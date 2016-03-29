@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>AT&T Enhanced Push-to-Talk | API Developer center</title>
+
+
+		<!-- Bootstrap core CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet"> 
+		<link href="css/eptt-api.css" rel="stylesheet">
+	
+
+		<!-- Just for debugging purposes. Don't actually copy this line! -->
+		<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<body> 
+		<div class="container">
+			<header>
+				<div class="row">
+					<div class="col-xs-3 col-sm-2 col-md-1">
+						<img src="img/att_globe_rgb_pos.png">
+					</div>
+					<div class="col-xs-7 col-sm-6 col-md-4">
+						<img src="img/eptt-api-name.png">
+					</div>
+					<div class="col-md-2 pull-right">
+						<a data-toggle="modal" data-target="#help-form" href="#">Help</a>
+					</div>
+				</div>
+			</header>
+
+
+			<div class="row">
+				<form class="form-horizontal">
+					<div class="col-md-6">
+						<fieldset>
+							<!-- Text input-->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="username">Username/Email</label>  
+							  <div class="col-md-7">
+							  <input id="username" name="username" type="text" placeholder="" class="form-control input-md input-first" required title="Enter your email address as your username">
+							    
+							  </div>
+							</div>
+
+							<!-- Password input-->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="password">Password <a href="#" data-toggle="popover" data-trigger="hover" title="Your password must:" data-content="Be at least eight (8) characters, contain at least one alpha character (a-z; A-Z) contain at least one numeric (0-9), contain at least one special character. For example: @&%”"><img class="infoIcon" src="img/info.png"></a></label>
+							  <div class="col-md-7">
+							    <input id="password" name="password" type="password" placeholder="" class="form-control input-md input-middle" required title="Enter a qualifying password.">
+							  </div>
+							</div>
+
+							<!-- Password input-->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="password-confirm">Confirm password</label>
+							  <div class="col-md-7">
+							    <input id="password-confirm" name="password-confirm" type="password" placeholder="" class="form-control input-md input-middle" required title="Your password entries must match.">
+							  </div>
+							</div>
+
+							<!-- Text input-->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="firstName">First name</label>  
+							  <div class="col-md-7">
+							  <input id="firstName" name="firstName" type="text" placeholder="" class="form-control input-md input-middle" required title="Please enter your first name.">
+							  </div>
+							</div>
+
+							<!-- Text input-->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="lastName">Last name</label>  
+							  <div class="col-md-7">
+							  <input id="lastName" name="lastName" type="text" placeholder="" class="form-control input-md input-last" required title="Please enter your last name.">
+							  </div>
+							</div>
+						</fieldset>
+					</div>
+
+					<div class="col-md-6">
+						<fieldset>
+							<!-- Text input-->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="mobile">Mobile</label>  
+							  <div class="col-md-7">
+							  <input id="mobile" name="mobile" type="text" placeholder="" class="form-control input-md input-first" required title="Please enter your mobile number">
+							  </div>
+							</div>
+
+							<!-- Text input-->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="company">Company</label>  
+							  <div class="col-md-7">
+							  <input id="company" name="company" type="text" placeholder="" class="form-control input-md input-middle" required title="Please enter your company name">
+							  </div>
+							</div>
+
+							<!-- Text input-->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="officePhone">Office Phone</label>  
+							  <div class="col-md-7">
+							  <input id="officePhone" name="officePhone" type="text" placeholder="" class="form-control input-md input-middle" required title="Please enter your ofice/company phone number">
+							  </div>
+							</div>
+
+							<!-- Text input-->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="website">Website</label>  
+							  <div class="col-md-7">
+							  <input id="website" name="website" type="text" placeholder="" class="form-control input-md input-last" required title="Please enter your company website url">
+							  </div>
+							</div>
+
+							<!-- Multiple Checkboxes -->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="terms">I have read and <br>agree to the</label>
+							  <div class="col-md-7">
+							  <div class="checkbox">
+							    <label for="terms-0">
+							      <input type="checkbox" name="terms" id="terms-0" value="apiTerms" required="">
+							      AT&amp;T EPTT API <a data-toggle="modal" data-target="#apiTC" href="#">Terms and Contitions</a>
+							    </label>
+								</div>
+							  <div class="checkbox">
+							    <label for="terms-1">
+							      <input type="checkbox" name="terms" id="terms-1" value="developerTerms" required="">
+							      Developer Program <a data-toggle="modal" data-target="#developerTC" href="#">Terms and Conditions</a>
+							    </label>
+								</div>
+							  </div>
+							</div>
+
+							<!-- Button -->
+							<div class="form-group form-button">
+							  <label class="col-md-4 control-label" for="submitRegister"></label>
+							  <div class="col-md-4">
+							    <button id="submitRegister" name="submitRegister" class="btn btn-primary">Register</button>
+							  </div>
+							</div>
+						</fieldset>
+					</div>
+				</form>
+
+			</div>
+
+			
+
+			<footer>
+				<p><a href="http://clicks.att.com/OCT/eTrac?EMAIL_ID=1012748074&finalURL=http://att.com/Trademark-Copyright-Privacy-Policy?source=EACQM0ftr0000000E" target="blank">© 2016 AT&T Intellectual Property</a>. All rights reserved. AT&T, the AT&T logo and all other AT&T marks contained herein are trademarks of AT&T Intellectual Property and/or AT&T affiliated companies.
+</p>
+			</footer>
+			
+
+		</div><!-- /container -->
+
+
+
+<!-- **********HELP FORM MODAL********** -->
+
+<div id="help-form" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+ <!-- Modal content-->
+    <div class="modal-content">
+    	<div class="modal-header">
+        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+        	<h4 class="modal-title">EPTT API Developer Center Help</h4>
+      	</div>
+
+	    <div class="modal-body">
+			<form class="form-horizontal">
+				<fieldset>
+
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="name">Your name</label>  
+						<div class="col-md-6">
+							<input id="name" name="name" type="text" placeholder="" class="form-control input-md input-first" required title="Enter your first and last name">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="email">Your email</label>  
+						<div class="col-md-6">
+							<input id="email" name="email" type="text" placeholder="" class="form-control input-md input-middle" required title="Enter your email address">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="subject">Subject</label>  
+						<div class="col-md-6">
+							<input id="subject" name="subject" type="text" placeholder="" class="form-control input-md input-last" required title="Please indicate the subject of your question">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="message">Question</label>
+						<div class="col-md-6">                     
+							<textarea class="form-control input-single" id="message" name="message" required title="Please enter your question"></textarea>
+						</div>
+					</div>
+
+					<div class="form-group form-button">
+						<label class="col-md-4 control-label" for="submit"></label>
+						<div class="col-md-6">
+							<button id="help-submit" name="help-submit" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+
+				</fieldset>
+			</form>
+		</div><!-- MODAL BODY -->
+
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+    </div><!-- MODAL CONTENT -->
+  </div>
+</div>
+<!-- ********** /HELP FORM MODAL********** -->
+
+<!-- **********API LEGAL MODAL********** -->
+
+<div id="apiTC" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+ <!-- Modal content-->
+    <div class="modal-content">
+    	<div class="modal-header">
+        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+        	<h4 class="modal-title">AT&T API License Agreement</h4>
+      	</div>
+
+	    <div class="modal-body termsModal">
+	    This AT&T API  License Agreement ("Agreement") is between AT&T Mobility LLC ("AT&T") and You governing your use of the Service, including all application programming interfaces ("API(s)"), information, content, products, materials, and services made available to You by AT&T or third parties related to the EPTT Service (the "Service"). "You" and "Your" means and refers to the person(s) or legal entity using the Service or otherwise exercising rights under this Agreement. If You are entering into this Agreement on behalf of Your company, "You" or "Your" refers to your company as well.
+Please read this Agreement carefully prior to using the Service. By using or otherwise accessing the Service, You (a) acknowledge that you have read this Agreement and agree to be bound by the terms of this Agreement on behalf of yourself (if an individual) or the legal entity that you represent (in the case of a legal entity), and (b) warrant that you have authority to execute this Agreement and bind the person or entity. If You do not agree to the terms of this Agreement, do not use the Service.
+
+
+<ol class="terms">
+<li><strong>License</strong><br>
+AT&T grants You a non-exclusive, non-transferable, revocable, restricted access right to use the Service for the testing and development of Applications. As used herein, "Application" means one or more non-commercial, prototype software programs developed by You used in connection with the Service, including any content delivered or made available through such non-commercial, prototype software programs. This License is conditioned upon Your compliance with the rules for usage of the Service that are contained in this Agreement or that AT&T publishes on AT&T's Developer Site. AT&T reserves the right to discontinue, without prior notice, Your use of the Service. You agree that You will not commercialize Your Application, including, but not limited to, charging a fee for Your Application, while you are developing and testing Your Application in the Service. You agree that you will not commercialize Your Application until you have executed a Joint Marketing Agreement or other agreement with AT&T  and moved the Application to the production environment, as determined by AT&T. <br><br>
+
+As between AT&T and You, AT&T reserves and retains all right, title, and interest, including but not limited to all Intellectual Property Rights in the Service, AT&T Marks, AT&T's wireless data network, AT&T's network and the AT&T Service (collectively, "AT&T IP"). You agree to cooperate with AT&T to maintain AT&T's ownership of the AT&T IP and, to the extent that You become aware of any claims relating to the AT&T IP, You will use reasonable efforts to promptly provide notice of any such claims to AT&T. No title to or ownership of any of these Intellectual Property Rights is transferred to You or any other Person under this Agreement. As between the parties, AT&T retains all Intellectual Property Rights and all other right, title, and interest in and to the AT&T IP. You obtain no right to use AT&T Intellectual Property Rights beyond the term of this Agreement.
+You may not (a) sublicense or share the Service with any other party, act as a subhost for others or (b) assign, transfer or this Agreement or your rights hereunder, without the prior written consent of AT&T. Your use of the Service must comply with this Agreement, AT&T's Privacy Policy http://www.att.com/gen/privacy-policy?pid=2506, and AT&T's Acceptable Use Policy www.att.com/aup.</li>
+
+<li><strong>USE LIMITATIONS</strong><br>
+<ul class="sublist"> 
+<li>AT&T will establish limits on Your use of the Service including, but not limited to, the number of API calls You can make over a limited time period (i.e., per minute, hourly and daily). AT&T provides no service level commitments, nor quality of service standards. AT&T is not obligated to provide any maintenance, technical, nor any other support for the Service or the APIs that are being used.</li>
+
+<li>Updates - AT&T may extend, enhance, or otherwise modify the Service and APIs provided hereunder at any time without notice. If Updates are made available by AT&T, the terms of this Agreement will govern such Updates, unless the Update is accompanied by a separate license in which case the terms of that license will govern. You acknowledge that AT&T has no express or implied obligation to announce or make available any Updates to the Service or APIs to anyone in the future. Should an Update be made available, it may have APIs, features, services or functionality that are different from those found under this Agreement.</li>
+</ul>
+</li>
+
+<li><strong>YOUR OBLIGATIONS</strong><br>
+<ul class="sublist"> 
+<li>Modifications - You shall not (a) make derivative works of, reverse engineer, reverse compile or disassemble the APIs, (b) use the Service in any unauthorized manner, including any way that will: (i) infringe on any AT&T or third party's copyright, patent, trademark, trade secret or other property rights or rights of publicity or privacy, or (ii) violate any applicable law, statute, ordinance or regulation. You shall not rent, lease, loan, resell for profit, use, copy, modify, distribute, display, or provide the Service in any form.</li>
+
+<li>Unsuitable Content -Your Applications used in connection with the Service may not contain Unsuitable Content.</li>
+
+<li>Harmful code - Your Applications used in connection with the Service may not contain any malware, malicious or harmful code, program, or other internal component (e.g. computer viruses, Trojan horses, "backdoors") which could damage, destroy, or adversely affect any part of the Service, the AT&T network, or other AT&T or third party software, firmware, hardware, data, systems, or services.</li>
+
+<li>Free and Open Source Software ("FOSS") - If Your Application includes any FOSS, You must comply with all applicable FOSS licensing terms. You also agree not to use any FOSS in the development of Your Application in such a way that would cause AT&T to be subject to any FOSS licensing terms or obligations.</li>
+
+<li>Location Based Services - All Location Based Applications used in connection with the Service must comply with AT&T's LBS Developer's Guide and any other rules concerning such services posted on the Developer Site. Except with AT&T's prior written consent, Your Application may not allow End Users to be passively or automatically located i.e., "tracked," by any third party. For example, Your Application may access the location of a Device that has requested a navigation service, but Your Application may not provide a "family finder" or "friend finder" or similar feature that would allow a third party to passively track a Device. Certain Location Based Services delivered to "feature phones," must maintain "AT&T Trusted" certificates. In that regard, such Location Based Services must comply with such standards and requirements as AT&T may impose to maintain an "AT&T Trusted" certificate. You acknowledge that Location Information is sensitive subscriber personal information. You may not collect, use or disclose Location Information in connection with Your Location Based Application other than as specifically provided in this Agreement and only in accordance with the required disclosures below. You may not use AT&T Location Information for any purpose other than delivering Your Location Based Service. Without limiting the generality of the immediately preceding sentence, you may not anonymize, aggregate and re-use or distribute any AT&T Location Information.<br><br>
+
+
+Before you may use or collect Location Information, You must disclose to the End User, at a minimum 
+
+<ul class="sublist2"> 
+<li>what Location Information is collected and how it will be used by You,</li>
+<li>the identity of the party collecting the Location Information,</li> 
+<li>whether Location Information is shared with third parties,</li>
+<li>how long Location Information will be retained, and</li>
+<li>what security measures are in place to protect the Location Information. Your Location Based Service may not access Location Information directly or through your Application unless Your Location Based Service is first initiated by an End User. Your Application may not unilaterally initiate a Location Based Service. You agree not to store Location Information any longer than necessary to provide the Location Based Service. You further agree that AT&T is the preferred provider of Location Information derived from the AT&T network (e.g., cell site location). You agree that Your Location Based Service will not use Location Information derived from the AT&T network obtained from a third-party source (e.g., an aggregator of location information) without AT&T's prior written approval.</li></ul>
+<li>Interoperability.  You shall endeavor to inform AT&T with respect to the interoperability and compatibility of Your products with AT&T’s management systems as contemplated herein, and any issues or problems with respect thereto; You will use Your best efforts to achieve full interoperability and compatibility.  
+</li></li></ul>
+
+<li><strong>API CREDENTIALS</strong><br>
+You may only access the AT&T APIs through the account credentials issued to You. You may not provide your EPTT API credentials to any other person or party, without AT&T's written permission. You may not establish additional accounts or obtain additional credentials by utilizing alternative email addresses. AT&T reserves the right to revoke Your credentials at any time, validate Your IP and/or domain address, and to block requests that AT&T deems in its sole discretion to be malicious or abusive.</li>
+
+<li><strong>REPRESENTATIONS AND WARRANTIES</strong><br>
+You represent and warrant that:
+<ul class="sublist">
+<li>You are of the legal age of majority in the jurisdiction in which You reside (at least 18 years of age) and have the right and authority to enter into this Agreement on Your own behalf; that You are a Developer; and if You are entering into this Agreement on behalf of Your company, that You have the right and authority to legally bind Your company to the terms and obligations of this Agreement;</li>
+<li>You will be solely responsible for all costs, expenses, losses and liabilities incurred, and activities undertaken by You in connection with the Service, Your Applications and Your related development efforts, including, but not limited to, any network and server equipment, Internet service(s), or any other hardware, software or services used by You;</li>
+<li>You will not, through use of the Service or otherwise, create any Application or other program that would disable, hack or otherwise interfere with any security, digital signing, digital rights management, verification or authentication mechanisms implemented in or by the Service, AT&T's network, any AT&T Services or Products or other AT&T software or technology, or enable others to do so; and,</li>
+<li>You are not presently the subject of, nor the proponent of, any claim that would have a Material adverse effect on this Agreement or Your use of the Service.</li>
+6. INFRINGEMENT
+You affirm and agree that You will not assert against AT&T, its affiliates or authorized representatives any claim for infringement or misappropriation of any rights protectable under intellectual property law anywhere throughout the world, including rights protectable under patent, copyright, trade secret or trademark, in any way relating to the Service.
+</ul>
+</li>
+
+<li><strong>DISCLAIMER OF WARRANTIES AND LIMITATION OF LIABILITY</strong><br>
+AT&T MAKES NO WARRANTIES OR REPRESENTATIONS CONCERNING AVAILABILITY OR SECURITY OF THE SERVICE, NOR THAT YOUR APPLICATIONS ARE FIT FOR BEING TESTED OR OTHERWISE VERIFIED IN THE SERVICE. AT&T INFORMS AND YOU ACCEPT THAT AVAILABILITY OF THE SERVICE CAN BE NON-EXISTING OR RESTRICTED DUE TO LACK OF CAPACITY, DATA TRANSMISSION ERRORS, INTERRUPTION OF POWER AND OTHER CIRCUMSTANCES BEYOND AT&T'S CONTROL. FURTHER YOU AGREE THAT AT&T SHALL HAVE NO RESPONSIBILITY, NOR LIABILITY FOR THE NON-AVAILABILITY OF THE SERVICE. AT&T SHALL ATTEMPT TO POST, BUT HAS NO OBLIGATION TO DO SO, WHEN THE SERVICE MAY BE UNAVAILABLE FOR MAINTENANCE, REPAIRS, OR OTHER REASONS.<br><br>
+AT&T'S SOLE RESPONSIBILITY IN THE CASE OF MALFUNCTIONS IS LIMITED TO USING REASONABLE EFFORTS TO CORRECT ANY MALFUNCTION. YOU SHALL HAVE NO OTHER REMEDY. IF IN SPITE OF AT&T USING ALL REASONABLE EFFORTS, IT PROVES DIFFICULT OR NOT COMMERCIALLY SUITABLE IN OUR SOLE OPINION TO CORRECT THE MALFUNCTION, THE MALFUNCTION SHALL NOT BE CORRECTED. AT&T SHALL HAVE NO RESPONSIBILITY OR LIABILITY FOR ANY MALFUNCTION WHETHER CAUSED BY AT&T OR CAUSED BY YOU AND/OR ANY THIRD PARTY. THE REMEDIES SET FORTH ABOVE CONSTITUTE THE ONLY AND EXCLUSIVE REMEDIES AVAILABLE TO YOU FOR MALFUNCTIONS.<br><br>
+YOU ASSUME TOTAL RESPONSIBILITY AND RISK FOR YOUR USE OF THE SERVICE. THE SERVICE IS PROVIDED "AS IS" AND AT&T DOES NOT MAKE, AND EXPRESSLY DISCLAIMS, ANY EXPRESS OR IMPLIED WARRANTIES, REPRESENTATIONS OR ENDORSEMENTS OF ANY KIND WHATSOEVER, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, AND THE WARRANTIES OF TITLE OR NON-INFRINGEMENT. YOU ASSUME ALL RISK AS TO THE SUITABILITY, QUALITY, AND PERFORMANCE OF THE SERVICE.<br><br>
+IN NO EVENT SHALL AT&T OR ITS DIRECTORS, OFFICERS, EMPLOYEES OR AFFILIATES BE LIABLE FOR (A) ANY INCIDENTAL, CONSEQUENTIAL, INDIRECT, SPECIAL OR EXEMPLARY DAMAGES (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS, BUSINESS INTERRUPTION, LOSS OF PROGRAMS OR INFORMATION, AND THE LIKE) ARISING OUT OF THE USE OF OR INABILITY TO USE THE SERVICE, EVEN IF AT&T OR ANY OF ITS AUTHORIZED REPRESENTATIVES HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, (B) ANY CLAIM ATTRIBUTABLE TO ERRORS, OMISSIONS, INTERRUPTIONS, INCOMPATIBILITY WITH EQUIPMENT, SYSTEMS, VIRUSES, OR OTHER INACCURACIES IN THE SERVICE, OR (C) ANY CLAIM BY ANY THIRD PARTY. BECAUSE SOME STATES DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, THE ABOVE LIMITATION MAY NOT APPLY TO YOU. IN SUCH STATES, AT&T'S LIABILITY IS LIMITED TO THE GREATEST EXTENT PERMITTED BY LAW.<br><br>
+NOTWITHSTANDING ANY OTHER PROVISION IN THIS AGREEMENT, AT&T'S AGGREGATE LIABILITY UNDER THIS AGREEMENT IS LIMITED TO A MAXIMUM AMOUNT EQUAL TO $100.00.
+YOU ACKNOWLEDGE THAT THE PROVISIONS OF THIS AGREEMENT WERE NEGOTIATED TO REFLECT AN INFORMED, VOLUNTARY ALLOCATION BETWEEN YOU AND AT&T OF ALL RISKS (BOTH KNOWN AND UNKNOWN) ASSOCIATED WITH THE TRANSACTIONS ASSOCIATED WITH THIS AGREEMENT AND REFLECT THAT AT&T IS NOT CHARGING YOU FOR THE LICENSES GRANTED UNDER THIS AGREEMENT. THE REMEDY LIMITATIONS, AND THE LIMITATIONS OF LIABILITY, ARE SEPARATELY INTENDED TO LIMIT THE FORMS OF RELIEF AVAILABLE TO YOU.</li>
+
+<li><strong>INDEMNIFACTION</strong><br>
+You agree to indemnify, defend and hold AT&T, its employees, agents, consultants, subsidiaries, affiliates, suppliers and licensors (each an "Indemnified Party") harmless from and against any and all claims, costs, losses, damages, liabilities, judgments and expenses (including reasonable fees of attorneys and other professionals) which AT&T and/or any Indemnified Party may incur and that arise from or are related to: (i) Your use of the Service; (ii) any infringement of intellectual property, patents, trademarks, copyrights, or trademarks belonging to any Third Party; or (iii) Your breach of this Agreement.</li>
+
+<li><strong>TERM AND TERMINATION</strong><br>
+This Agreement and Your rights hereunder will terminate immediately upon the earlier of the following: (a) without notice, if You fail to comply with any of Your obligations under this Agreement, (b) the date that You are notified by AT&T that you are no longer authorized to use the Service, or (c) the date that You terminate Your use of the Service or otherwise notify AT&T of your termination of this Agreement.</li>
+
+<li><strong>GOVERNING LAW</strong><br>
+This Agreement shall be governed by the laws of the State of Georgia, except conflict of law rules. The United Nations Convention on the International Sale of Goods shall not apply to this Agreement. Suit to enforce this Agreement or any provision thereof will be brought exclusively in the state or federal courts located in Atlanta, Georgia.</li>
+
+<li><strong>SEVERABILITY</strong><br>
+If any one or more of the provisions of this Agreement should be ruled wholly or partly invalid or unenforceable by a court or other government body of competent jurisdiction, then: (a) the validity and enforceability of all provisions of this Agreement not ruled to be invalid or unenforceable will be unaffected; (b) the effect of the ruling will be limited to the jurisdiction of the court or other government body making the ruling; (c) the provision(s) held wholly or partly invalid or unenforceable will be deemed amended, and the court or other government body or AT&T is authorized to reform the provision(s), to the minimum extent necessary to render them valid and enforceable in conformity with the Parties' intent as manifested herein; and (d) if the ruling, and/or the controlling principle of law or equity leading to the ruling, is subsequently overruled, modified, or amended by legislative, judicial, or administrative action, then the provision(s) in question as originally set forth in this Agreement will be deemed valid and enforceable to the maximum extent permitted by the new controlling principle of law or equity.</li>
+
+<li><strong>PUBLICITY </strong><br>
+You shall refrain from marketing and/or giving publicity that could give the impression that the Applications tested in the Service are approved or certified, or qualitatively or functionally accepted or approved by AT&T. You shall not make any public statement regarding this Agreement, the terms of this Agreement, or any specific aspect thereof without AT&T's prior written approval, which may be withheld in AT&T's sole discretion. In order to preserve the value of AT&T's name and/or any trademarks, service marks, trade names, or trade dress adopted and/or used by AT&T from time to time, You shall not make any use of any of the same for any reason except solely as may be expressly authorized in writing by AT&T.</li>
+
+<li><strong>CONFIDENTIAL INFORMATION</strong><br>
+You agree that information AT&T discloses to You under this Agreement, including but not limited to, ideas, concepts, know-how, techniques, designs, specifications, drawings, blueprints, tracings, diagrams, models, samples, flow charts, data, computer programs, disks, diskettes, tapes, marketing plans, and other technical, financial or business information (individually and collectively, "Information") shall be deemed to be confidential and proprietary. You agree to hold such Information in confidence with the same degree of care with which You protect Your own confidential or proprietary Information, but no less than reasonably prudent care; use the Information only for the purpose of this Agreement; not copy, distribute, or otherwise use such Information or knowingly allow anyone else to copy, distribute, or otherwise use such Information, and any and all copies shall bear the same notices or legends, if any, as the originals; and upon request, promptly return to AT&T all Information that is in tangible form. As to Information that was disclosed in or is stored in intangible form, including, but not limited to electronic mail or other electronic communication, upon request by AT&T, You shall certify in writing within five (5) business days to AT&T that all such Information has been destroyed or, if the Information was recorded on an erasable storage medium, that You have used reasonable efforts to erase all such intangible Information.<br><br>
+No Confidential Disclosures by You. The Parties do not intend that You will disclose to AT&T, and agree that You will refrain from disclosing to AT&T, any information that You regard as proprietary. You warrant that all information disclosed to AT&T by You is or will be free of any obligation of confidence. AT&T works with many application and software developers and some of their products may be similar to or compete with Your Applications. AT&T may also be developing its own similar or competing applications and products or may decide to do so in the future. To avoid potential misunderstandings, AT&T cannot agree, and expressly disclaims, any confidentiality obligations or use restrictions, express or implied, with respect to any information that You may provide in connection with this Agreement, including information about Your Application and metadata (such disclosures will be referred to as "Developer Disclosures"). You agree that any such Developer Disclosures will be non-confidential. AT&T will be free to use and disclose any Developer Disclosures on an unrestricted basis without notifying or compensating You. You release AT&T from all liability and obligations that may arise from the receipt, review, use, or disclosure of any portion of any Developer Disclosures. Any physical materials You submit to AT&T will become AT&T property and AT&T will have no obligation to return those materials to You or to certify their destruction.<br><br>
+Nothing in this Agreement will impair AT&T's right to develop, acquire, license, market, promote, or distribute products or technologies that perform the same or similar functions as, or otherwise compete with, Your Applications or any other products or technologies that You may develop, produce, market, or distribute.</li>
+
+<li><strong>INDEPENDENT PARTIES</strong><br>
+You and AT&T are independent contractors. No partnership or joint venture is intended to be created by this Agreement, nor any principal-agent or employer-employee relationship. You shall not attempt to assert, the authority to make commitments for or to bind AT&T to any obligation. Although this Agreement contains covenants with respect to Confidential/Proprietary Information, You and AT&T disclaim any other intent to create a confidential or fiduciary relationship.</li>
+
+<li><strong>NO WAIVER</strong><br>
+The failure of either Party (You or AT&T) at any time to require performance by the other Party of any provision of this Agreement shall in no way affect the right of such Party to require performance of that provision. Any waiver by either Party of any breach of any provision of this Agreement shall not be construed as a waiver of any continuing or succeeding breach of such provision, a waiver of the provision itself or a waiver of any right under this Agreement.</li>
+
+<li><strong>INJUNCTIVE RELIEF</strong><br>
+Any violation by You of this Agreement shall give the AT&T the right to a court-ordered injunction or other appropriate order to specifically enforce those covenants. This is in addition to any remedies AT&T may have at law. A breach of any of Your Obligations or the covenants under this Agreement is a breach of the Licenses granted by this Agreement.</li>
+
+<li><strong>NON-EXCLUSIVE</strong><br>
+Under no circumstances will this Agreement be construed or interpreted as an exclusive dealing agreement by either party. Nothing in this Agreement will be construed as to restrict either party from entering into any agreement with any other party, even if similar to or competitive with the transactions contemplated hereunder.</li>
+
+<li><strong>EXPORT</strong><br>
+You will not export or re-export directly or indirectly (including via remote access) any part of the Service (including any Confidential/Proprietary Information) to any country for which a validated license is required for such export or re-export under the Export Laws without first obtaining such a validated license.</li>
+
+<li><strong>FORCE MAJEURE</strong><br>
+AT&T shall not be responsible for failures of its obligations under this Agreement for events beyond its reasonable control, including, but not limited to, natural disasters, epidemics, strikes, labor difficulties, severe weather conditions, regulatory or government acts, or delay of suppliers or contractors.</li>
+
+<li><strong>NOTICES</strong><br>
+You consent to receive and review notices through the Service and agree that any such notices will satisfy any legal communication requirements.
+21. GOVERNMENT USE.  If You are part of an agency, department, or other entity of the United States Government ("Government"), the use, duplication, reproduction, release, modification, disclosure or transfer of the API Package is restricted in accordance with the Federal Acquisition Regulations as applied to civilian agencies and the Defense Federal Acquisition Regulation Supplement as applied to military agencies.  The API Package is a "commercial item," "commercial computer software" and "commercial computer software documentation." In accordance with such provisions, any use of the API Package by the Government shall be governed solely by the terms of this Agreement.</li>
+
+<li><strong>ENTIRE AGREEMENT</strong><br>
+This Agreement constitutes the entire agreement between the You and AT&T concerning the subject matter thereof. No prior or contemporaneous representations, inducements, promises, or agreements, oral or otherwise, between You and AT&T with reference thereto will be of any force or effect. You represent and warrant that, in entering into and performing Your obligations under this Agreement, You do not and will not rely on any promise, inducement, or representation allegedly made by or on behalf of AT&T with respect to the subject matter hereof, nor on any course of dealings or custom and usage in the trade, except as such promise, inducement, or representation may be expressly set forth herein. This Agreement may be modified only: (a) by a written amendment signed by both parties, or (b) to the extent expressly permitted by this Agreement (for example, by AT&T by written or email notice to You).</li>
+</ol>
+
+			
+		</div><!-- MODAL BODY -->
+
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+    </div><!-- MODAL CONTENT -->
+  </div>
+</div>
+<!-- ********** /API TERMS MODAL********** -->
+
+
+<!-- **********DEVELOPER MODAL********** -->
+
+<div id="developerTC" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+ <!-- Modal content-->
+    <div class="modal-content">
+    	<div class="modal-header">
+        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+        	<h4 class="modal-title">AT&T Developer Web Pages License Agreement</h4>
+      	</div>
+
+	    <div class="modal-body termsModal">
+			<p>The AT&amp;T Developer Web Pages are maintained by  AT&amp;T Mobility LLC (&ldquo;AT&amp;T&rdquo;) for use by developers interested in  obtaining resource information about the development of software applications  for mobile devices.  When you or any  other person, employee or representative authorized by you (collectively  referred to as &ldquo;You&rdquo; or &ldquo;Your&rdquo;) use the AT&amp;T Developer Web Pages, You  accept the Terms and Conditions stated below (the &ldquo;Terms and Conditions&rdquo;).  Do not use the AT&amp;T Developer Web Pages  if You do not agree with these Terms and Conditions.</p>
+
+<ol>
+<li><strong>Content Ownership.</strong>	The AT&amp;T Developer Web Pages  (&ldquo;Web Pages&rdquo;)<strong>  </strong>provide You access to technical resources,  such as product, service, and network information, and community forums and contain trademarks, service marks, logos, copyrights, other  intellectual property, including, without limitation, text, data, graphics,  audio, video, and product, service,   network, process, and technical descriptions and information (collectively, the &quot;Content&quot;) owned by,  licensed to, and/or supplied to AT&amp;T. As between You, AT&amp;T its third  party Content licensors and suppliers, AT&amp;T or such third party Content  licensors and suppliers are the sole owners of all Content on the Web Pages,  including, without limitation, all copyrights, trademarks, service marks, patent,  trade secret, and other intellectual property rights thereto. AT&amp;T is the  sole owner of the Web Pages. The Web Pages may  contain links and references to third-party websites, which are provided for  the convenience.  AT&amp;T is not  responsible for  the content or  information contained on such third party websites. </li>
+
+<li><strong>Account Registration.</strong>	In order  to use certain features of the Web Pages, You will be asked to create a user  Account and password (an &quot;Account&quot;) and provide certain information  (&quot;Registration Data&quot;). You agree: (i) that the Registration Data You  provide will be true, accurate, current and complete at the time You provide  it; (ii) to maintain and update such Registration Data to keep it true,  accurate, current and complete; and (iii) that AT&amp;T may contact You and  require You to confirm some or all of Your Registration Data before using  certain features of the Web Pages. You are responsible for maintaining the  confidentiality of Your Account credentials and for all activities, charges  and/or liabilities that occur from Your Account, whether or not authorized by  You. You must immediately notify AT&amp;T of any unauthorized use of Your  Account credentials or any other breach of security of which You become aware.  We will not be liable for any loss or damage arising from Your failure to  comply with this section.</li>
+
+<li><strong>Limited License.</strong>		Subject to Your compliance with  these Terms and Conditions, and in consideration of Your promises reflected  herein, AT&amp;T grants to You a limited,  non-exclusive, revocable, non-transferable license to access, view and use the  Web Pages, including the Content contained therein, subject to any access  restrictions or fees AT&amp;T may establish from time to time. You may  download, view, copy and print the Content solely for Your own use; provided  that, without the express prior written permission of AT&amp;T, such Content  may not be adapted, modified, published, displayed, transmitted, transferred,  shared with or disseminated to anyone for any purpose which is inconsistent  with the business purpose of these Web Pages, facilitates unfair competition  with these Web Pages, or exploits these Web Pages in any way or which is  inappropriate under applicable US or international law.  You are not permitted to distribute,  assign, transfer or sublicense any right to use the Web Pages, either in whole  or in part, to any third party.  </li>
+
+<li><strong>Use  Restrictions</strong>.	Notwithstanding the  foregoing license grant, You may not resell, redistribute, broadcast or  transfer the Content or use the Content in a searchable, machine-readable  database or file except through the authorized access to these Web Pages.  Unless separately and specifically authorized in writing by AT&amp;T, You may  not rent, lease, sublicense, distribute, transfer, copy, reproduce, publicly  display, publish, adapt, modify, create derivative works, mine, harvest,  collect, store or time-share these Web Pages, any part thereof, or any of the Content  received or accessed therefrom to or through any person or entity.  Access to any restricted area of the Web  Pages without the authorization of AT&amp;T is prohibited. You agree to use  these Web Pages, including, without limitation, any restricted area, and the Content  contained herein for lawful purposes only.  You may not utilize logos, marks, or other  distinctive graphics, video, or audio material in Your links, without  AT&amp;T&rsquo;s express written permission, which AT&amp;T may withhold in its  discretion. You may not link in any manner reasonably likely to (i) imply  affiliation with or endorsement or sponsorship by AT&amp;T, (ii) cause  confusion, mistake, or deception, (iii) dilute AT&amp;T's trademarks or service  marks, or (iv) otherwise violate state or federal law. In addition, You may  only link to the home page of the AT&amp;T Developer Web Pages unless AT&amp;T  authorizes You to link to other  Web  Pages.  You may not use spiders, robots, data mining techniques or other  automated devices or programs to catalog, download or programs to catalog,  download or otherwise reproduce, store or distribute Content available on the AT&amp;T  Developer Web Pages.  You may not use any  such automated means to manipulate the AT&amp;T Developer Web Pages or attempt  to exceed the limited authorization and access granted to You under these Terms  and Conditions.  You may not resell use  of, or access to, the AT&amp;T Developer Web Pages to any third party. </li>
+
+<li><strong>Forums.</strong>	AT&amp;T may make forums available within the AT&amp;T Developer Web Pages to help developers request and provide development  help and share tips.  By submitting comments,  posts, content, information, or messages (&ldquo;Posts&rdquo;) to such forums, You  represent and warrant that: (i) You own and control all rights to the content  inYour Posts, that You transmit or otherwise make available, or You have the  lawful right to distribute, reproduce, and provide such content; (ii) the Posts  are accurate and not misleading; and (iii) providing such Posts does not: (a)  violate this Agreement or (b) violate the rights of, or cause any injury to,  any person or entity. Further, You grant us a royalty-free, perpetual, irrevocable  license to use such Posts.  Also, You  understand and agree that AT&amp;T retains the right to reformat, excerpt or  translate any Posts submitted by You. You understand and agree that AT&amp;T  will not be liable for any Posts publicly posted or privately transmitted on  these Web Sites. You understand and agree that we cannot guarantee the  identity, statements or representations of any other users with whom You may  interact in the course of using these Web Sites. Additionally, we cannot  guarantee that any Posts obtained from our users or otherwise, is accurate,  complete, authentic, current or reliable. Your use of the forums, if any, will  further be governed by the AT&amp;T Developer Community Rules available for  review within the forums.  Those rules  are incorporated into these Terms and Conditions by this reference.  Users should be  aware that forums and discussion groups are public and not private  communications. Further, users acknowledge that Postings by other users are not  endorsed by AT&amp;T, and that such Posts shall not be considered as having  been reviewed, screened or approved by AT&amp;T. <br/>
+<br/>
+You agree  not to submit or transmit any Post that (a) is libelous,  defamatory, vulgar or obscene, pornographic, sexually offensive or explicit,  harmful or harassing, threatening, hateful, racially, culturally, ethnically or  otherwise objectionable or offensive, discriminatory or abusive; (b) violates  any law or regulation or the rights of others; (c) infringes any copyright,  trademark or other intellectual property right, or any proprietary or personal  rights or confidentiality obligations of others; or (d)  is  a solicitation for  funding, advertising or solicitation for goods or services;  or (e) (iv) which is used to unlawfully collude  against another person in restraint of trade and competition.  You are solely responsible and liable for any  such activity, behavior, use and conduct.   This means that You, and not AT&amp;T or its, suppliers, or licensors,  are entirely responsible for all Posts You submit or transmit.  AT&amp;T reserves the right to filter, edit,  or control all Your Posts and does not guarantee the accuracy, integrity or  quality of Your Post.  Under no  circumstances will AT&amp;T or its suppliers, or licensors be liable in any way  to You for any Posts, including, but not limited to, any errors or omissions in  any content, information, or messages, or any loss or damage of any kind  incurred as a result of the use of any such content, information or messages  posted, emailed, transmitted.  You shall be solely liable for any damages resulting from  any infringement of copyright, trademark or other proprietary right, or any  other harm resulting from Your Post to a forum.   AT&amp;T  does not and cannot review every Post by You on forums and is not responsible  for any Post.  AT&amp;T reserves the right  to delete, move or edit, at its sole discretion, any Post that does not comply  with this paragraph. You acknowledge that any Post may be edited, removed,  modified, published, transmitted and displayed by AT&amp;T.   AT&amp;T is under no  obligation to use any Post you transmit or submit. You agree that AT&amp;T is  not under any obligation of confidentiality, express or implied, with respect  to Your Post. <br/>
+<br/>
+Any  Post, comments, content, information or  materials sent to us, including, but not limited to, data,  ideas, answers, questions, comments,  suggestions, feedback or the like,   (collectively, &quot;Feedback&quot;), is non-confidential and shall  become our sole property. We shall have no obligation to You of any kind,  monetary or non-monetary, with respect to such Feedback and shall be free to  reproduce, use, disclose, exhibit, display, transform, create derivative works  from and distribute the Feedback to others without limitation or  obligation.  You acknowledge that  AT&amp;T has absolutely no liability for alleged infringement or  misappropriation in connection with such information/Post.  The submission of such information/Post to  AT&amp;T will in no way prevent, or require, the purchase, manufacture or use  of any products, services, plans or ideas by AT&amp;T for any purpose whatsoever.<br />
+<br/>
+<strong>Consent  to Monitoring and Disclosure.</strong> You acknowledge that AT&amp;T reserves the right, and may from time to time, monitor Your access and  use of the Web Pages and Your Posts. AT&amp;T, at its sole discretion and  without further notice to You, may (but is not obligated to) review, censor or  prohibit the transmission or receipt of any Post which AT&amp;T deems inappropriate  or that violates these Terms or Conditions or any AT&amp;T Policy. During  monitoring, Posts may be examined, recorded, copied, and used for authorized  purposes. Your use of the Web Pages, authorized or unauthorized, constitutes  consent to such monitoring. <br />
+<br/>
+<strong>Copyright Complaints.</strong> AT&amp;T respects the intellectual property rights of others. If You believe that Your work has been copied and has been posted, stored or transmitted by or through  the Web Pages in a way that constitutes copyright infringement, please submit a  notification pursuant to the Digital Millennium Copyright Act  (&quot;DMCA&quot;) in accordance with the process  detailed at <a href="http://www.att.net/general-info/claims.html">http://www.att.net/general-info/claims.html</a> and directed to:  <a name="_DV_M37" id="_DV_M37"></a>Designated Agent: Manager of Security &amp; Copyright  Infringement, 1800 Perimeter Park Drive, Suite 100, Morrisville, NC 27560, Phone:  (919) 319-5737, Fax: (919) 319-8154, E-mail: <a href="mailto:copyright@att.com">copyright@att.com</a>. </li>
+  
+<li><strong>Privacy.</strong>	It is the policy of AT&amp;T to respect the  privacy of its customers and any persons who visit its web sites.  For this reason, AT&amp;T has established a  Privacy Policy, the terms of which are available for Your review at:  <a href="http://www.att.com/privacy">www.att.com/privacy</a>.  Subject to these Terms and Conditions, the  relevant provisions of said Privacy Policy are incorporated by this reference.</li>
+
+<li><strong>Subject to  Change.</strong>	AT&amp;T reserves the right to modify these Terms and  Conditions, the Privacy Statement, and the business policies and practices associated with  the use of these Web Pages.  Such modifications may include, without limitation, implementation of user  priorities, implementation of rules for use by You, and discontinuance of functional  aspects of the Web Pages, and changes in prices. AT&amp;T may also add,  withdraw or modify any Content contained within these Web Pages at any time in  its sole discretion.  Your use of  these Web Pages is Your agreement to be bound by such changes.</li>
+
+<li><strong>Term.</strong>		The period during which You are entitled to  use the AT&amp;T Developer Web Pages (&ldquo;Term&rdquo;) begins on the date upon which You  agree to these Terms and Conditions. AT&amp;T may revoke or terminate the  License granted in its sole discretion at any time. Without limiting the  generality of the foregoing, we may revoke or terminate the License if You: (i)  breach any obligation in these Terms and Conditions or in any other agreement  between You and us, (ii) violate any policy or guideline applicable to the Web  Pages, Content, or any other AT&amp;T service, or (iii) use these Web Pages or  Content specifically authorized in these Terms and Conditions, without our  prior written permission.   Additionally,  either You or AT&amp;T may terminate this License at any time without cause,  but termination of this License will not relieve You of the obligations under  these Terms and Conditions that You assumed by using these Web Pages.</li>
+
+<li><strong>Termination of AT&amp;T Developer Web Site and Service.</strong>	AT&amp;T may discontinue, terminate, suspend or shut down the AT&amp;T  Developer Web Site, Web Pages, particular Web Pages, and/or remove Content at  any time and for any or no reason. We are not obligated to give notice of such  discontinuation, termination, suspension, removal or shut-down.  Your License shall automatically terminate,  if AT&amp;T discontinues, terminates, suspends or shut downs the AT&amp;T  Developer Web Site.</li>
+  <li><strong>Application  Agreement(s).</strong>  These Terms and Conditions relate solely to  Your access to, and use of, the Web Pages and Content.  No commitments, obligations, terms or  restrictions are imposed upon either party with respect to any Application(s)  by virtue of these Terms and Conditions.   Any agreements between You and AT&amp;T regarding Applications will be  governed by a separate agreement(s).</li>
+
+<li><strong>Trademarks.</strong>	The AT&amp;T name, trade names, trademarks  and logo, as well as all related product and service names, design marks and  slogans, are the property of AT&amp;T, and may not be used by You for any  purpose unless specifically authorized in writing, and in advance, by  AT&amp;T.  All other names, marks and  logos are the names, marks and logos of their respective owners.  All right, title and interest, including,  without limitation, all copyrights, trademarks and other intellectual property  rights, in the Web Pages and Content belong to AT&amp;T, its licensors, or  suppliers.</li>
+
+<li> <strong>Connectivity; Delay in Service.</strong>	You are responsible for all costs and expenses associated with  establishing and maintaining Your connection to these Web Pages. Neither  AT&amp;T, nor any of its licensors or suppliers (including its and their  officers, directors, managers, employees, affiliates, agents, or representatives)  shall be liable for any loss or liability resulting, directly or indirectly,  from delays or interruptions due to electric or mechanic equipment failures,  interconnection problems, defects, weather,  strikes, walkouts, fire, acts of nature, riots, armed conflicts, acts of war or  other like causes. AT&amp;T shall have no responsibility to provide You access  to these Web Pages during any such interruption. </li>
+
+<li><strong>Limitation of Liability.</strong>	YOU ASSUME FULL RESPONSIBILITY FOR IMPLEMENTING SUFFICIENT PROCEDURES AND CHECKS TO SATISFY YOUR REQUIREMENTS FOR ACCURACY AND SUITABILITY OF THESE WEB PAGES AND THE CONTENT, AND FOR MAINTAINING ANY MEANS WHICH YOU MAY REQUIRE FOR THE RECONSTRUCTION OF LOST DATA OR SUBSEQUENT MANIPULATIONS OR ANALYSES OF THE CONTENT PROVIDED UNDER THIS AGREEMENT. YOU ACKNOWLEDGE  AND AGREE THAT AT&amp;T, ITS AFFILIATES, LICENSORS, AND SUPPLIERS (INCLUDING ITS OR THEIR OFFICERS, DIRECTORS, MANAGERS,  EMPLOYEES, AFFILIATES, AGENTS,  AND REPRESENTATIVES  (&ldquo;LIMITED LIABILITY PARTIES&rdquo; FOR THE REMAINDER OF THIS PARAGRAPH) WILL NOT BE  LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES, OR ANY DAMAGES  WHATSOEVER RESULTING FROM AN INABILITY TO ACCESS OR USE THE WEB PAGES AND/OR  CONTENT AVAILABLE ON OR ACCESSIBLE THROUGH THE WEB PAGES. THESE LIMITATIONS ON THE LIABILITY OF THE  LIMITED LIABILITY PARTIES APPLY WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE, STRICT LIABILITY OR OTHER TORTIOUS ACTION ARISING OUT OF OR IN CONNECTION WITH  THE CONTENT AVAILABLE ON OR ACCESSIBLE THROUGH THE WEB PAGES AND THE  LIMITATIONS APPLY EVEN IF LIMITED LIABILITY PARTIES HAVE BEEN ADVISED OF THE  POSSIBILITY OF SUCH DAMAGES.  YOU AGREE  AND ACKNOWLEDGE THAT THESE LIMITATIONS ON THE LIABILITY OF LIMITED LIABILITY  PARTIES REFLECT A REASONABLE ALLOCATION OF RISK AND THAT SUCH ALLOCATION OF  RISK IS A SIGNIFICANT INDUCMENT FOR AT&amp;T TO ALLOW YOU TO ACCESS AND USE THE  WEB PAGES.  IN NO EVENT WILL THE AGGREGATE, TOTAL LIABILITY OF THE LIMITED LIABILITY PARTIES FOR DAMAGES, INJURY, LOSSES AND CAUSES OF ACTION, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM OR RELATING TO ACCESS OR USE OF THE WEB PAGES EXCEED TEN DOLLARS ($10.00).  BECAUSE SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES, SOME OF THE ABOVE LIMITATIONS MAY NOT APPLY IN THOSE JURISDICTIONS.  IN SUCH JURISDICTIONS, THE LIMITED LIABILITY PARTIES¿ LIABILITY IS LIMITED TO THE GREATEST EXTENT PERMITTED BY LAW.</li>
+
+<li><strong>Disclaimer of Warranties.</strong>		BROWSING AND USE OF THE WEB PAGES AND CONTENT IS AT YOUR OWN RISK. YOU ACKNOWLEDGE THAT INACCURACIES MAY OCCUR, AND THAT AT&T AND ITS LICENSORS AND SUPPLIERS DO NOT WARRANT THE ACCURACY OR SUITABILITY OF THE WEB PAGES AND CONTENT FOR ANY PURPOSE. FURTHERMORE, THE WEB PAGES AND CONTENT MAY CONTAIN LINKS TO THIRD PARTY WEBSITES NOT UNDER THE CONTROL OR OPERATION OF AT&T. AT&T PROVIDES ANY SUCH LINKS ONLY AS A CONVENIENCE FOR YOU AND IS NOT RESPONSIBLE FOR ANY SUCH LINKED SITES, THE CONTENT ON ANY SUCH LINKED SITES OR A SITE LINKED TO OR FROM ANY SUCH LINKED SITES. YOU ASSUME ALL RESPONSIBILITY AND RISK FOR USE OF THE WEB PAGES, THE CONTENT AND THE INTERNET GENERALLY.  ACCESS TO AND/OR USE OF THE WEB PAGES AND CONTENT PROVIDED ON OR AVAILABLE THROUGH THE WEB PAGES ARE PROVIDED OR MADE AVAILABLE ON AN ¿AS IS¿ AND ¿AS AVAILABLE¿ BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF TITLE, NON-INFRINGEMENT OR IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.  NO ADVICE OR INFORMATION GIVEN BY AT&T, ITS AFFILIATES OR IT LICENSORS, OR SUPPLIERS WILL CREATE ANY WARRANTY.  FURTHER, NEITHER AT&T NOR ITS AFFILIATES, LICENSORS, OR SUPPLIERS WARRANT THAT CONTENT PROVIDED ON OR AVAILABLE THROUGH THE WEB PAGES WILL BE UN-INTERRUPTABLE, ACCURATE, COMPLETE, USEFUL, FUNCTIONAL OR ERROR FREE, OR THAT CONTENT OR MATERIAL PROVIDED ON OR AVAILABLE THROUGH THE WEB PAGES IS FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.  ANY CONTENT AVAILABLE ON OR ACCESSIBLE THROUGH THE WEB PAGES MAY INCLUDE TECHNICAL INACCURACIES OR TYPOGRAPHICAL ERRORS.</li>
+
+<li><strong>Indemnification.</strong>		You agree to release, indemnify, defend and  hold AT&amp;T, its affiliates and/or its licensors, and suppliers and their affiliates, officers, directors,  managers, employees, agents and representatives  harmless from losses, damages, claims, demands, suits, liabilities, fines,  penalties, and expenses,  including reasonable attorneys&rsquo; fees, made by any third party due to or arising  out of Your access to or use of the AT&amp;T Developer Web Pages or the  Content, the violation by You of these Terms and Conditions, the infringement  by You of any intellectual property or other right of any person or entity,  and/or any Posts You submit or transmit to any Forums.</li>
+
+<li><strong>Severability.</strong>	If any of these Terms and Conditions are held  to be invalid or unenforceable with respect to a party, the remainder of these  Terms and Conditions, or the application of such provision to persons other  than those to whom it is held invalid or unenforceable shall not be affected  and each remaining provision of these Terms and Conditions shall be valid and  enforceable to the fullest extent permitted by law.</li>
+
+<li><strong>Publicity.</strong>	Nothing contained in these Terms and  Conditions will be construed as granting to You any right to use or refer to in  advertising, publicity, promotion, marketing or other activities, any name,  trade name, trade or service mark or any other designation of AT&amp;T, its  licensors, or suppliers, including any contraction, abbreviation or simulation  of any kind of the foregoing, unless specifically authorized in writing, and in  advance, by AT&amp;T, its licensors, or suppliers.</li>
+
+<li><strong>International  Use.</strong>	AT&amp;T controls and operates these Web Pages from its offices  in the United States of America. AT&amp;T does not represent that Content  accessible via the Web Pages is appropriate or available for use in all  geographic locations, especially some locations outside the United States, and  accessing such from certain locations may be illegal and prohibited.  If You access or use such Content from such  locations, You are acting on Your own initiative, and AT&amp;T is not  responsible for Your compliance with local laws or other applicable legal or  regulatory restrictions.  You agree that  You will not access or use the Web Pages or Content where prohibited by  applicable law, rule or regulation.  You  represent and warrant that You are not (a) located in any country that is  subject to a U.S. Government embargo, or that has been designated by the U.S.  Government as a &ldquo;terrorist supporting&rdquo; country, or (b) listed on any U.S.  Government list of prohibited or restricted parties including the Treasury  Department&rsquo;s list of Specially Designated Nationals or the U.S. Department of  Commerce Denied Persons List or Entity List. You also agree that You will not  use the Web Pages or Content for any purposes prohibited by United States law.</li>
+
+<li><strong>Governing Law.</strong>		The laws of the State of Texas, excluding its conflicts-of-law  rules, shall govern this Agreement and Your use of these Web Pages and Content.  You agree that any claim or dispute with AT&amp;T relating in any way to Your  use of the Web Pages or Content shall be commenced and heard in the state or  federal courts of the State of Texas, County of Dallas, and You agree and  expressly consent to the exercise of personal jurisdiction in the courts of the  State of Texas, in connection with any such dispute.  You and AT&amp;T agree that any cause of  action arising out of or related to or use of the Web Pages or Content  must commence within one (1) year after the  cause of action arises.  Otherwise, such  cause of action is permanently barred.   Because some jurisdictions do not permit such time bars, this limitation  may not apply in all situations.</li>
+
+<li><strong>Miscellaneous.</strong>		AT&amp;T&rsquo;s failure to exercise or enforce any  right or provision of these Terms and Conditions will not constitute a waiver  of such right or provision unless acknowledged and agreed to by AT&amp;T in  writing.  Neither the course of conduct  between the parties nor trade practice will act to modify any provision of  these Terms and Conditions.  </li>
+</ol>
+
+		</div><!-- MODAL BODY -->
+
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+    </div><!-- MODAL CONTENT -->
+  </div>
+</div>
+<!-- ********** /DEVELOPER MODAL********** -->
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<script>
+			$(document).ready(function(){
+			    $('[data-toggle="popover"]').popover(); 
+			});
+		</script>
+
+
+</body>
+</html>

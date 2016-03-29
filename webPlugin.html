@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>AT&T Enhanced Push-to-Talk | API Developer center</title>
+
+
+		<!-- Bootstrap core CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet"> 
+		<link href="css/eptt-api.css" rel="stylesheet">
+	
+
+		<!-- Just for debugging purposes. Don't actually copy this line! -->
+		<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<body> 
+		<div class="container">
+			<header>
+				<div class="row">
+					<div class="col-xs-3 col-sm-2 col-md-1">
+						<img src="img/att_globe_rgb_pos.png">
+					</div>
+					<div class="col-xs-7 col-sm-6 col-md-4">
+						<img src="img/eptt-api-name.png">
+					</div>
+					<div class="col-md-2 pull-right">
+						<a data-toggle="modal" data-target="#help-form" href="#">Help</a>
+					</div>
+				</div>
+			</header>
+
+			<div class="row">
+				<div class="col-md-2">
+
+				    <nav class="navbar navbar-default" role="navigation">
+					  <!-- Brand and toggle get grouped for better mobile display -->
+					  <div class="navbar-header">
+					    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					      <span class="sr-only">Toggle navigation</span>
+					      <span class="icon-bar"></span>
+					      <span class="icon-bar"></span>
+					      <span class="icon-bar"></span>
+					    </button>
+					    <!-- <a class="navbar-brand" href="#">Brand</a> -->
+					  </div>
+
+					  <!-- Collect the nav links, forms, and other content for toggling -->
+					  <div class="collapse navbar-collapse navbar-ex1-collapse">
+					    <ul class="nav navbar-nav">
+					      <li><a href="overview.html">Overview</a></li>
+					      <li class="dropdown">
+					        <a href="#" class="dropdown-toggle" data-toggle="dropdown">EPTT APIs <b class="caret"></b></a>
+					        <ul class="dropdown-menu">
+					          <li><a href="deepLink.html">Deep Linking</a></li>
+					          <li><a href="WebPlugin.html">Web Plugin</a></li>
+					        </ul>
+					      </li>
+					      <li><a href="#">Projects</a></li>
+					      <li><a href="http://att.com/enhanced-push-to-talk" target="blank">Enhanced PTT</a></li>
+					    </ul>
+					    
+					    
+					    </ul>
+					  </div><!-- /.navbar-collapse -->
+					</nav>
+    
+				</div>
+				<div class="col-md-10 content">
+					<div class="col-md-6">
+						<div class="col-md-4">
+							<img src="img/web-plugin-icons.png">
+						</div>
+						<div class="col-md-8">
+							<p class="attBlue"><strong>Integrate EPTT functionality directly into a Windows desktop-based applications.</strong></p>
+						</div>
+						<div class="col-md-12">
+							<ul class="features">
+								<span class="headline"> API version : 1.0</span>
+
+								<li>kodiakpoc.js is a JavaScript API that exposes several Kodiak PoC services directly into the browser.</li>
+
+								<li>Kodiak PoC Plugin lets you open inbound and outbound audio connections to Kodiak PoC Server for Building conference calls, push-to-talk systems, etc all from the browser.</li>
+
+								<li>Kodiak PoC EventStream pushes the real-time events from your PoC calls and InstantPersonalAlert messages into your browser to create completely synchronized phone and browser application experiences.</li>
+
+								<li>Import kodiakpoc.js file in HTML for using the PoC services</li>
+
+								<li>Example:<span class="code"> &lt;script type="text/javascript" src="http://static.kodiaknetworks.com/jslib/pocjs/1.0/kodiakpoc.js"&gt;&lt;/script&gt;</span></li>
+							</ul>
+					</div>
+					</div>
+					<div class="col-md-6">
+						<p class="headline attBlue">API Resources</p>
+						<div class="resources">
+							<ul>
+								<li><a href="#">Downloadable_Reference.xxx</a></li>
+								<li><a href="#">Downloadable_Reference.xxx</a></li>
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-10 col-centered codeBox">
+					<div class="code">
+					/**<br />
+ * @version 1.0.2<br />
+ *<br />
+ * @fileoverview  &lt;h3&gt;Kodiak PoC Plugin for Browser&lt;/h3&gt;<br />
+ * &lt;p&gt;&lt;b&gt;API version : 1.0&lt;/b&gt;&lt;/p&gt;<br />
+ * &lt;p&gt;kodiakpoc.js is a JavaScript API that exposes several Kodiak PoC services directly into the browser.&lt;/p&gt;<br />
+ *<br />
+ * &lt;p&gt;Kodiak PoC Plugin lets you open inbound and outbound audio connections to Kodiak PoC Server<br />
+ *    for Building conference calls, push-to-talk systems, etc all from the browser.&lt;/p&gt;<br />
+ *<br />
+ * &lt;p&gt;Kodiak PoC EventStream pushes the real-time events from your PoC calls and<br />
+ * InstantPersonalAlert messages into your browser to create completely synchronized phone and<br />
+ * browser application experiences.&lt;/p&gt;<br />
+ *<br />
+ * &lt;p&gt;Import kodiakpoc.js file in HTML for using the PoC services&lt;/p&gt;<br />
+ * &lt;p&gt;Example : &amp;lt;script src="http://static.kodiaknetworks.com/jslib/pocjs/1.0/kodiakpoc.js" type="text/javascript"&amp;gt;&amp;lt;/script&amp;gt;&lt;/p&gt;<br />
+ * @copyright Copyright (c) 2015  Kodiak Networks (India) Pvt. Ltd.<br />
+ * &lt;br/&gt;<br />
+ * &lt;br/&gt;All Rights Reserved.<br />
+ * &lt;br/&gt;&lt;p&gt;This software is the confidential and proprietary information of Kodiak<br />
+ * Networks, Inc. You shall not disclose such confidential information and<br />
+ * shall use it only in accordance with the terms of the license agreement<br />
+ * you entered into with Kodiak Networks.&lt;/p&gt;<br />
+ */<br />
+/**<br />
+ * Plugin download URL.<br />
+ *<br />
+ * Set the valid plugin url using {@link KNPoC.setPluginURL}<br />
+ * @type {string}<br />
+ */<br />
+var defaultPluginURL = '';<br />
+/**<br />
+ * &lt;br/&gt;<br />
+ * &lt;h5 style="padding-left:14px"&gt;Login Status Codes:&lt;/h5&gt;<br />
+ *    &lt;table class="params" style="margin-left:17px" border="1px solid"&gt;<br />
+ *    &lt;thead&gt;&lt;th&gt;Status Code&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th class="last"&gt;Description&lt;/th&gt;&lt;/thead&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;1&lt;/td&gt;&lt;td class="type"&gt;UNKNOWN&lt;/td&gt;&lt;td class="description last"&gt;Unknown status code&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;2&lt;/td&gt;&lt;td class="type"&gt;SUCCESS&lt;/td&gt;&lt;td class="description last"&gt;Login is success&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;3&lt;/td&gt;&lt;td class="type"&gt;FAILED&lt;/td&gt;&lt;td class="description last"&gt;Login failed&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;4&lt;/td&gt;&lt;td class="type"&gt;ALREADY_LOGGED_IN&lt;/td&gt;&lt;td class="description last"&gt;Client is already logged in, logout and try again.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br />
+ *@type {enum}<br />
+ */<br />
+var LOGINSTATUS = {<br />
+    UNKNOWN     	  : "1",<br />
+    SUCCESS           : "2",<br />
+    FAILED            : "3",<br />
+    ALREADY_LOGGED_IN : "4"<br />
+};<br />
+/**<br />
+ * &lt;br/&gt;<br />
+ * &lt;h5 style="padding-left:14px"&gt;Subscription Status Codes:&lt;/h5&gt;<br />
+ *    &lt;table class="params" style="margin-left:17px" border="1px solid"&gt;<br />
+ *    &lt;thead&gt;&lt;th&gt;Status Code&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th class="last"&gt;Description&lt;/th&gt;&lt;/thead&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;1&lt;/td&gt;&lt;td class="type"&gt;SUBSCRIPTION_CHANGED&lt;/td&gt;&lt;td class="description last"&gt;Subscription changed&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;2&lt;/td&gt;&lt;td class="type"&gt;SUBSCRIPTION_ENABLED&lt;/td&gt;&lt;td class="description last"&gt;Subscription is Enabled&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;3&lt;/td&gt;&lt;td class="type"&gt;SUBSCRIPTION_CANCELLED&lt;/td&gt;&lt;td class="description last"&gt;Subscription is Cancelled&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;4&lt;/td&gt;&lt;td class="type"&gt;SUBSCRIPTION_DELETED&lt;/td&gt;&lt;td class="description last"&gt;Subscription is Deleted&lt;/td&gt;&lt;/tr&gt;<br />
+ *	  &lt;tr&gt;&lt;td class="name"&gt;5&lt;/td&gt;&lt;td class="type"&gt;SUBSCRIPTION_CRED_CHANGE&lt;/td&gt;&lt;td class="description last"&gt;Subscription credential changed&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br />
+ *@type {enum}<br />
+ */<br />
+var SUBSCRIPTIONSTATUS = {<br />
+    SUBSCRIPTION_CHANGED	     : "1",<br />
+    SUBSCRIPTION_ENABLED         : "2",<br />
+    SUBSCRIPTION_CANCELLED       : "3",<br />
+    SUBSCRIPTION_DELETED         : "4",<br />
+    SUBSCRIPTION_CRED_CHANGE    : "5"<br />
+};<br />
+/**<br />
+ * &lt;br/&gt;<br />
+ * &lt;h5 style="padding-left:14px"&gt;Contact Availability Status Codes:&lt;/h5&gt;<br />
+ *    &lt;table class="params" style="margin-left:17px" border="1px solid"&gt;<br />
+ *    &lt;thead&gt;&lt;th&gt;Status Code&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th class="last"&gt;Description&lt;/th&gt;&lt;/thead&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;1&lt;/td&gt;&lt;td class="type"&gt;UNKNOWN&lt;/td&gt;&lt;td class="description last"&gt;Unknown status code&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;2&lt;/td&gt;&lt;td class="type"&gt;OFFLINE&lt;/td&gt;&lt;td class="description last"&gt;Contact is offline&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;3&lt;/td&gt;&lt;td class="type"&gt;AVAILABLE&lt;/td&gt;&lt;td class="description last"&gt;Contact is available&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;4&lt;/td&gt;&lt;td class="type"&gt;DND&lt;/td&gt;&lt;td class="description last"&gt;Contact status is Do Not Disturb&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br />
+ *@type {enum}<br />
+ */<br />
+var CONTACTAVAILABILITYSTATUS = {<br />
+    UNKNOWN  	   : "1",<br />
+    OFFLINE        : "2",<br />
+    AVAILABLE      : "3",<br />
+    DND            : "4"<br />
+};<br />
+/**<br />
+ * &lt;br/&gt;<br />
+ * &lt;h5 style="padding-left:14px"&gt;Self Availability status Codes:&lt;/h5&gt;<br />
+ *    &lt;table class="params" style="margin-left:17px" border="1px solid"&gt;<br />
+ *    &lt;thead&gt;&lt;th&gt;Status Code&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th class="last"&gt;Description&lt;/th&gt;&lt;/thead&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;1&lt;/td&gt;&lt;td class="type"&gt;UNKNOWN&lt;/td&gt;&lt;td class="description last"&gt;Unknown status code&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;2&lt;/td&gt;&lt;td class="type"&gt;OFFLINE&lt;/td&gt;&lt;td class="description last"&gt;Self status is offline&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;3&lt;/td&gt;&lt;td class="type"&gt;AVAILABLE&lt;/td&gt;&lt;td class="description last"&gt;Self status is available&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;4&lt;/td&gt;&lt;td class="type"&gt;DND&lt;/td&gt;&lt;td class="description last"&gt;Self status is Do Not Disturb&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br />
+ *@type {enum}<br />
+ */<br />
+var SELFAVAILABILITYSTATUS = {<br />
+    UNKNOWN  	   : "1",<br />
+    OFFLINE        : "2",<br />
+    AVAILABLE      : "3",<br />
+    DND            : "4"<br />
+};<br />
+/**<br />
+ * &lt;br/&gt;<br />
+ * &lt;h5 style="padding-left:14px"&gt;Self Availability Change Status Codes:&lt;/h5&gt;<br />
+ *    &lt;table class="params" style="margin-left:17px" border="1px solid"&gt;<br />
+ *    &lt;thead&gt;&lt;th&gt;Status Code&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th class="last"&gt;Description&lt;/th&gt;&lt;/thead&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;1&lt;/td&gt;&lt;td class="type"&gt;UNKNOWN&lt;/td&gt;&lt;td class="description last"&gt;Unknown status code&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;2&lt;/td&gt;&lt;td class="type"&gt;SUCCESS&lt;/td&gt;&lt;td class="description last"&gt;Success&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;3&lt;/td&gt;&lt;td class="type"&gt;FAILURE&lt;/td&gt;&lt;td class="description last"&gt;Failure&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br />
+ *@type {enum}<br />
+ */<br />
+var SELFAVAILABILITYCHANGESTATUS = {<br />
+	UNKNOWN : "1",<br />
+	SUCCESS : "2",<br />
+	FAILURE : "3"<br />
+};<br />
+/**<br />
+ * &lt;br/&gt;<br />
+ * &lt;h5 style="padding-left:14px"&gt;Logout Status Codes:&lt;/h5&gt;<br />
+ *    &lt;table class="params" style="margin-left:17px" border="1px solid"&gt;<br />
+ *    &lt;thead&gt;&lt;th&gt;Status Code&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th class="last"&gt;Description&lt;/th&gt;&lt;/thead&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;1&lt;/td&gt;&lt;td class="type"&gt;UNKNOWN&lt;/td&gt;&lt;td class="description last"&gt;Unknown status code&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;2&lt;/td&gt;&lt;td class="type"&gt;SUCCESS&lt;/td&gt;&lt;td class="description last"&gt;Success&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;3&lt;/td&gt;&lt;td class="type"&gt;FAILURE&lt;/td&gt;&lt;td class="description last"&gt;Failure&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;4&lt;/td&gt;&lt;td class="type"&gt;USER_NOT_LOGGED_IN&lt;/td&gt;&lt;td class="description last"&gt;User not logged in&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br />
+ *@type {enum}<br />
+ */<br />
+var LOGOUTSTATUS = {<br />
+	UNKNOWN 			: "1",<br />
+	SUCCESS 			: "2",<br />
+	FAILURE 			: "3",<br />
+	USER_NOT_LOGGED_IN 	: "4"<br />
+};<br />
+/**<br />
+ * &lt;br/&gt;<br />
+ * &lt;h5 style="padding-left:14px"&gt;Contact Operation Codes:&lt;/h5&gt;<br />
+ *    &lt;table class="params" style="margin-left:17px" border="1px solid"&gt;<br />
+ *    &lt;thead&gt;&lt;th&gt;Status Code&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th class="last"&gt;Description&lt;/th&gt;&lt;/thead&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;1&lt;/td&gt;&lt;td class="type"&gt;UNKNOWN&lt;/td&gt;&lt;td class="description last"&gt;Unknown status code&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;2&lt;/td&gt;&lt;td class="type"&gt;ADDED&lt;/td&gt;&lt;td class="description last"&gt;When a single contact added&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;3&lt;/td&gt;&lt;td class="type"&gt;DELETED&lt;/td&gt;&lt;td class="description last"&gt;When a single contact deleted&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;4&lt;/td&gt;&lt;td class="type"&gt;UPDATED&lt;/td&gt;&lt;td class="description last"&gt;When a contacts name is updated&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;5&lt;/td&gt;&lt;td class="type"&gt;LOCATION_CHANGE&lt;/td&gt;&lt;td class="description last"&gt;When contact location changes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br />
+ *@type {enum}<br />
+ */<br />
+var CONTACTOPERATIONCODE = {<br />
+    UNKNOWN    		 : "1",<br />
+    ADDED     		 : "2",<br />
+    DELETED          : "3",<br />
+    UPDATED          : "4",<br />
+    LOCATION_CHANGE  : "5"<br />
+};<br />
+/**<br />
+ * &lt;br/&gt;<br />
+ * &lt;h5 style="padding-left:14px"&gt;Group Operation Codes:&lt;/h5&gt;<br />
+ *    &lt;table class="params" style="margin-left:17px" border="1px solid"&gt;<br />
+ *    &lt;thead&gt;&lt;th&gt;Status Code&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th class="last"&gt;Description&lt;/th&gt;&lt;/thead&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;1&lt;/td&gt;&lt;td class="type"&gt;UNKNOWN&lt;/td&gt;&lt;td class="description last"&gt;Unknown status code&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;2&lt;/td&gt;&lt;td class="type"&gt;ADDED&lt;/td&gt;&lt;td class="description last"&gt;Group is created&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;3&lt;/td&gt;&lt;td class="type"&gt;DELETED&lt;/td&gt;&lt;td class="description last"&gt;Group is deleted&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;4&lt;/td&gt;&lt;td class="type"&gt;UPDATED&lt;/td&gt;&lt;td class="description last"&gt;Group is updated&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br />
+ *@type {enum}<br />
+ */<br />
+var GROUPOPERATIONCODE = {<br />
+    UNKNOWN  	   : "1",<br />
+    ADDED          : "2",<br />
+    DELETED        : "3",<br />
+    UPDATED        : "4"<br />
+};<br />
+/**<br />
+ * &lt;br/&gt;<br />
+ * &lt;h5 style="padding-left:14px"&gt;Call Status Codes:&lt;/h5&gt;<br />
+ *    &lt;table class="params" style="margin-left:17px" border="1px solid"&gt;<br />
+ *    &lt;thead&gt;&lt;th&gt;Status Code&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th class="last"&gt;Description&lt;/th&gt;&lt;/thead&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;1&lt;/td&gt;&lt;td class="type"&gt;UNKNOWN&lt;/td&gt;&lt;td class="description last"&gt;Unknown status code&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;2&lt;/td&gt;&lt;td class="type"&gt;DIALING&lt;/td&gt;&lt;td class="description last"&gt;The call is dialing&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;3&lt;/td&gt;&lt;td class="type"&gt;RINGING&lt;/td&gt;&lt;td class="description last"&gt;The call is ringing&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;4&lt;/td&gt;&lt;td class="type"&gt;BUSY&lt;/td&gt;&lt;td class="description last"&gt;The other end is busy&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;5&lt;/td&gt;&lt;td class="type"&gt;ANSWERED&lt;/td&gt;&lt;td class="description last"&gt;The call is being answered&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;6&lt;/td&gt;&lt;td class="type"&gt;CONNECTED&lt;/td&gt;&lt;td class="description last"&gt;The call is connected and active&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;7&lt;/td&gt;&lt;td class="type"&gt;TERMINATED&lt;/td&gt;&lt;td class="description last"&gt;The call is terminated&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;8&lt;/td&gt;&lt;td class="type"&gt;FLOOR_CHANGED&lt;/td&gt;&lt;td class="description last"&gt;Floor has changed&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;9&lt;/td&gt;&lt;td class="type"&gt;RECONNECTING&lt;/td&gt;&lt;td class="description last"&gt;Call is reconnecting&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;10&lt;/td&gt;&lt;td class="type"&gt;USER_DND&lt;/td&gt;&lt;td class="description last"&gt;User is in "Do Not Disturb" mode&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;11&lt;/td&gt;&lt;td class="type"&gt;USER_OFFLINE&lt;/td&gt;&lt;td class="description last"&gt;User is Offline&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;12&lt;/td&gt;&lt;td class="type"&gt;OTHER_CALL_ERROR&lt;/td&gt;&lt;td class="description last"&gt;Any other call error&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br />
+ *@type {enum}<br />
+ */<br />
+var CALLSTATUS = {<br />
+    UNKNOWN     	  : "1",<br />
+    DIALING     	  : "2",<br />
+    RINGING           : "3",<br />
+    BUSY              : "4",<br />
+    ANSWERED          : "5",<br />
+    CONNECTED         : "6",<br />
+    TERMINATED        : "7",<br />
+    FLOOR_CHANGED     : "8",<br />
+    RECONNECTING      : "9",<br />
+    USER_DND		  : "10",<br />
+    USER_OFFLINE	  : "11",<br />
+    OTHER_CALL_ERROR  : "12"<br />
+};<br />
+/**<br />
+ * &lt;br/&gt;<br />
+ * &lt;h5 style="padding-left:14px"&gt;Floor Status Codes:&lt;/h5&gt;<br />
+ *    &lt;table class="params" style="margin-left:17px" border="1px solid"&gt;<br />
+ *    &lt;thead&gt;&lt;th&gt;Status Code&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th class="last"&gt;Description&lt;/th&gt;&lt;/thead&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;1&lt;/td&gt;&lt;td class="type"&gt;REQUESTED_SELF&lt;/td&gt;&lt;td class="description last"&gt;Floor is requested by self&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;2&lt;/td&gt;&lt;td class="type"&gt;RELEASED&lt;/td&gt;&lt;td class="description last"&gt;Floor is released by self or by participant&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;3&lt;/td&gt;&lt;td class="type"&gt;REVOKED&lt;/td&gt;&lt;td class="description last"&gt;Floor is revoked&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;4&lt;/td&gt;&lt;td class="type"&gt;GRANTED&lt;/td&gt;&lt;td class="description last"&gt;Floor is granted to self or to a participant&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;5&lt;/td&gt;&lt;td class="type"&gt;DENIED&lt;/td&gt;&lt;td class="description last"&gt;Floor requested is denied&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;6&lt;/td&gt;&lt;td class="type"&gt;TAKEN&lt;/td&gt;&lt;td class="description last"&gt;Floor is taken by a participant&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;7&lt;/td&gt;&lt;td class="type"&gt;IDLE&lt;/td&gt;&lt;td class="description last"&gt;Floor is idle&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br />
+ *@type {enum}<br />
+ */<br />
+var FLOORSTATUS = {<br />
+    REQUESTED_SELF  : "1",<br />
+    RELEASED     	: "2",<br />
+    REVOKED     	: "3",<br />
+    GRANTED      	: "4",<br />
+    DENIED 			: "5",<br />
+    TAKEN           : "6",<br />
+    IDLE			: "7"<br />
+};<br />
+/**<br />
+ * &lt;br/&gt;<br />
+ * &lt;h5 style="padding-left:14px"&gt;Floor Status Disconnect Reason Codes:&lt;/h5&gt;<br />
+ *    &lt;table class="params" style="margin-left:17px" border="1px solid"&gt;<br />
+ *    &lt;thead&gt;&lt;th&gt;Status Code&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th class="last"&gt;Description&lt;/th&gt;&lt;/thead&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;1&lt;/td&gt;&lt;td class="type"&gt;UNKNOWN&lt;/td&gt;&lt;td class="description last"&gt;Disconnect reason unknown&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;2&lt;/td&gt;&lt;td class="type"&gt;NORMAL&lt;/td&gt;&lt;td class="description last"&gt;Call ended&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;3&lt;/td&gt;&lt;td class="type"&gt;CALL_TO_NON_KODIAK_USER&lt;/td&gt;&lt;td class="description last"&gt;Non Kodiak user&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;4&lt;/td&gt;&lt;td class="type"&gt;CALL_TO_DELETED_GROUP&lt;/td&gt;&lt;td class="description last"&gt;Group is deleted&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;5&lt;/td&gt;&lt;td class="type"&gt;CALL_TO_DND_USER&lt;/td&gt;&lt;td class="description last"&gt;User in DND state&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;6&lt;/td&gt;&lt;td class="type"&gt;USER_TEMPORARY_UNAVAILABLE&lt;/td&gt;&lt;td class="description last"&gt;User unavailable&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;7&lt;/td&gt;&lt;td class="type"&gt;USER_OUT_OF_COVERAGE_AREA&lt;/td&gt;&lt;td class="description last"&gt;User out of coverage area&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;8&lt;/td&gt;&lt;td class="type"&gt;ALL_GROUP_MEMEBERS_ARE_UNAVAILABLE&lt;/td&gt;&lt;td class="description last"&gt;All group members in group call are unavailable&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;9&lt;/td&gt;&lt;td class="type"&gt;CALL_TO_BUSY_USER&lt;/td&gt;&lt;td class="description last"&gt;User is busy&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;10&lt;/td&gt;&lt;td class="type"&gt;CALL_TO_ZERO_MEMBER_GROUP&lt;/td&gt;&lt;td class="description last"&gt;Made call to zero contact group&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;11&lt;/td&gt;&lt;td class="type"&gt;TEMPORARY_FAILURE&lt;/td&gt;&lt;td class="description last"&gt;Temporary failure&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;12&lt;/td&gt;&lt;td class="type"&gt;CALL_TO_OFFLINE_USER&lt;/td&gt;&lt;td class="description last"&gt;User is offline&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;13&lt;/td&gt;&lt;td class="type"&gt;CALL_TO_DEACTIVATED_USER&lt;/td&gt;&lt;td class="description last"&gt;User is deactivated&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;14&lt;/td&gt;&lt;td class="type"&gt;CALLER_OUT_OF_COVERAGE_AREA&lt;/td&gt;&lt;td class="description last"&gt;Caller out of coverage area&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;15&lt;/td&gt;&lt;td class="type"&gt;CALL_TO_DISPATCHER&lt;/td&gt;&lt;td class="description last"&gt;1-1 call with DISPATCHER&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br />
+ *@type {enum}<br />
+ */<br />
+var FLOORSTATUSREASON = {<br />
+    UNKNOWN     	  						: "1",<br />
+    NORMAL     	  							: "2",<br />
+    CALL_TO_NON_KODIAK_USER           		: "3",<br />
+    CALL_TO_DELETED_GROUP              		: "4",<br />
+    CALL_TO_DND_USER          				: "5",<br />
+    USER_TEMPORARY_UNAVAILABLE         		: "6",<br />
+    USER_OUT_OF_COVERAGE_AREA        		: "7",<br />
+    ALL_GROUP_MEMEBERS_ARE_UNAVAILABLE     	: "8",<br />
+    CALL_TO_BUSY_USER      					: "9",<br />
+    CALL_TO_ZERO_MEMBER_GROUP		  		: "10",<br />
+    TEMPORARY_FAILURE	  					: "11",<br />
+    CALL_TO_OFFLINE_USER  					: "12",<br />
+    CALL_TO_DEACTIVATED_USER		  		: "13",<br />
+	CALLER_OUT_OF_COVERAGE_AREA	  			: "14",<br />
+    CALL_TO_DISPATCHER  					: "15"<br />
+};<br />
+/**<br />
+ * &lt;br/&gt;<br />
+ * &lt;h5 style="padding-left:14px"&gt;IPA Status Codes:&lt;/h5&gt;<br />
+ *    &lt;table class="params" style="margin-left:17px" border="1px solid"&gt;<br />
+ *    &lt;thead&gt;&lt;th&gt;Status Code&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th class="last"&gt;Description&lt;/th&gt;&lt;/thead&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;1&lt;/td&gt;&lt;td class="type"&gt;UNKNOWN&lt;/td&gt;&lt;td class="description last"&gt;Unknown status code&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;2&lt;/td&gt;&lt;td class="type"&gt;SUCCESS&lt;/td&gt;&lt;td class="description last"&gt;Success&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;3&lt;/td&gt;&lt;td class="type"&gt;FAILURE&lt;/td&gt;&lt;td class="description last"&gt;Failure&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br />
+ *@type {enum}<br />
+ */<br />
+var IPASTATUS = {<br />
+    UNKNOWN  	   : "1",<br />
+    SUCCESS        : "2",<br />
+    FAILURE        : "3"<br />
+};<br />
+/**<br />
+ * &lt;br/&gt;<br />
+ * &lt;h5 style="padding-left:14px"&gt;Setup Status Codes:&lt;/h5&gt;<br />
+ *    &lt;table class="params" style="margin-left:17px" border="1px solid"&gt;<br />
+ *    &lt;thead&gt;&lt;th&gt;Status Code&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th class="last"&gt;Description&lt;/th&gt;&lt;/thead&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;1&lt;/td&gt;&lt;td class="type"&gt;UNKNOWN&lt;/td&gt;&lt;td class="description last"&gt;Unknown status code&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;2&lt;/td&gt;&lt;td class="type"&gt;SUCCESS&lt;/td&gt;&lt;td class="description last"&gt;Success&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;3&lt;/td&gt;&lt;td class="type"&gt;PLUGIN_NOT_INSTALLED&lt;/td&gt;&lt;td class="description last"&gt;Plugin not installed&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;4&lt;/td&gt;&lt;td class="type"&gt;PLUGIN_ALREADY_RUNNING&lt;/td&gt;&lt;td class="description last"&gt;Another instance is already running&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;5&lt;/td&gt;&lt;td class="type"&gt;PLUGIN_IS_BLOCKED&lt;/td&gt;&lt;td class="description last"&gt;Plugin is blocked&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br />
+ *@type {enum}<br />
+ */<br />
+var SETUPSTATUS = {<br />
+    UNKNOWN     			: "1",<br />
+    SUCCESS     			: "2",<br />
+    PLUGIN_NOT_INSTALLED    : "3",<br />
+    PLUGIN_ALREADY_RUNNING	: "4",<br />
+	PLUGIN_IS_BLOCKED		: "5"<br />
+};<br />
+/**<br />
+ * &lt;br/&gt;<br />
+ * &lt;h5 style="padding-left:14px"&gt;Plugin Status Codes:&lt;/h5&gt;<br />
+ *    &lt;table class="params" style="margin-left:17px" border="1px solid"&gt;<br />
+ *    &lt;thead&gt;&lt;th&gt;Status Code&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th class="last"&gt;Description&lt;/th&gt;&lt;/thead&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;1&lt;/td&gt;&lt;td class="type"&gt;BUSY&lt;/td&gt;&lt;td class="description last"&gt;Plugin is busy&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;2&lt;/td&gt;&lt;td class="type"&gt;READY&lt;/td&gt;&lt;td class="description last"&gt;Plugin is ready for use&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;3&lt;/td&gt;&lt;td class="type"&gt;NETWORK_CONNECTED&lt;/td&gt;&lt;td class="description last"&gt;Network connected&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;4&lt;/td&gt;&lt;td class="type"&gt;NETWORK_DISCONNECTED&lt;/td&gt;&lt;td class="description last"&gt;Network disconnected&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br />
+ *@type {enum}<br />
+ */<br />
+var PLUGINSTATUS = {<br />
+	BUSY					: "1",<br />
+	READY					: "2",<br />
+    NETWORK_CONNECTED		: "3",<br />
+    NETWORK_DISCONNECTED	: "4"<br />
+};<br />
+/**<br />
+ * &lt;br/&gt;<br />
+ * &lt;h5 style="padding-left:14px"&gt;Missed call alert call type:&lt;/h5&gt;<br />
+ *    &lt;table class="params" style="margin-left:17px" border="1px solid"&gt;<br />
+ *    &lt;thead&gt;&lt;th&gt;Status Code&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th class="last"&gt;Description&lt;/th&gt;&lt;/thead&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;1&lt;/td&gt;&lt;td class="type"&gt;PRIVATE&lt;/td&gt;&lt;td class="description last"&gt;Missed call while originator originated one to one private call &lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;2&lt;/td&gt;&lt;td class="type"&gt;GROUP&lt;/td&gt;&lt;td class="description last"&gt;Missed call while originator originated prearranged group call &lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;3&lt;/td&gt;&lt;td class="type"&gt;ADHOC&lt;/td&gt;&lt;td class="description last"&gt;Missed call while originator originated adhoc group call&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br />
+ *@type {enum}<br />
+ */<br />
+var MISSEDCALLALERTCALLTYPE = {<br />
+	PRIVATE 	: "1",<br />
+	GROUP		: "2",<br />
+	ADHOC		: "3"<br />
+};<br />
+/**<br />
+ * &lt;br/&gt;<br />
+ * &lt;h5 style="padding-left:14px"&gt;Plugin generic error code:&lt;/h5&gt;<br />
+ *    &lt;table class="params" style="margin-left:17px" border="1px solid"&gt;<br />
+ *    &lt;thead&gt;&lt;th&gt;Status Code&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th class="last"&gt;Description&lt;/th&gt;&lt;/thead&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;1&lt;/td&gt;&lt;td class="type"&gt;UNKNOWN&lt;/td&gt;&lt;td class="description last"&gt;Unknown error code &lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;2&lt;/td&gt;&lt;td class="type"&gt;PLUGIN_BUSY&lt;/td&gt;&lt;td class="description last"&gt;Plugin is busy&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;3&lt;/td&gt;&lt;td class="type"&gt;NETWORK_DISCONNECTED&lt;/td&gt;&lt;td class="description last"&gt;Network disconnected, Plugin is trying to reconnect&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;4&lt;/td&gt;&lt;td class="type"&gt;INPUT_VALIDATION_FAILED&lt;/td&gt;&lt;td class="description last"&gt;Input parameter is not valid&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;5&lt;/td&gt;&lt;td class="type"&gt;USER_NOT_LOGGED_IN&lt;/td&gt;&lt;td class="description last"&gt;User not logged in&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;6&lt;/td&gt;&lt;td class="type"&gt;AUDIO_DEVICE_NOT_FOUND&lt;/td&gt;&lt;td class="description last"&gt;Audio Device(s) not available&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br />
+ *@type {enum}<br />
+ */<br />
+var ERRORCODE = {<br />
+	UNKNOWN 					: "1",<br />
+	PLUGIN_BUSY 				: "2",<br />
+	NETWORK_DISCONNECTED		: "3",<br />
+	INPUT_VALIDATION_FAILED		: "4",<br />
+	USER_NOT_LOGGED_IN 			: "5",<br />
+	AUDIO_DEVICE_NOT_FOUND 		: "6"<br />
+};<br />
+/**<br />
+ * &lt;br/&gt;<br />
+ * &lt;h5 style="padding-left:14px"&gt;Plugin API:&lt;/h5&gt;<br />
+ *    &lt;table class="params" style="margin-left:17px" border="1px solid"&gt;<br />
+ *    &lt;thead&gt;&lt;th&gt;HotKey code&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th class="last"&gt;Description&lt;/th&gt;&lt;/thead&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;1&lt;/td&gt;&lt;td class="type"&gt;ACQUIREFLOOR&lt;/td&gt;&lt;td class="description last"&gt;Acquiring floor&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;2&lt;/td&gt;&lt;td class="type"&gt;RELEASEFLOOR&lt;/td&gt;&lt;td class="description last"&gt;Release floor&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;3&lt;/td&gt;&lt;td class="type"&gt;ENDCALL&lt;/td&gt;&lt;td class="description last"&gt;End call&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br />
+ *@type {enum}<br />
+ */<br />
+var PLUGINAPI = {<br />
+    ACQUIREFLOOR: "1",<br />
+    RELEASEFLOOR: "2",<br />
+    ENDCALL: "3"<br />
+};<br />
+/**<br />
+ * &lt;br/&gt;<br />
+ * &lt;h5 style="padding-left:14px"&gt;Hot Key functions:&lt;/h5&gt;<br />
+ *    &lt;table class="params" style="margin-left:17px" border="1px solid"&gt;<br />
+ *    &lt;thead&gt;&lt;th&gt;HotKey code&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th class="last"&gt;Description&lt;/th&gt;&lt;/thead&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;1&lt;/td&gt;&lt;td class="type"&gt;FOOTPEDAL&lt;/td&gt;&lt;td class="description last"&gt;Device to acquire/release floor during call&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br />
+ *@type {enum}<br />
+ */<br />
+var DEVICETYPE = {<br />
+    FOOTPEDAL: "1"<br />
+};<br />
+/**<br />
+ * &lt;br/&gt;<br />
+ * &lt;h5 style="padding-left:14px"&gt;Hot Key functions:&lt;/h5&gt;<br />
+ *    &lt;table class="params" style="margin-left:17px" border="1px solid"&gt;<br />
+ *    &lt;thead&gt;&lt;th&gt;HotKey code&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th class="last"&gt;Description&lt;/th&gt;&lt;/thead&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;1&lt;/td&gt;&lt;td class="type"&gt;PRESSED&lt;/td&gt;&lt;td class="description last"&gt;Foot Pedal Pressed&lt;/td&gt;&lt;/tr&gt;<br />
+ *	  &lt;tr&gt;&lt;td class="name"&gt;2&lt;/td&gt;&lt;td class="type"&gt;RELEASED&lt;/td&gt;&lt;td class="description last"&gt;Foot Pedal Release&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br />
+ *@type {enum}<br />
+ */<br />
+var DEVICESTATUS = {<br />
+    PRESSED: "1",<br />
+	RELEASED: "2"<br />
+};<br />
+/**<br />
+ * &lt;br/&gt;<br />
+ * &lt;h5 style="padding-left:14px"&gt;Incoming call type:&lt;/h5&gt;<br />
+ *    &lt;table class="params" style="margin-left:17px" border="1px solid"&gt;<br />
+ *    &lt;thead&gt;&lt;th&gt;Status Code&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th class="last"&gt;Description&lt;/th&gt;&lt;/thead&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;1&lt;/td&gt;&lt;td class="type"&gt;PRIVATE_CALL&lt;/td&gt;&lt;td class="description last"&gt;Incoming one to one private call &lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;2&lt;/td&gt;&lt;td class="type"&gt;GROUP_CALL&lt;/td&gt;&lt;td class="description last"&gt;Incoming prearranged group call &lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;3&lt;/td&gt;&lt;td class="type"&gt;ADHOC_GROUP_CALL&lt;/td&gt;&lt;td class="description last"&gt;Incoming adhoc group call&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br />
+ *@type {enum}<br />
+ */<br />
+var CALLTYPE = {<br />
+	PRIVATE_CALL: 1,<br />
+	GROUP_CALL: 2,<br />
+	ADHOC_GROUP_CALL: 3<br />
+};<br />
+//Commented out Console logging for supporting IE9<br />
+function ConsoleLog(logString)<br />
+{<br />
+	//console.log(logString);<br />
+}<br />
+/**<br />
+ * Plugin reference variable. Holds the reference of kodaik PoC plugin<br />
+ * @private<br />
+ * @type {object}<br />
+ */<br />
+var kodiakplugin;<br />
+/**<br />
+ * Using KNPoC APIs user can perform the below actions:<br />
+ * &lt;ul&gt;&lt;li&gt; Set the plugin download url&lt;/li&gt;<br />
+ * &lt;li&gt; Download the plugin&lt;/li&gt;<br />
+ * &lt;li&gt; Install/Setup the plugin&lt;/li&gt;<br />
+ * &lt;li&gt; Login to the PoC server using the userId and access token&lt;/li&gt;<br />
+ * &lt;li&gt; Logout from the PoC server&lt;/li&gt;<br />
+ * &lt;li&gt; Set the self availability status&lt;/li&gt;&lt;/ul&gt;<br />
+ * @namespace<br />
+ * @class<br />
+ */<br />
+var KNPoC = {<br />
+    /**<br />
+     * Method for setting up the plugin installable URL.<br />
+     * From this URL browser will look for plugin MSI file and prompt the user to install or download the file.<br />
+     * @param pluginURL {string} plugin installer URL<br />
+     * @returns void<br />
+     *<br />
+     * @example<br />
+     *<br />
+     * KNPoC.setPluginURL("http://static.kodiak.com/ptt/");<br />
+     *<br />
+     */<br />
+    setPluginURL	: function(pluginURL) {<br />
+        if(pluginURL) {<br />
+            defaultPluginURL = pluginURL;<br />
+        }<br />
+    },<br />
+    /**<br />
+	 * Method for checking the plugin new version.<br />
+	 * If version JSON status is true then UI should prompt the user for new version download.<br />
+	 * @example<br />
+	 * KNPoC.versionCheck();<br />
+	 * @returns {JSON}<br />
+	 * Output JSON:<br />
+	 *		{"status":true,"downloadURL":"http://static.kodiak.com/plugin/KWP.msi"}<br />
+     *<br />
+     */<br />
+	versionCheck: function() {<br />
+		var xmlhttp;<br />
+		var rtnJSON ="{\"status\":false,\"downloadURL\":\"\"}";<br />
+		if(kodiakplugin &amp;&amp; defaultPluginURL) {<br />
+			var versionNum = kodiakplugin().version;<br />
+			try {<br />
+				if (window.XMLHttpRequest) {<br />
+				// code for IE7+, Firefox, Chrome, Opera, Safari<br />
+				xmlhttp = new XMLHttpRequest({mozSystem: true});<br />
+				} else {<br />
+				// code for IE6, IE5<br />
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");<br />
+				}<br />
+				xmlhttp.onreadystatechange = function() {<br />
+					if (xmlhttp.readyState == 4 ) {<br />
+					   if(xmlhttp.status == 200){<br />
+						   ConsoleLog("version check:"+xmlhttp.responseText);<br />
+						   if(xmlhttp.responseText == "false"){<br />
+							  // KNUtil.downloadPluginNewVersion();<br />
+							   rtnJSON ="{\"status\":true,\"downloadURL\":\""+defaultPluginURL+"plugin/KWP.msi\"}";<br />
+						   }<br />
+					   } else {<br />
+						   ConsoleLog("unable to check the plugin version!");<br />
+					   }<br />
+					}<br />
+				};<br />
+				xmlhttp.open("GET", defaultPluginURL+"VersionCheck?version="+versionNum, false);<br />
+				xmlhttp.send();<br />
+			}catch(error){<br />
+				 ConsoleLog("unable to check the plugin version!"+error);<br />
+			}<br />
+		}<br />
+		return JSON.parse(rtnJSON);<br />
+	},<br />
+    /**<br />
+     * Method for setting up the plugin and registering default ERROR callback.<br />
+     * User has to call this method before performing any of the PoC operation, like login, call management, contact/group management etc.<br />
+     * @returns {JSON}<br />
+     *<br />
+     * Output JSON:<br />
+     *	{"result":status} Refer: {@link SETUPSTATUS}<br />
+     *<br />
+     *<br />
+     * var statusJson = KNPoC.setup();<br />
+     * var result = statusJson.result;<br />
+     *<br />
+     */<br />
+    setup  : function() {<br />
+    	ConsoleLog('setup method call');<br />
+    	var status = KNUtil.loadPlugin();<br />
+    	var statusJson = {"result":status};<br />
+        if(status == SETUPSTATUS.SUCCESS) {<br />
+            KNCallBackMgr.setupCallBack(this.onError, 'ERROR');<br />
+        }<br />
+        ConsoleLog('setup statusJson: '+JSON.stringify(statusJson));<br />
+        return statusJson;<br />
+    },<br />
+    /**<br />
+     * Method for logging into the Kodiak PTT server.<br />
+     * @param loginJson {JSON} Login json object with login credentials.<br />
+     *<br />
+     * @example<br />
+     *<br />
+     * var loginJson  =  {<br />
+	     *    "userId" : "19724453400", "accessToken" : "abcderfgh1234"<br />
+		 * }<br />
+     *<br />
+     * KNPoC.login(loginJson);<br />
+     *<br />
+     * @returns Boolean and asynchronous callback. Refer: {@link LOGINSTATUS}, {@link KNCallBackMgr}<br />
+     */<br />
+    login          : function(loginJson) {<br />
+        return kodiakplugin().login(loginJson);<br />
+    },<br />
+    /**<br />
+     * Method for setting up self status.<br />
+     * @param statusCodeJson {JSON} set the self status code.<br />
+     * @returns Boolean and asynchronous callback. Refer: {@link SELFAVAILABILITYSTATUS}, {@link KNCallBackMgr}<br />
+     * @example<br />
+     *<br />
+     * var availabilityStatus = {<br />
+	     *    "statusCode" : "0"<br />
+	     * }<br />
+     *<br />
+     * KNPoC.setAvailabilityStatus(availabilityStatus);<br />
+     */<br />
+    setAvailabilityStatus : function(statusCodeJson) {<br />
+        return kodiakplugin().setAvailabilityStatus(statusCodeJson);<br />
+    },<br />
+    /**<br />
+     * Method for logging out from the Kodiak PTT server.<br />
+     * @returns void and asynchronous callback. Refer: {@link LOGOUTSTATUS}, {@link KNCallBackMgr}<br />
+     *<br />
+     * @example<br />
+     *<br />
+     * KNPoC.logout();<br />
+     */<br />
+    logout         : function() {<br />
+        return kodiakplugin().logout();<br />
+    },<br />
+    /**<br />
+     * Method for getting the self name<br />
+     * @returns String  Self name<br />
+     *<br />
+     * @example<br />
+     *<br />
+     * KNPoC.getSelfName();<br />
+     */<br />
+    getSelfName         : function() {<br />
+        return kodiakplugin().getSelfName();<br />
+    },<br />
+    /**<br />
+     * Default callback method for handling errors.<br />
+     * @param errorJson {JSON} error detail.<br />
+     * @returns void<br />
+     * @private<br />
+     */<br />
+    onError        : function(errorJson) {<br />
+        ConsoleLog("Error :" + JSON.stringify(errorJson));<br />
+    },<br />
+	 /**<br />
+     * Method for getting device info<br />
+     * @param deviceJson {JSON} device type detail.<br />
+     * @returns String<br />
+     * @example<br />
+     * var deviceJson  =  {<br />
+	 *    deviceType" : "1"<br />
+	 * }<br />
+	 *<br />
+     * KNPoC.getDeviceInfo(deviceJson);<br />
+     */<br />
+    getDeviceInfo  : function(deviceJson) {<br />
+        return kodiakplugin().getDeviceInfo(deviceJson);<br />
+    }<br />
+};<br />
+/**<br />
+ * KNCallBackMgr class is used for registering the callbacks from the plugin<br />
+ * &lt;br/&gt;<br />
+ * &lt;h5 style="padding-left:14px"&gt;Callbacks type and description:&lt;/h5&gt;<br />
+ *    &lt;table class="params" style="margin-left:17px;font-size:12px;" border="1px solid"&gt;<br />
+ *    &lt;thead&gt;&lt;th&gt;Callback Type&lt;/th&gt;&lt;th&gt;Callback Json Response Structure&lt;/th&gt;&lt;th&gt;Response Code Referrence&lt;/th&gt;&lt;th class="last"&gt;Description&lt;/th&gt;&lt;/thead&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;LOGIN &lt;/td&gt;&lt;td class="name" style="width:40%"&gt;{ "status" : "3" }&lt;/td&gt;&lt;td class="name"&gt;{@link LOGINSTATUS}&lt;/td&gt;&lt;td class="description last"&gt;Will be called after calling login(args)&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;LOGOUT &lt;/td&gt;&lt;td class="name" style="width:40%"&gt;{ "status" : "1" }&lt;/td&gt;&lt;td class="name"&gt;{@link LOGOUTSTATUS}&lt;/td&gt;&lt;td class="description last"&gt;Will be called after calling logout(args)&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;CALLSTATUS&lt;/td&gt;&lt;td class="name"&gt;{ "callStatus" : "5", "floorStatus" : "3", "floorStatusReason" : "2" }&lt;/td&gt;&lt;td class="name"&gt;{@link CALLSTATUS}&lt;br/&gt;{@link FLOORSTATUS}&lt;br/&gt;{@link FLOORSTATUSREASON}&lt;/td&gt;&lt;td class="description last"&gt;Will be called when there is change in call status and floor status&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;CALLALERT&lt;/td&gt;&lt;td class="name"&gt;&lt;u&gt;&lt;h3&gt; One to One Private Call&lt;/u&gt;&lt;/h3&gt;<br />
+														  {"calltype":1,"mdn":"91988718069","name":"TestClient1"};<br />
+														  &lt;u&gt;&lt;h3&gt;Prearranged Group Call&lt;/u&gt;&lt;/h3&gt;<br />
+														  {"calltype":2,"groupId":"tel:+91988718068;kn-corp-groups=798088_615","mdn":"91988718069","name":"3rdPartyGP1"};<br />
+														  <br />
+														  &lt;u&gt;&lt;h3&gt;Adhoc Group Call&lt;/u&gt;&lt;/h3&gt;<br />
+														  {"calltype":3,"mdn":"91988718069","name":"TestClient1"};&lt;/br&gt;&lt;/br&gt;&lt;h3&gt;Note* :&lt;/h3&gt; For Group Incoming call "groupId" will have the Group ID. "name" will have Group Name and "mdn" will be originator phone number&lt;/td&gt; &lt;td class="name"&gt;{@link CALLTYPE}&lt;/td&gt;&lt;td class="description last"&gt;Will be called when there in incoming call&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;TALKERINFO&lt;/td&gt;&lt;td class="name"&gt;{ "name": "Elizabeth", "mdn": "121462098435" }&lt;/td&gt;&lt;td class="name"&gt;N/A&lt;/td&gt;&lt;td class="description last"&gt;Will be called when a talker takes the floor and starts talking&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;IPALERT&lt;/td&gt;&lt;td class="name"&gt;{ "name" : "Jennifer", "mdn" : "12146209832"}&lt;/td&gt;&lt;td class="name"&gt;N/A&lt;/td&gt;&lt;td class="description last"&gt;Will be called when there is incoming IPA&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;IPASTATUS&lt;/td&gt;&lt;td class="name"&gt;{ "status": "1" }&lt;/td&gt;&lt;td class="name"&gt;{@link IPASTATUS}&lt;/td&gt;&lt;td class="description last"&gt;Will be called when an IPA is initated by the API-User&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;CONTACTAVAILABILITYSTATUS&lt;/td&gt;&lt;td class="name"&gt;[{"mdn" : "12146209832", "availabilityStatus" : "0"},...]&lt;/td&gt;&lt;td class="name"&gt;{@link CONTACTAVAILABILITYSTATUS}&lt;/td&gt;&lt;td class="description last"&gt;Will be called when there is availability state change for self or any mdn&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;GROUPSTATUS&lt;/td&gt;&lt;td class="name"&gt;&lt;u&gt;&lt;h3&gt;Group is added&lt;/u&gt;&lt;/h3&gt;<br />
+															var groupData = { groupOperationCode: "2", group:<br />
+																				{ "groupId": "23478236787" } };<br />
+															&lt;u&gt;&lt;h3&gt;Group is deleted&lt;/u&gt;&lt;/h3&gt;<br />
+															var groupData = { groupOperationCode: "3", group:<br />
+																				{ "groupId": "23478236787 }};<br />
+															&lt;u&gt;&lt;h3&gt;Group is modified response 1:&lt;/u&gt;&lt;/h3&gt;<br />
+															var groupData = { groupOperationCode: "4", group:<br />
+															{ "name": "Group1", "groupId": "23478236787 }};<br />
+															&lt;u&gt;&lt;h3&gt;Group is modified response 2:&lt;/u&gt;&lt;/h3&gt;<br />
+															var groupData = { groupOperationCode: "4", group:<br />
+																{ "name": "Group1", "groupId": "23478236787", "contacts" : [<br />
+																{ "contactOperationCode ":"2", contact: {"name": "Bill", "mdn": "12146209832"},<br />
+																{ "contactOperationCode":"3", contact: {"name": "Bill", "mdn": "12146209832"},<br />
+																{ "contactOperationCode":"4", contact: {"name": "Bill", "mdn": "12146209832"}, ... ] }};<br />
+&lt;/br&gt;&lt;/br&gt;&lt;h3&gt;Note* :&lt;/h3&gt; Whenever there is no contacts key [as in group modified case 2 and new group addition], API user has to fetch the entire group contacts using fetchGroupDetail API<br />
+&lt;/td&gt;&lt;td class="name"&gt;{@link GROUPOPERATIONCODE}&lt;/td&gt;&lt;td class="description last"&gt;Will be called when there is a change in group&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;CONTACTSTATUS&lt;/td&gt;&lt;td class="name"&gt;[{"contactOperationCode":"2", contacts: {"name": "Bill", "mdn": "12146209832", "availabilityStatus": "0"}},{"contactOperationCode":"3", contacts: {"mdn": "12146209832"}},{"contactOperationCode":"4", contacts: {"name": "Bill", "mdn": "12146209832"}},{"contactOperationCode":"4", contacts: {"mdn": "12146209832", "LOC": "18.9750,72.8258"}}...] &lt;/br&gt;&lt;/br&gt;&lt;h3&gt;Note* :&lt;/h3&gt;&lt;b&gt;LOC attribute is not supported.&lt;/b&gt;&lt;/td&gt;&lt;td class="name"&gt;{@link CONTACTOPERATIONCODE}&lt;/td&gt;&lt;td class="description last"&gt;Will be called when a contact gets added or removed&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;SUBSCRIPTIONSTATUS&lt;/td&gt;&lt;td class="name"&gt;{ "status" : "0" }&lt;/td&gt;&lt;td class="name"&gt;{@link SUBSCRIPTIONSTATUS}&lt;/td&gt;&lt;td class="description last"&gt;Will be called when the subscriber’s subscription status changes&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;PLUGINSTATUS&lt;/td&gt;&lt;td class="name"&gt;{ "status" : "1" }&lt;/td&gt;&lt;td class="name"&gt;{@link PLUGINSTATUS}&lt;/td&gt;&lt;td class="description last"&gt;Will be called when plugin is busy or ready&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;SELFAVAILABILITYSTATUS&lt;/td&gt;&lt;td class="name"&gt;{ "status" : "1" }&lt;/td&gt;&lt;td class="name"&gt;{@link SELFAVAILABILITYSTATUS}&lt;/td&gt;&lt;td class="description last"&gt;Will be called when there is change in self presence status, for example client went to offline or the last self presence status when client relogin after logout&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;SELFAVAILABILITYCHANGESTATUS&lt;/td&gt;&lt;td class="name"&gt;{ "status" : "1" }&lt;/td&gt;&lt;td class="name"&gt;{@link SELFAVAILABILITYCHANGESTATUS}&lt;/td&gt;&lt;td class="description last"&gt;Will be called whenever client has change the self presence status by calling setAvailabilityStatus API&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;MISSEDCALLALERT&lt;/td&gt;&lt;td class="name"&gt;{"callType":"1","name":"Jennifer","originator":"19870000014"}&lt;/td&gt;&lt;td class="name"&gt;{@link MISSEDCALLALERTCALLTYPE}&lt;/td&gt;&lt;td class="description last"&gt;Will be called whenever there is missed call alert, alert type can be one to one call or group call or adhoc group call&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;ERROR&lt;/td&gt;&lt;td class="name"&gt;{"errorCode":"2","msg":"Error Message"}&lt;/td&gt;&lt;td class="name"&gt;{@link ERRORCODE}&lt;/td&gt;&lt;td class="description last"&gt;Will be called whenever there is generic error&lt;/td&gt;&lt;/tr&gt;<br />
+ *    &lt;tr&gt;&lt;td class="name"&gt;DEVICESTATUS&lt;/td&gt;&lt;td class="name"&gt;{"deviceType" : "1", "deviceState" : "1"}&lt;/td&gt;&lt;td class="name"&gt;{@link DEVICETYPE} {@link DEVICESTATUS}&lt;/td&gt;&lt;td class="description last"&gt;Will be called whenever there is change in device status&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br />
+ * &lt;br/&gt;&lt;br/&gt; &lt;h5 style="padding-left:14px"&gt;API Callback Matrix&lt;/h5&gt;<br />
+  		*&lt;table class="params" style="margin-left:17px;font-size:12px;" border="1px solid"&gt; <br />
+ 		*&lt;tbody&gt;&lt;tr&gt;&lt;td nowrap="" &gt;&lt;p&gt;&lt;b&gt;API Name&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;&lt;b&gt;Success Callbacks &lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;b&gt;Error Callbacks &lt;/b&gt;&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;/tr&gt;<br />
+ 	 	*&lt;tr&gt;<br />
+ 	 	*&lt;td nowrap="" &gt;&lt;p&gt;Login&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;(a) &lt;b&gt;&lt;i&gt;SUBSCRIPTIONSTATUS&lt;/i&gt;&lt;/b&gt; will be received to indicate if the user subscription is enabled/disabled etc.&lt;br /&gt;<br />
+ 	 	*(b) &lt;b&gt;&lt;i&gt;SELFAVAILABILITYSTATUS&lt;/i&gt;&lt;/b&gt; will be received with value as 'offline'&lt;br /&gt;<br />
+ 	 	*(c ) &lt;b&gt;&lt;i&gt;PLUGINSTATUS&lt;/i&gt;&lt;/b&gt; will be received to indicate that plugin has finished syncing with the backend servers&lt;br /&gt;<br />
+ 	 	*(d) &lt;b&gt;&lt;i&gt;LOGIN&lt;/i&gt;&lt;/b&gt; success will be received&lt;br /&gt;<br />
+ 	 	*(e) &lt;b&gt;&lt;i&gt;SELFAVAILABILITYSTATUS&lt;/i&gt;&lt;/b&gt; will be received indicating self presence status as available&lt;br /&gt;<br />
+ 	 	*(f) &lt;b&gt;&lt;i&gt;CONTACTAVAILABILITYSTATUS&lt;/i&gt;&lt;/b&gt; will be received indicating the presence status of all the contacts&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;(a) &lt;b&gt;&lt;i&gt;LOGIN&lt;/i&gt;&lt;/b&gt; - will return value 4 if user is already logged in&lt;br /&gt;<br />
+ 	 	*(b) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 4 if input parameter validation fails when user Id is empty or not numeric&lt;br /&gt;<br />
+ 	 	*(c ) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 4 if input parameter validation fails when activation key is empty&lt;br /&gt;<br />
+ 	 	*(d) &lt;b&gt;&lt;i&gt;LOGIN&lt;/i&gt;&lt;/b&gt; - will return value 1 if there are internal API failures&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;/tr&gt;<br />
+ 	 	*&lt;tr&gt;<br />
+ 	 	*&lt;td nowrap="" &gt;&lt;p&gt;sendIPA&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;&lt;b&gt;&lt;i&gt;IPASTATUS&lt;/i&gt;&lt;/b&gt; - with value of 1 or 2 depending on whether IPA delivery was success or failure&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;(a) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 2 if sync with backend server is in progress&lt;br /&gt;<br />
+ 	 	*(b) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 3 if transport is in progress (being established/broken)&lt;br /&gt;<br />
+ 	 	*(c ) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 5 if user is not logged in&lt;br /&gt;<br />
+ 	 	*(d) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 4 if phone number to send IPA to is invalid (non numeric)&lt;br /&gt;<br />
+ 	 	*(e) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 4 if phone number to send IPA to is not present&lt;br /&gt;<br />
+ 	 	*(f) &lt;b&gt;&lt;i&gt;IPASTATUS&lt;/i&gt;&lt;/b&gt; - will return value 3 if the user to whom IPA was being sent is offline&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;/tr&gt;<br />
+ 	 	*&lt;tr&gt;&lt;td nowrap="" &gt; &lt;/td&gt;&lt;td&gt; &lt;/td&gt;&lt;td&gt; &lt;/td&gt;&lt;/tr&gt;<br />
+ 	 	*&lt;tr&gt;<br />
+ 	 	*&lt;td nowrap="" &gt;&lt;p&gt;makeCall&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;(a) &lt;b&gt;CALLSTATUS&lt;/b&gt; - indicating call and floor status&lt;br /&gt;<br />
+ 	 	*(b) &lt;b&gt;TALKERINFO&lt;/b&gt; - indicating change in talker information&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;(a) &lt;b&gt;ERROR&lt;/b&gt; - will return value 2 if sync with backend server is in progress&lt;br /&gt;<br />
+ 	 	*(b) &lt;b&gt;ERROR&lt;/b&gt; - will return value 3 if transport is in progress (being established/broken)&lt;br /&gt;<br />
+ 	 	*(c ) &lt;b&gt;ERROR&lt;/b&gt; - will return value 5 if user is not logged in&lt;br /&gt;<br />
+ 	 	*(d) &lt;b&gt;ERROR&lt;/b&gt; - will return value 6 is either audio devices or recording devices or both are not present on the system&lt;br /&gt;<br />
+ 	 	*(e) &lt;b&gt;ERROR&lt;/b&gt; - will return value 4 if no phone numbers are entered for call&lt;br /&gt;<br />
+ 	 	*(f) &lt;b&gt;CALLSTATUS&lt;/b&gt; - will return callStatus as 10 or 11 if the user is DND or offline and floorstatus as idle in case of 1 to 1 call&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;/tr&gt;<br />
+ 	 	*&lt;tr&gt;<br />
+ 	 	*&lt;td nowrap="" &gt;&lt;p&gt;makeGroupCall&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;(a) &lt;b&gt;&lt;i&gt;CALLSTATUS&lt;/i&gt;&lt;/b&gt; - indicating call and floor status&lt;br /&gt;<br />
+ 	 	*(b) &lt;b&gt;&lt;i&gt;TALKERINFO&lt;/i&gt;&lt;/b&gt; - indicating change in talker information&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;(a) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 2 if sync with backend server is in progress&lt;br /&gt;<br />
+ 	 	*(b) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 3 if transport is in progress (being established/broken)&lt;br /&gt;<br />
+ 	 	*(c ) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 5 if user is not logged in&lt;br /&gt;<br />
+ 	 	*(d) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 6 is either audio devices or recording devices or both are not present on the system&lt;br /&gt;<br />
+ 	 	*(e) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 4 if groupId is empty&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;/tr&gt;<br />
+ 	 	*&lt;tr&gt;<br />
+ 	 	*&lt;td nowrap="" &gt;&lt;p&gt;acquireFloor&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;(a) &lt;b&gt;&lt;i&gt;CALLSTATUS&lt;/i&gt;&lt;/b&gt; - indicating call and floor status&lt;br /&gt;<br />
+ 	 	*(b) &lt;b&gt;&lt;i&gt;TALKERINFO&lt;/i&gt;&lt;/b&gt; - indicating change in talker information&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;(a) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 2 if sync with backend server is in progress&lt;br /&gt;<br />
+ 	 	*(b) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 3 if transport is in progress (being established/broken)&lt;br /&gt;<br />
+ 	 	*(c ) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 5 if user is not logged in&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;/tr&gt;<br />
+ 	 	*&lt;tr&gt;&lt;td nowrap="" &gt; &lt;/td&gt;&lt;td&gt; &lt;/td&gt;&lt;td&gt; &lt;/td&gt;&lt;/tr&gt;<br />
+ 	 	*&lt;tr&gt;<br />
+ 	 	*&lt;td nowrap="" &gt;&lt;p&gt;releaseFloor&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;(a) &lt;b&gt;&lt;i&gt;CALLSTATUS&lt;/i&gt;&lt;/b&gt; - indicating call and floor status&lt;br /&gt;<br />
+ 	 	*(b) &lt;b&gt;&lt;i&gt;TALKERINFO&lt;/i&gt;&lt;/b&gt; - indicating change in talker information&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;(a) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 2 if sync with backend server is in progress&lt;br /&gt;<br />
+ 	 	*(b) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 3 if transport is in progress (being established/broken)&lt;br /&gt;<br />
+ 	 	*(c ) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 5 if user is not logged in&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;/tr&gt;<br />
+ 	 	*&lt;tr&gt;<br />
+ 	 	*&lt;td nowrap="" &gt;&lt;p&gt;endCall&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;(a) &lt;b&gt;&lt;i&gt;CALLSTATUS&lt;/i&gt;&lt;/b&gt; - indicating call and floor status&lt;br /&gt;<br />
+ 	 	*(b) &lt;b&gt;&lt;i&gt;TALKERINFO&lt;/i&gt;&lt;/b&gt; - indicating change in talker information&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;(a) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 2 if sync with backend server is in progress&lt;br /&gt;<br />
+ 	 	*(b) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 3 if transport is in progress (being established/broken)&lt;br /&gt;<br />
+ 	 	*(c ) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 5 if user is not logged in&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;/tr&gt;<br />
+ 	 	*&lt;tr&gt;<br />
+ 	 	*&lt;td nowrap="" &gt;&lt;p&gt;logout&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;&lt;b&gt;&lt;i&gt;LOGOUT&lt;/i&gt;&lt;/b&gt; - indicating logout success/failure&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;(a) &lt;b&gt;&lt;i&gt;LOGOUT&lt;/i&gt;&lt;/b&gt; - with value 4 if user is not in logged in state&lt;br /&gt;<br />
+ 	 	*(b) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 2 if sync with backend server is in progress&lt;br /&gt;<br />
+ 	 	*(c ) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 3 if transport is in progress (being established/broken)&lt;br /&gt;<br />
+ 	 	*(d) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 5 if user is not logged in&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;/tr&gt;<br />
+ 	 	*<br />
+ 	 	*&lt;tr&gt;<br />
+ 	 	*&lt;td nowrap="" &gt;&lt;p&gt;fetchContacts&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;No callback. Information is passed as return value.&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;(a) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 2 if sync with backend server is in progress&lt;br /&gt;<br />
+ 	 	*(b) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 3 if transport is in progress (being established/broken)&lt;br /&gt;<br />
+ 	 	*(c ) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 5 if user is not logged in&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;/tr&gt;<br />
+ 	 	*&lt;tr&gt;<br />
+ 	 	*&lt;td nowrap="" &gt;&lt;p&gt;fetchGroups&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;No callback. Information is passed as return value.&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;(a) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 2 if sync with backend server is in progress&lt;br /&gt;<br />
+ 	 	*(b) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 3 if transport is in progress (being established/broken)&lt;br /&gt;<br />
+ 	 	*(c ) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 5 if user is not logged in&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;/tr&gt;<br />
+ 	 	*&lt;tr&gt;<br />
+ 	 	*&lt;td nowrap="" &gt;&lt;p&gt;fetchGroupDetail&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;No callback. Information is passed as return value.&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;(a) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 2 if sync with backend server is in progress&lt;br /&gt;<br />
+ 	 	*(b) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 3 if transport is in progress (being established/broken)&lt;br /&gt;<br />
+ 	 	*(c ) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 5 if user is not logged in&lt;br /&gt;<br />
+ 	 	*(d) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return 4 if empty groupId is passed&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;/tr&gt;<br />
+ 	 	*&lt;tr&gt;<br />
+ 	 	*&lt;td nowrap="" &gt;&lt;p&gt;fetchGroupList&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;No callback. Information is passed as return value.&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;(a) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 2 if sync with backend server is in progress&lt;br /&gt;<br />
+ 	 	*(b) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 3 if transport is in progress (being established/broken)&lt;br /&gt;<br />
+ 	 	*(c ) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 5 if user is not logged in&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;/tr&gt;<br />
+ 	 	*&lt;tr&gt;<br />
+ 	 	*&lt;td nowrap="" &gt;&lt;p&gt;setAvailabilityStatus&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;&lt;b&gt;&lt;i&gt;SELFAVAILABILITYCHANGESTATUS&lt;/i&gt;&lt;/b&gt; - indicating if changing self presence was success/failure&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;(a) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 2 if sync with backend server is in progress&lt;br /&gt;<br />
+ 	 	*(b) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 3 if transport is in progress (being established/broken)&lt;br /&gt;<br />
+ 	 	*(c ) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return value 5 if user is not logged in&lt;br /&gt;<br />
+ 	 	*(d) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return 4 if user tries to change self status to anything but DND/Available&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;/tr&gt;<br />
+ 	 	*&lt;tr&gt;<br />
+ 	 	*&lt;td nowrap="" &gt;&lt;p&gt;getDeviceInfo&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;No callback. Value will be returned as a string.&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;(a) &lt;b&gt;&lt;i&gt;ERROR&lt;/i&gt;&lt;/b&gt; - will return 4 if invalid device type is passed&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;/tr&gt;<br />
+ 	 	*&lt;tr&gt;<br />
+ 	 	*&lt;td nowrap="" &gt;&lt;p&gt;Incoming IPA&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;&lt;b&gt;&lt;i&gt;IPALERT&lt;/i&gt;&lt;/b&gt; - when an incoming IPA is received&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt; &lt;/td&gt;<br />
+ 	 	*&lt;/tr&gt;<br />
+ 	 	*&lt;tr&gt;<br />
+ 	 	*&lt;td nowrap="" &gt;&lt;p&gt;Incoming call&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;&lt;b&gt;&lt;i&gt;CALLALERT&lt;/i&gt;&lt;/b&gt; - when an incoming call is received&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt; &lt;/td&gt;<br />
+ 	 	*&lt;/tr&gt;<br />
+ 	 	*&lt;tr&gt;<br />
+ 	 	*&lt;td nowrap="" &gt;&lt;p&gt;Missed call&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;&lt;b&gt;&lt;i&gt;MISSEDCALLALERT&lt;/i&gt;&lt;/b&gt; - if a missed call alert is received&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt; &lt;/td&gt;<br />
+ 	 	*&lt;/tr&gt;<br />
+ 	 	*&lt;tr&gt;<br />
+ 	 	*&lt;td nowrap="" &gt;&lt;p&gt;Miscellaneous&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;&lt;b&gt;&lt;i&gt;PLUGINSTATUS&lt;/i&gt;&lt;/b&gt; - Can be received whenever the plugin is syncing with the backend server&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt; &lt;/td&gt;<br />
+ 	 	*&lt;/tr&gt;<br />
+ 	 	*&lt;tr&gt;<br />
+ 	 	*&lt;td nowrap="" &gt;&lt;p&gt;Miscellaneous&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt;&lt;p&gt;&lt;b&gt;&lt;i&gt;DEVICESTATUS&lt;/i&gt;&lt;/b&gt; - Will relay events from the supported devices. Currently for foot pedal, this callback will return events pressed/released as 1/2.&lt;/p&gt;&lt;/td&gt;<br />
+ 	 	*&lt;td&gt; &lt;/td&gt;<br />
+ 	 	*&lt;/tr&gt;<br />
+ 	 	*&lt;/tbody&gt;<br />
+		*&lt;/table&gt;<br />
+ * @namespace<br />
+ * @class<br />
+ */<br />
+var KNCallBackMgr = {<br />
+    /**<br />
+     * Method for setting up the callbacks.<br />
+     * @param callback {functionRef} callback function reference to receive callback event/notification from plugin.<br />
+     * @param callbackType {string} Check the predefined callback type in Plugin API documentation.<br />
+     * @returns Boolean<br />
+     *<br />
+     * @example<br />
+     * Receiving call status event :<br />
+     *<br />
+     * var mediaCallback = function(callStatusJson) {<br />
+		 *<br />
+		 * 		var callStatus = callStatusJson.callStatus;<br />
+		 * 		var floorStatus = callStatusJson.floorStatus;<br />
+		 * 		...<br />
+		 * }<br />
+     *<br />
+     * KNCallMgrCBK.setupCallBack(mediaCallback, "CALLSTATUS");<br />
+     */<br />
+    setupCallBack : function(callback, callbackType) {<br />
+        return kodiakplugin().setupCallBack(callback, callbackType);<br />
+    }<br />
+};<br />
+/**<br />
+ * KNCntGrpMgr class defines Contact and Group Management APIs<br />
+ * @namespace<br />
+ * @class<br />
+ */<br />
+var KNCntGrpMgr = {<br />
+    /**<br />
+     * Method for fetching logged in user contacts.<br />
+     * @returns contactsJson {JSON}<br />
+     *<br />
+     * @example<br />
+     * var contactsJson = KNCntGrpMgr.fetchContacts();<br />
+     *<br />
+     * Response JSON Format:<br />
+     *<br />
+     * var contacts =  [<br />
+     *  {"name": "Bill", "mdn": "12146209832", "availabilityStatus": "0"},<br />
+     *  {"name": "James", "mdn": "12146209833", "availabilityStatus": "1"},<br />
+     *  {"name": "Ingrid", "mdn": "12146209834", "availabilityStatus": "2"}<br />
+     * ];<br />
+     *<br />
+     * contactsJson[0].name;<br />
+     * contactsJson[0].mdn;<br />
+     * contactsJson[0].availabilityStatus;<br />
+     *<br />
+     */<br />
+    fetchContacts : function() {<br />
+        return kodiakplugin().fetchContacts();<br />
+    },<br />
+    /**<br />
+     * Method for fetching logged in user groups.<br />
+     * @returns groupsJson {JSON}<br />
+     *<br />
+     * @example<br />
+     * var groupsJson = KNCntGrpMgr.fetchGroups();<br />
+     *<br />
+     * Response JSON Format:<br />
+     *<br />
+     * var groups = [<br />
+     *  { "name": "Group1", "groupId": "23478236787",<br />
+		 *    "contacts" : [<br />
+		 * 		{"name": "John", "mdn": "12146209833"},<br />
+		 * 		{"name": "Daisy", "mdn": "12146209834"}<br />
+		 * 		]<br />
+		 *  }<br />
+     * ];<br />
+     *<br />
+     * groups[0].name;<br />
+     * groups[0].groupId;<br />
+     * groups[0].contacts[0].name;<br />
+     *<br />
+     */<br />
+    fetchGroups   : function() {<br />
+        return kodiakplugin().fetchGroups();<br />
+    },<br />
+    /**<br />
+     * Method for fetching logged in user specific group based on group ID.<br />
+     * @param groupIdJson {JSON} specific group ID<br />
+     * @returns groupsJson {JSON}<br />
+     *<br />
+     * @example<br />
+     * Input Json:<br />
+     * 	var json  =  {<br />
+	 *		"groupId" : "jasda7s66q271322"<br />
+	 * 	}<br />
+     *<br />
+     * Output Json:<br />
+     *  var groupsJson = { "name": "Group1",<br />
+	 *  "contacts" : [<br />
+	 * 		{"name": "John", "mdn": "12146209833"},<br />
+	 * 		{"name": "Daisy", "mdn": "12146209834"}<br />
+	 * 	      ]<br />
+	 *  };<br />
+     *<br />
+     * var groupsJson = KNCntGrpMgr.fetchGroupDetail(json);<br />
+     *<br />
+     * groupsJson.name;<br />
+     * groupsJson.groupId;<br />
+     * groupsJson.contacts[0].name;<br />
+     *<br />
+     */<br />
+    fetchGroupDetail   : function(json) {<br />
+        return kodiakplugin().fetchGroupDetail(json);<br />
+    },<br />
+    /**<br />
+	 * Method for fetching logged in user all group list.<br />
+	 * @returns groupListJson {JSON}<br />
+	 *<br />
+	 * @example<br />
+	 * var groupListJson = KNCntGrpMgr.fetchGroupList();<br />
+	 *<br />
+	 * Response JSON Format:<br />
+	 *<br />
+	 * var groupList = [<br />
+	 *  { "name": "Group1", "groupId": "23478236787", "memberCount": "2"},<br />
+	 *  { "name": "Group2", "groupId": "12345678900", "memberCount": "5"},<br />
+	 *  { "name": "Group3", "groupId": "34556636787", "memberCount": "9"},<br />
+	 * ];<br />
+	 *<br />
+	 * groups[0].name;<br />
+	 * groups[0].groupId;<br />
+	 *<br />
+	 */<br />
+	fetchGroupList   : function() {<br />
+		return kodiakplugin().fetchGroupList();<br />
+    }<br />
+};<br />
+/**<br />
+ * KNCallMgr class defines APIs related to PoC Call Management.<br />
+ * @namespace<br />
+ * @class<br />
+ */<br />
+var KNCallMgr = {<br />
+    /**<br />
+     * This API is used by web user to initiate a one to one private PoC call with a contact<br />
+     * or any phone number or to a list of contacts or phone numbers<br />
+     * &lt;br/&gt;<br />
+     * @param callJson {JSON} Json object with one or more phone number(s)<br />
+     * @returns void and asynchronous callback. Refer: {@link CALLSTATUS}, {@link KNCallBackMgr}<br />
+     *<br />
+     * @example<br />
+     * var callJson = [<br />
+     *  {"phoneNumber" : "12146209832"},<br />
+     *  {"phoneNumber" : "12146209835"}<br />
+     * ];<br />
+     *<br />
+     * KNCallMgr.makeCall(callJSon)<br />
+     *<br />
+     */<br />
+    makeCall : function(callJSonObj) {<br />
+        kodiakplugin().makeCall(callJSonObj);<br />
+    },<br />
+    /**<br />
+     * This API is used by web user to end an ongoing call.<br />
+     * @returns Boolean and asynchronous callback. Refer: {@link CALLSTATUS}, {@link KNCallBackMgr}<br />
+     *<br />
+     * @example<br />
+     * KNCallMgr.endcall()<br />
+     */<br />
+    endcall : function() {<br />
+        return kodiakplugin().endCall();<br />
+    },<br />
+    /**<br />
+     * This API is used to initiate a group call identified by the groupId.<br />
+     * @param groupIdJson {JSON} Json object with group ID<br />
+     * @returns Boolean and asynchronous callback. Refer: {@link CALLSTATUS}, {@link KNCallBackMgr}<br />
+     *<br />
+     * @example<br />
+     * var groupIdJson = {<br />
+		 * 		"groupId" : "23478236787"<br />
+		 * }<br />
+     *<br />
+     * KNCallMgr.makeGroupCall(groupIdJson)<br />
+     */<br />
+    makeGroupCall : function(groupIdJson) {<br />
+        return kodiakplugin().makeGroupCall(groupIdJson);<br />
+    },<br />
+    /**<br />
+     * This API is used for acquiring the floor to talk.<br />
+     * @returns Boolean and asynchronous callback. Refer: {@link FLOORSTATUS}, {@link KNCallBackMgr}<br />
+     *<br />
+     * @example<br />
+     * KNCallMgr.acquireFloor()<br />
+     */<br />
+    acquireFloor : function() {<br />
+        return kodiakplugin().acquireFloor();<br />
+    },<br />
+    /**<br />
+     * This API is used for releasing the floor to allow other participants to talk.<br />
+     * @returns Boolean and asynchronous callback. Refer: {@link FLOORSTATUS}, {@link KNCallBackMgr}<br />
+     *<br />
+     * @example<br />
+     * KNCallMgr.releaseFloor()<br />
+     */<br />
+    releaseFloor : function() {<br />
+        return kodiakplugin().releaseFloor();<br />
+    },<br />
+    /**<br />
+     * This API is used for initiating IPA by the web user to any of the contact.<br />
+     * @param IPAJson {JSON} Json object with phone number<br />
+     * @returns Boolean and asynchronous callback. Refer: {@link IPASTATUS}, {@link KNCallBackMgr}<br />
+     * @example<br />
+     * var IPAJson = {<br />
+		 * 		"phoneNumber" : "12146209832"<br />
+		 * }<br />
+     *<br />
+     * KNCallMgr.sendIPA(IPAJson)<br />
+     */<br />
+    sendIPA : function(IPAJson) {<br />
+        return kodiakplugin().sendIPA(IPAJson);<br />
+    }<br />
+};<br />
+/**<br />
+ * KNHotKeyStorage is global array, that store hot key in JSON format:<br />
+ * @private<br />
+ */<br />
+var KNHotKeyStorage = [];<br />
+/**<br />
+ * KNHotKeyHandler can be used to register and unregister hot keys for Plugin API<br />
+ * @namespace<br />
+ * @class<br />
+ */<br />
+var KNHotKeyHandler = {<br />
+    hasHotKeyRegistered: function (jsonHotKey) {<br />
+        var len;<br />
+        len = KNHotKeyStorage.length;<br />
+        if (len &lt; 1 || len == undefined) return -1;<br />
+        for (i = 0; i &lt; len; i++) {<br />
+            if (jsonHotKey["ctrl"] == KNHotKeyStorage[i]["ctrl"] &amp;&amp;<br />
+                    jsonHotKey["shift"] == KNHotKeyStorage[i]["shift"] &amp;&amp;<br />
+                    jsonHotKey["alt"] == KNHotKeyStorage[i]["alt"] &amp;&amp;<br />
+                    jsonHotKey["keyCode"] == KNHotKeyStorage[i]["keyCode"]) {<br />
+                return i;<br />
+            }<br />
+        }<br />
+        return -1;<br />
+    },<br />
+    hasFunctionRegistered: function (apiName) {<br />
+        var len;<br />
+        len = KNHotKeyStorage.length;<br />
+        if (len &lt; 1 || len == undefined) return -1;<br />
+        for (i = 0; i &lt; len; i++) {<br />
+            if (apiName == KNHotKeyStorage[i]["functionName"]) {<br />
+                return i;<br />
+            }<br />
+        }<br />
+        return -1;<br />
+    },<br />
+    /**<br />
+    * Method for registering hot keys.<br />
+    * @param jsonHotKey {JSON} json object as mentioned in example section.<br />
+	* @param apiName {String} Plugin API to register refer: {@link PLUGINAPI}.<br />
+    * @example<br />
+	* Registering Ctrl-A for Acquire Floor<br />
+    * var jsonHotKey  =  {<br />
+	*    "ctrl" : "true", "shift" : "false", "alt" : "false", "keyCode" : "65"<br />
+	* }<br />
+    * var apiName = PLUGINAPI.ACQUIREFLOOR<br />
+    * KNHotKeyHandler.registerHotKey(jsonHotKey, apiName);<br />
+    *<br />
+    * @returns Boolean<br />
+    */<br />
+    registerHotKey: function (jsonHotKey, apiName) {<br />
+        //validation on inputs<br />
+        if ((jsonHotKey["ctrl"] == "" || jsonHotKey["ctrl"] == undefined) ||<br />
+            (jsonHotKey["shift"] == "" || jsonHotKey["shift"] == undefined) ||<br />
+            (jsonHotKey["alt"] == "" || jsonHotKey["alt"] == undefined) ||<br />
+            (jsonHotKey["keyCode"] == "" || jsonHotKey["keyCode"] == undefined) ||<br />
+            (apiName == undefined || apiName == ""))<br />
+            return false;<br />
+        var index = -1;<br />
+        var len = KNHotKeyStorage.length;<br />
+        if(len &gt; 0) {<br />
+            //check whether given hot keys already registered.<br />
+            index = KNHotKeyHandler.hasHotKeyRegistered(jsonHotKey);<br />
+            if (index != -1) {<br />
+                ConsoleLog("Given hot key has already been registered with function " + KNHotKeyStorage[index]["functionName"]);<br />
+                return false;<br />
+            }<br />
+            //check whether given function already registered<br />
+            index = KNHotKeyHandler.hasFunctionRegistered(apiName);<br />
+            //given registered key is new, so registered it at the end of KNHotKeyStorage array<br />
+            index = (index == -1) ? KNHotKeyStorage.length : index;<br />
+        }<br />
+        index = (index == -1) ? 0 : index;<br />
+        jsonHotKey.functionName = apiName;<br />
+        KNHotKeyStorage.splice(index, 1, jsonHotKey);<br />
+        return true;<br />
+    },<br />
+    /**<br />
+    * Method for unregistering hot keys.<br />
+    * @param apiName {String} Plugin API to register refer: {@link PLUGINAPI}.<br />
+    * @example<br />
+	*<br />
+    * var apiName = PLUGINAPI.ACQUIREFLOOR<br />
+    * KNHotKeyHandler.unregisterHotKey(PLUGINAPI.ACQUIREFLOOR);<br />
+    *<br />
+    * @returns Boolean<br />
+    */<br />
+    unregisterHotKey: function (apiName) {<br />
+        //validation on inputs<br />
+        if ((apiName == undefined || apiName == "")) return false;<br />
+        var len = KNHotKeyStorage.length;<br />
+        if (len &lt; 1) return false;<br />
+        var index = KNHotKeyHandler.hasFunctionRegistered(apiName);<br />
+        if (index == -1) return false;<br />
+        KNHotKeyStorage.splice(index, 1);<br />
+        return true;<br />
+    },<br />
+	/**<br />
+    * Method for handling hot keys<br />
+    * @param jsonHotKey {JSON}  Json object as mentioned below<br />
+    * @example<br />
+	*<br />
+    * document.onkeydown = function(evt) {<br />
+	*			evt = evt || window.event;<br />
+	*			var json = {"ctrl" : (evt.ctrlKey).toString(), "shift" : (evt.shiftKey).toString(), "alt" : (evt.altKey).toString(), "keyCode" : (evt.keyCode).toString()};<br />
+	*			ConsoleLog(JSON.stringify(json));<br />
+	*			KNHotKeyHandler.handleHotKey(json);<br />
+	* };<br />
+    *<br />
+    * @returns Boolean<br />
+    */<br />
+    handleHotKey: function (jsonHotKey) {<br />
+        //validation on inputs<br />
+        if ((jsonHotKey["ctrl"] == "" || jsonHotKey["ctrl"] == undefined) ||<br />
+            (jsonHotKey["shift"] == "" || jsonHotKey["shift"] == undefined) ||<br />
+            (jsonHotKey["alt"] == "" || jsonHotKey["alt"] == undefined) ||<br />
+            (jsonHotKey["keyCode"] == "" || jsonHotKey["keyCode"] == undefined))<br />
+            return false;<br />
+        var len = KNHotKeyStorage.length;<br />
+        if (len &lt; 1) return false;<br />
+        var index = KNHotKeyHandler.hasHotKeyRegistered(jsonHotKey);<br />
+        if (index == -1) return false;<br />
+        switch (KNHotKeyStorage[index]["functionName"]) {<br />
+            case PLUGINAPI.ACQUIREFLOOR:<br />
+                KNCallMgr.acquireFloor();<br />
+                return true;<br />
+            case PLUGINAPI.RELEASEFLOOR:<br />
+                KNCallMgr.releaseFloor();<br />
+                return true;<br />
+            case PLUGINAPI.ENDCALL:<br />
+                KNCallMgr.endcall();<br />
+                return true;<br />
+            default:<br />
+                break;<br />
+        }<br />
+        return false;<br />
+    }<br />
+};<br />
+/**<br />
+ * KNUtil class is related to plugin installation and are private.<br />
+ * @namespace<br />
+ * @class<br />
+ * @private<br />
+ */<br />
+var KNUtil = {<br />
+    /**<br />
+     * This API is used downloading plugin.<br />
+     * @private<br />
+     * @returns Boolean<br />
+     */<br />
+	setKodiakplugin : function() {<br />
+        kodiakplugin = function() {<br />
+            return document.getElementById('kn-plugin');<br />
+        };<br />
+    },<br />
+    /**<br />
+	     * This API for downloading the plugin.<br />
+	     * @private<br />
+	     * @returns void<br />
+     */<br />
+    downloadPlugin: function(){<br />
+			var r = confirm("Do you want to install Kodiak Web PoC Plugin?");<br />
+			if (r == true) {<br />
+			     var win = window.open(defaultPluginURL+"plugin/KWP.msi", '_self');<br />
+				 win.focus();<br />
+			 }<br />
+	},<br />
+    /**<br />
+     * This API is used to load the plugin.<br />
+     * Refer to this as {@link KNUtil.loadPlugin}<br />
+     * @private<br />
+     * @returns Boolean<br />
+     */<br />
+    loadPlugin    : function() {<br />
+		var obj = document.createElement("object");<br />
+		obj.setAttribute("id", "kn-plugin");<br />
+		obj.setAttribute("width", "0");<br />
+		obj.setAttribute("height", "0");<br />
+		//Add &lt;param&gt; node(s) to &lt;object&gt;<br />
+		var param_knplugin = document.createElement("param");<br />
+		param_knplugin.setAttribute("name", "onload");<br />
+		param_knplugin.setAttribute("value", "KNUtil.echo");<br />
+		obj.appendChild(param_knplugin);<br />
+		var param_pid = document.createElement("param");<br />
+		param_pid.setAttribute("name", "pluginID");<br />
+		param_pid.setAttribute("value", this.generatePluginID());<br />
+		obj.appendChild(param_pid);<br />
+  	    obj.setAttribute("type", "application/x-kwp");<br />
+        var target_element = document.body;<br />
+        if(typeof (target_element) == "undefined" || target_element == null) {<br />
+            ConsoleLog("return false");<br />
+            return SETUPSTATUS.UNKNOWN;<br />
+        }<br />
+        if(this.isIE()){<br />
+        	ConsoleLog("Browser IE");<br />
+        	target_element.appendChild(obj);<br />
+     		this.setKodiakplugin();<br />
+        	if(this.isPluginInstalledIE()){<br />
+        		if(this.isInstanceRunning()){<br />
+    				return SETUPSTATUS.PLUGIN_ALREADY_RUNNING;<br />
+                }<br />
+        	}else{<br />
+        		this.downloadPlugin();<br />
+        		return SETUPSTATUS.PLUGIN_NOT_INSTALLED;<br />
+        	}<br />
+        } else {<br />
+        	ConsoleLog("Browser Not IE");<br />
+        	target_element.appendChild(obj);<br />
+    		this.setKodiakplugin();<br />
+        	if(this.isPluginInstalledNotIE() &amp;&amp; !this.isPluginBlockedNotIE()){<br />
+        		if(this.isInstanceRunning()){<br />
+    				return SETUPSTATUS.PLUGIN_ALREADY_RUNNING;<br />
+                }<br />
+        	} else if(!this.isPluginInstalledNotIE()){<br />
+        		this.downloadPlugin();<br />
+        		return SETUPSTATUS.PLUGIN_NOT_INSTALLED  ;<br />
+        	} else if(this.isPluginBlockedNotIE()){<br />
+        		return SETUPSTATUS.PLUGIN_IS_BLOCKED  ;<br />
+        	}<br />
+        }<br />
+		return SETUPSTATUS.SUCCESS;<br />
+    },<br />
+	/**<br />
+	 * This API is used for checking the number of plugin instances running.<br />
+	 * Refer to this as {@link KNUtil.isInstanceRunning}<br />
+	 * @private<br />
+	 * @returns Boolean<br />
+     */<br />
+    isInstanceRunning    : function() {<br />
+    		var isInstanceRunning = kodiakplugin().isInstanceRunning();<br />
+    		ConsoleLog("isInstanceRunning="+isInstanceRunning);<br />
+			return isInstanceRunning;<br />
+	},<br />
+	/**<br />
+	 * This API is used for generating plugin instances identifier.<br />
+	 * Refer to this as {@link KNUtil.generatePluginID}<br />
+	 * @private<br />
+	 * @returns string<br />
+     */<br />
+	generatePluginID : function() {<br />
+		    return Math.random().toString(36).substring(2, 15) +<br />
+		        Math.random().toString(36).substring(2, 15);<br />
+	},<br />
+    /**<br />
+     * This API is used to log the installer plugin version.<br />
+     * Refer to this as {@link KNUtil.echo}<br />
+     * @private<br />
+     * @returns void<br />
+     */<br />
+    echo          : function() {<br />
+        ConsoleLog(kodiakplugin().version);<br />
+    },<br />
+    isPluginInstalledNotIE :function() {<br />
+    	if (navigator.mimeTypes["application/x-kwp"]) {<br />
+    		return true;<br />
+    	} else {<br />
+    		return false;<br />
+    	}<br />
+    },<br />
+    isPluginBlockedNotIE :function() {<br />
+    	 if(eval("kodiakplugin().valid")) {<br />
+             return false;<br />
+         } else {<br />
+        	 return true;<br />
+         }<br />
+    },<br />
+    isPluginInstalledIE :function(){<br />
+        if(!eval("kodiakplugin().valid")) {<br />
+          return false;<br />
+        } else {<br />
+          ConsoleLog("installPlugin: Plugin exists");<br />
+          return true;<br />
+        }<br />
+      },<br />
+    isIE: function(){<br />
+    	var isIE = /*@cc_on!@*/false || !!document.documentMode;<br />
+    	return isIE;<br />
+    }<br />
+};
+					</div>
+				</div>
+			</div>
+
+
+
+			
+
+			<footer>
+				<p><a href="http://clicks.att.com/OCT/eTrac?EMAIL_ID=1012748074&finalURL=http://att.com/Trademark-Copyright-Privacy-Policy?source=EACQM0ftr0000000E" target="blank">© 2016 AT&T Intellectual Property</a>. All rights reserved. AT&T, the AT&T logo and all other AT&T marks contained herein are trademarks of AT&T Intellectual Property and/or AT&T affiliated companies.
+</p>
+			</footer>
+			
+
+		</div><!-- /container -->
+
+
+
+<!-- **********HELP FORM MODAL********** -->
+
+<div id="help-form" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+ <!-- Modal content-->
+    <div class="modal-content">
+    	<div class="modal-header">
+        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+        	<h4 class="modal-title">EPTT API Developer Center Help</h4>
+      	</div>
+
+	    <div class="modal-body">
+			<form class="form-horizontal">
+				<fieldset>
+
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="name">Your name</label>  
+						<div class="col-md-6">
+							<input id="name" name="name" type="text" placeholder="" class="form-control input-md input-first" required title="Enter your first and last name">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="email">Your email</label>  
+						<div class="col-md-6">
+							<input id="email" name="email" type="text" placeholder="" class="form-control input-md input-middle" required title="Enter your email address">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="subject">Subject</label>  
+						<div class="col-md-6">
+							<input id="subject" name="subject" type="text" placeholder="" class="form-control input-md input-last" required title="Please indicate the subject of your question">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="message">Question</label>
+						<div class="col-md-6">                     
+							<textarea class="form-control input-single" id="message" name="message" required title="Please enter your question"></textarea>
+						</div>
+					</div>
+
+					<div class="form-group form-button">
+						<label class="col-md-4 control-label" for="submit"></label>
+						<div class="col-md-6">
+							<button id="help-submit" name="help-submit" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+
+				</fieldset>
+			</form>
+		</div><!-- MODAL BODY -->
+
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+    </div><!-- MODAL CONTENT -->
+  </div>
+</div>
+<!-- ********** /HELP FORM MODAL********** -->
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

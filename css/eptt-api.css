@@ -1,0 +1,52 @@
+@import url(fonts.css);
+body {font-family:"Omnes_ATT W02"; font-size: 16px; color:#191919; text-align: left; background-color: #f2f2f2}
+.col-centered { float: none; margin: 0 auto;}
+a {color: #0568ae;font-family: Arial}
+.attBlue {color: #009fdb;}
+
+header, footer {margin: 2em 0}
+header img {width:90%;}
+footer p {font-size: .75em; font-family: Arial}
+
+.headline {font-family:"Omnes_ATT W02 Medium"; font-size: 1.5em}
+.indent {padding-left: 2em}
+.btn {padding:6px 20px;}
+.btn-primary {background-color: #009fdb; border-color: #009fdb;}
+.btn-primary:hover {background-color: #009fdb; border-color: #009fdb;}
+.btn-primary:active:focus {background-color: #0568ae; border-color: #009fdb;}
+
+/*********** FORMS ***********/
+.form-group {margin-bottom: 0;}
+.form-control:focus {border-color: #009fdb; -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(0,159,219,.6); box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(0,159,219,.6);}
+.form-control{ height: 40px; border: 2px solid #ccc; box-shadow: inset 0 1px 2px 0px #959595;}
+.input-single {-webkit-border-radius: 10px; border-radius: 10px; margin-bottom: 1em}
+.input-first {-webkit-border-radius: 10px 10px 0 0; border-radius: 10px 10px 0 0;}
+.input-middle {-webkit-border-radius: 0; border-radius: 0; border-top: 0}
+.input-last {-webkit-border-radius: 0 0 10px 10px; border-radius: 0 0 10px 10px; margin-bottom: 1em; border-top: 0}
+.form-button {margin-top: 1em}
+#message {height: 8em}
+.infoIcon {width:1em;}
+.popover {width: 100%; font-size: .75em}
+.checkbox label, .form-horizontal .control-label {font-size: .875em}
+
+.forgot a {font-size: .75em; color: #ea7400;}
+
+
+/*********** NAVIGATION ***********/
+.navbar-default {background-color: #009fdb;}
+.navbar-default .navbar-nav>li>a {font-size: .875em; color:white;}
+.navbar-collapse {padding:0;}
+.nav>li {width:100%; border-bottom: 1px solid #f2f2f2;}
+
+
+.termsModal {height:500px; overflow: auto; font-size: .75em}
+.termsModal li {margin-bottom: 1em}
+.sublist {list-style: upper-alpha;}
+.sublist2 {list-style: lower-alpha;}
+
+.resources, .codeBox {height:250px; padding: 1em 0; overflow: auto; border: 1px solid #ccc; -webkit-border-radius: 6px 6px 6px 6px; border-radius: 6px 6px 6px 6px;}
+.codeBox {margin-top: 2em}
+.resources ul {padding-left: 1em}
+.resources li {list-style: none; margin-bottom: .5em}
+.features {padding-left: 0}
+.code {font-size: .875em}
