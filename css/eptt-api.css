@@ -37,6 +37,20 @@ footer p {font-size: .75em; font-family: Arial}
 .navbar-default .navbar-nav>li>a {font-size: .875em; color:white;}
 .navbar-collapse {padding:0;}
 .nav>li {width:100%; border-bottom: 1px solid #f2f2f2;}
+.topNav {list-style: none;}
+.topNav li {display: inline-block; margin-left: 1em}
+
+
+/*********** TABLES ***********/
+table {width:100%;}
+.tableHead {background-color: #009fdb;}
+.tableHead td {padding: .5em .25em .5em .75em; border-right:1px solid white; color:white;}
+.tableInfo {border-bottom: 1px solid #ccc;}
+.tableInfo td {padding: .5em .25em .5em .75em; border-right:1px solid #ccc;}
+td.last {border-right:none;}
+
+
+
 
 
 .termsModal {height:500px; overflow: auto; font-size: .75em}
@@ -50,3 +64,17 @@ footer p {font-size: .75em; font-family: Arial}
 .resources li {list-style: none; margin-bottom: .5em}
 .features {padding-left: 0}
 .code {font-size: .875em}
+
+.titleBar {background-color: #009fdb; padding: .025em 0 .025em 1em; margin: 1em 0}
+.titleBar h1 {color: white;}
+.flowChart img {width:100%;}
+
+
+.dataTitle {font-family:"Omnes_ATT W02 Medium";}
+.projectData {font-family:"Omnes_ATT W02";}
+.reviewComments {height: 175px; padding:1em; margin-bottom: 1em}
+.userResponse {margin-top: 2em}
+.userResponse .control-label {text-align: left;}
+
+
+

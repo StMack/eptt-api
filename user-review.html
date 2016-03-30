@@ -70,38 +70,79 @@
 					          <li><a href="WebPlugin.html">Web Plugin</a></li>
 					        </ul>
 					      </li>
-					      <li><a href="projects.html">Projects</a></li>
-					      <li><a href="http://att.com/enhanced-push-to-talk" target="blank">Enhanced <br>Push-to-Talk</a></li>
+					      <li><a href="#">Projects</a></li>
+					      <li><a href="http://att.com/enhanced-push-to-talk" target="blank">Enhanced <br>
+					      Push-to-Talk</a></li>
 					    </ul>
 					  </div><!-- /.navbar-collapse -->
 					</nav>
     
 				</div>
 				<div class="col-md-10 content">
-					<div class="row">
-						<div class="col-md-12">
-							<img src="img/photoHeader.png">
+					<div class="col-md-4">
+						<p class="dataTitle">Project name:<br>
+						<span class="projectData">[Project Name]</span>
+						</p>
+
+						<p class="dataTitle">Project API(s):<br>
+						<span class="projectData">[Project API]</span>
+						</p>
+
+						<p class="dataTitle">Submitted date:<br>
+						<span class="projectData">[XX/XX/XXXX]</span>
+						</p>
+
+						<p class="dataTitle">Launch date:<br>
+						<span class="projectData">[XX/XX/XXXX]</span>
+						</p>
+
+						<p class="dataTitle">Project files;<br>
+						<span class="projectData">[Filename.xxx]<br></span>
+						<span class="projectData">[Filename.xxx]<br></span>
+						<span class="projectData">[Filename.xxx]</span>
+						</p>
+
+						<p class="dataTitle">Project description:<br>
+						<span class="projectData">[This is the descrition of the project that the deveoper entered when they first submitted the project for review. It is a brief top-line overview of what their project is.]</span>
+						</p>
+					</div>
+					<div class="col-md-7 col-md-offset-1">
+						<p class="dataTitle">Reviewed by: <span class="projectData">[Reviewer Name]</span></p>
+						<p class="dataTitle">Comments</p>
+						<div class="resources reviewComments">
+							[This is the text of comments or notes entered on the review page by a member of the AT&T EPTT API team.]
 						</div>
-						<div class="col-md-6">
-							<h1 class="headline">About Enhanced Push-to-Talk</h1>
-							<ul>
-								<li>Highly scalable carrier-grade instant voice communication service</li>
- 
-								<li>One-to-one calls, one-to-many (group) calls, alerts, status, location</li>
-								 
-								<li>Proven commercial deployment integrated into AT&T’s network</li>
-							</ul>
-						</div>
-						<div class="col-md-6">
-							<h1 class="headline">Enhanced Push-to-Talk APIs Enable:</h1>
-							<ul>
-								<li>Press a button or icon to initiate a near real-time call on a mobile app or webpage.</li>
- 
-								<li>Establish a One-to-One or One-to-Many (group) EPTT Call</li>
- 
-								<li>Send a Call Me Alert</li>
-							</ul>
-						</div>
+							<p class="dataTitle">File download;<br>
+							<span class="projectData">[Review File.xxx]<br></span>
+							<span class="projectData">[Review File.xxx]</span>
+							</p>
+
+							<form class="form-horizontal userResponse">
+								<fieldset>
+									<div class="form-group">
+									<label class="col-md-4 control-label" for="message">Add a comment</label>
+									<div class="col-md-8">                     
+										<textarea class="form-control input-single" id="message" name="message" required title="Please enter your question"></textarea>
+									</div>
+								</div>
+								</fieldset>
+								<fieldset>
+									<div class="form-group">
+										<label class="col-md-4 control-label" for="upload">
+											Upload new project files<br>
+											<span class="code">Please compress files as zip, rar or gz</span></label>
+										<div class="col-md-8">
+											<input type="file" name="fileToUpload" id="fileToUpload">
+										</div>
+									</div>
+								</fieldset>
+								<div class="form-group form-button">
+									<label class="col-md-4 control-label" for="submit"></label>
+									<div class="col-md-6">
+										<button id="help-submit" name="help-submit" class="btn btn-primary">Resubmit</button>
+									</div>
+								</div>
+							</form>
 					</div>
 				</div>
 			</div>
@@ -111,7 +152,8 @@
 			
 
 			<footer>
-				<p><a href="http://clicks.att.com/OCT/eTrac?EMAIL_ID=1012748074&finalURL=http://att.com/Trademark-Copyright-Privacy-Policy?source=EACQM0ftr0000000E" target="blank">© 2016 AT&T Intellectual Property</a>. All rights reserved. AT&T, the AT&T logo and all other AT&T marks contained herein are trademarks of AT&T Intellectual Property and/or AT&T affiliated companies.</p>
+				<p><a href="http://clicks.att.com/OCT/eTrac?EMAIL_ID=1012748074&finalURL=http://att.com/Trademark-Copyright-Privacy-Policy?source=EACQM0ftr0000000E" target="blank">© 2016 AT&T Intellectual Property</a>. All rights reserved. AT&T, the AT&T logo and all other AT&T marks contained herein are trademarks of AT&T Intellectual Property and/or AT&T affiliated companies.
+</p>
 			</footer>
 			
 
