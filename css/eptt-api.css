@@ -34,6 +34,8 @@ footer p {font-size: .75em; font-family: Arial}
 .projectForm {margin-bottom: 1em;}
 .projectButton {margin-top: 4em;}
 
+input[name="logoUpload"] { width:15em;}
+
 
 /*********** NAVIGATION ***********/
 .navbar-default {background-color: #009fdb;}
@@ -55,7 +57,11 @@ td.last {border-right:none;}
 .editIcon, .deleteIcon {width:1.25em;}
 
 
-
+/*********** LICENSE ***********/
+.license {height:350px; padding: 1em; overflow: auto; border: 1px solid #ccc; -webkit-border-radius: 6px 6px 6px 6px; border-radius: 6px 6px 6px 6px; /*margin-bottom: 2em*/}
+.licenseForm {margin-top: 2em;}
+.licenseForm label {font-family:"Omnes_ATT W02 Medium"; color: #ea7400; }
+.licenseForm .btn-default {margin-left: 1em;}  
 
 
 .termsModal {height:500px; overflow: auto; font-size: .75em}

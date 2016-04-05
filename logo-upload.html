@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>AT&T Enhanced Push-to-Talk | API Developer center</title>
+
+
+		<!-- Bootstrap core CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet"> 
+		<link href="css/eptt-api.css" rel="stylesheet">
+	
+
+		<!-- Just for debugging purposes. Don't actually copy this line! -->
+		<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<body> 
+		<div class="container">
+			<header>
+				<div class="row">
+					<div class="col-xs-3 col-sm-2 col-md-1">
+						<img src="img/att_globe_rgb_pos.png">
+					</div>
+					<div class="col-xs-7 col-sm-6 col-md-4">
+						<img src="img/eptt-api-name.png">
+					</div>
+					<div class="col-md-3 pull-right">
+						<ul class="topNav">
+							<li><a data-toggle="modal" data-target="#help-form" href="#">Help</a></li>
+							<li><a href="index.html">Log out</a></li>
+						</ul>
+					</div>
+				</div>
+			</header>
+
+			<div class="row">
+				<div class="col-md-2">
+
+				    <nav class="navbar navbar-default" role="navigation">
+					  <!-- Brand and toggle get grouped for better mobile display -->
+					  <div class="navbar-header">
+					    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					      <span class="sr-only">Toggle navigation</span>
+					      <span class="icon-bar"></span>
+					      <span class="icon-bar"></span>
+					      <span class="icon-bar"></span>
+					    </button>
+					    <!-- <a class="navbar-brand" href="#">Brand</a> -->
+					  </div>
+
+					  <!-- Collect the nav links, forms, and other content for toggling -->
+					  <div class="collapse navbar-collapse navbar-ex1-collapse">
+					    <ul class="nav navbar-nav">
+					      <li><a href="overview.html">Overview</a></li>
+					      <li class="dropdown">
+					        <a href="#" class="dropdown-toggle" data-toggle="dropdown">APIs <b class="caret"></b></a>
+					        <ul class="dropdown-menu">
+					          <li><a href="deepLink.html">Deep Linking</a></li>
+					          <li><a href="WebPlugin.html">Web Plugin</a></li>
+					        </ul>
+					      </li>
+					      <li><a href="#">Projects</a></li>
+					      <li><a href="http://att.com/enhanced-push-to-talk" target="blank">Enhanced <br>
+					      Push-to-Talk</a></li>
+					    </ul>
+					  </div><!-- /.navbar-collapse -->
+					</nav>
+    
+				</div>
+				<div class="col-md-10 content">
+				<h1 class="headline">Your projects</h1>
+
+				<table>
+						<tbody>
+							<tr class="tableHead">
+								<td>
+									Project name
+								</td>
+								<td width="30">
+									Logo
+								</td>
+								<td>
+									URL
+								</td>
+								<td class="last">
+									&nbsp;
+								</td>
+							</tr>
+							<tr class="tableInfo">
+								<form class="form-horizontal">
+									<fieldset>
+										<td>
+											[Project name]
+										</td>
+										<td width="30">
+											<input type="file" name="logoUpload" id="logoUpload">
+											<span class="compress">.jpg, .png, or .gif</span>
+										</td>
+										<td>
+											<div class="form-group">
+												<div>
+												<input id="logoUrl" name="logoUrl" type="text" placeholder="" class="form-control input-md">
+												</div>
+											</div>
+										</td>
+										<td class="last">
+											<button id="logoSubmit" name="logoSubmit" class="btn btn-primary">Upload</button>
+										</td>
+									</fieldset>
+								</form>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+
+
+			
+
+			<footer>
+				<p><a href="http://clicks.att.com/OCT/eTrac?EMAIL_ID=1012748074&finalURL=http://att.com/Trademark-Copyright-Privacy-Policy?source=EACQM0ftr0000000E" target="blank">© 2016 AT&T Intellectual Property</a>. All rights reserved. AT&T, the AT&T logo and all other AT&T marks contained herein are trademarks of AT&T Intellectual Property and/or AT&T affiliated companies.
+</p>
+			</footer>
+			
+
+		</div><!-- /container -->
+
+
+
+<!-- **********HELP FORM MODAL********** -->
+
+<div id="help-form" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+ <!-- Modal content-->
+    <div class="modal-content">
+    	<div class="modal-header">
+        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+        	<h4 class="modal-title">Enhanced Push-to-Talk API Developer Center Help</h4>
+      	</div>
+
+	    <div class="modal-body">
+			<form class="form-horizontal">
+				<fieldset>
+
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="name">Your name</label>  
+						<div class="col-md-6">
+							<input id="name" name="name" type="text" placeholder="" class="form-control input-md input-first" required title="Enter your first and last name">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="email">Your email</label>  
+						<div class="col-md-6">
+							<input id="email" name="email" type="text" placeholder="" class="form-control input-md input-middle" required title="Enter your email address">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="subject">Subject</label>  
+						<div class="col-md-6">
+							<input id="subject" name="subject" type="text" placeholder="" class="form-control input-md input-last" required title="Please indicate the subject of your question">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="message">Question</label>
+						<div class="col-md-6">                     
+							<textarea class="form-control input-single" id="message" name="message" required title="Please enter your question"></textarea>
+						</div>
+					</div>
+
+					<div class="form-group form-button">
+						<label class="col-md-4 control-label" for="submit"></label>
+						<div class="col-md-6">
+							<button id="help-submit" name="help-submit" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+
+				</fieldset>
+			</form>
+		</div><!-- MODAL BODY -->
+
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+    </div><!-- MODAL CONTENT -->
+  </div>
+</div>
+<!-- ********** /HELP FORM MODAL********** -->
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
