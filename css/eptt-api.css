@@ -103,8 +103,9 @@ td.last {border-right:none;}
  /* The colour of the indicators */
 .carousel-indicators li { background: #cecece;}
 .carousel-indicators .active {background: #009fdb;}
-.thumbnail {border:none; background-color: transparent; min-height: 250px}
-.attProduct {margin-top: 45%}
+.thumbnail {border:none; background-color: transparent; height: 250px; display: table-cell; vertical-align: middle}
+.thumbnail img {vertical-align: middle;}÷
+
 
 
 
