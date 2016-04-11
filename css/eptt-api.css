@@ -29,12 +29,14 @@ footer p {font-size: .75em; font-family: Arial}
 .popover {width: 100%; font-size: .75em}
 .checkbox label, .form-horizontal .control-label {font-size: .875em}
 
-.forgot a, .compress {font-size: .75em; color: #ea7400;}
+.forgot a, .compress, .instruct {font-size: .75em; color: #ea7400;}
 
-.projectForm {margin-bottom: 1em;}
+.projectForm, .surveyForm {margin-bottom: 1em;}
 .projectButton {margin-top: 4em;}
 
 input[name="logoUpload"] { width:15em;}
+
+.devSurvey  {text-align: left !important; margin-bottom: 1em}
 
 
 /*********** NAVIGATION ***********/
@@ -55,6 +57,7 @@ table {width:100%;}
 td.last {border-right:none;}
 .editIcon {margin: 0 2em 0 1em;}
 .editIcon, .deleteIcon {width:1.25em;}
+.tableSort {text-decoration: underline; color: white;}
 
 
 /*********** LICENSE ***********/
@@ -86,6 +89,23 @@ td.last {border-right:none;}
 .reviewComments {height: 175px; padding:1em; margin-bottom: 1em}
 .userResponse {margin-top: 2em}
 .userResponse .control-label {text-align: left;}
+
+
+/*********** PARTNERS CAROUSEL ***********/
+.partners {margin-top: 3em}
+.carousel {margin-bottom: 0;padding: 0 40px 30px 40px;}
+/* The controlsy */
+.carousel-control {left: -12px; height: 40px; width: 40px; background: none repeat scroll 0 0 #009fdb; border: 4px solid #009fdb; border-radius: 23px 23px 23px 23px; margin-top: 90px;}
+.carousel-control.right {right: -12px;}
+.carousel-control.left, .carousel-control.right {background-image: none;}
+/* The indicators */
+.carousel-indicators {right: 50%; top: auto; bottom: -10px; margin-right: -19px;}
+ /* The colour of the indicators */
+.carousel-indicators li { background: #cecece;}
+.carousel-indicators .active {background: #009fdb;}
+.thumbnail {border:none; background-color: transparent; min-height: 250px}
+.attProduct {margin-top: 45%}
+
 
 
 

@@ -35,7 +35,7 @@
 					<div class="col-xs-7 col-sm-6 col-md-4">
 						<img src="img/eptt-api-name.png">
 					</div>
-					<div class="col-md-2 pull-right">
+					<div class="col-md-3 pull-right">
 						<ul class="topNav">
 							<li><a data-toggle="modal" data-target="#help-form" href="#">Help</a></li>
 							<li><a href="index.html">Log out</a></li>
@@ -45,65 +45,89 @@
 			</header>
 
 			<div class="row">
-				<div class="col-md-2">
-
-				    <nav class="navbar navbar-default" role="navigation">
-					  <!-- Brand and toggle get grouped for better mobile display -->
-					  <div class="navbar-header">
-					    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-					      <span class="sr-only">Toggle navigation</span>
-					      <span class="icon-bar"></span>
-					      <span class="icon-bar"></span>
-					      <span class="icon-bar"></span>
-					    </button>
-					    <!-- <a class="navbar-brand" href="#">Brand</a> -->
-					  </div>
-
-					  <!-- Collect the nav links, forms, and other content for toggling -->
-					  <div class="collapse navbar-collapse navbar-ex1-collapse">
-					    <ul class="nav navbar-nav">
-					      <li><a href="overview.html">Overview</a></li>
-					      <li class="dropdown">
-					        <a href="#" class="dropdown-toggle" data-toggle="dropdown">APIs <b class="caret"></b></a>
-					        <ul class="dropdown-menu">
-					          <li><a href="deepLink.html">Deep Linking</a></li>
-					          <li><a href="WebPlugin.html">Web Plugin</a></li>
-					        </ul>
-					      </li>
-					      <li><a href="projects.html">Projects</a></li>
-					      <li><a href="http://developer.att.com/enhanced-push-to-talk" target="blank">Enhanced <br>Push-to-Talk</a></li>
-					    </ul>
-					  </div><!-- /.navbar-collapse -->
-					</nav>
-    
+				
+				<div class="col-md-8 col-centered">
+					<h1 class="headline">Developer survey</h1>
+					<p>Thank you for taking the time to complete this brief survey. Your responses will help us to improve the API development process for your future projects. A member of the AT&T EPTT API Team may contact you for further information base on your responses.</p>
 				</div>
-				<div class="col-md-10 content">
-					<div class="row">
-						<div class="col-md-12">
-							<img src="img/photoHeader.png">
-						</div>
-						<div class="col-md-6">
-							<h1 class="headline">About Enhanced Push-to-Talk</h1>
-							<ul>
-								<li>Highly scalable carrier-grade instant voice communication service</li>
- 
-								<li>One-to-one calls, one-to-many (group) calls, alerts, status, location</li>
-								 
-								<li>Proven commercial deployment integrated into AT&T’s network</li>
-							</ul>
-						</div>
-						<div class="col-md-6">
-							<h1 class="headline">Enhanced Push-to-Talk APIs Enable:</h1>
-							<ul>
-								<li>Press a button or icon to initiate a near real-time call on a mobile app or webpage.</li>
- 
-								<li>Establish a one-to-one or one-to-many (group) Enhanced Push-to-Talk Call</li>
- 
-								<li>Send a Call Me Alert</li>
-							</ul>
-						</div>
-					</div>
+				
+				<div class="col-md-6 col-centered">
+					<form class="form-horizontal">
+						<fieldset>
+
+							<div class="form-group surveyForm">
+								<label class="col-md-12 control-label devSurvey" for="survey1">Was EPTT API the Development Process helpful for your project?</label>
+								<div class="col-md-3"> 
+									<label class="radio-inline" for="survey1-0">
+									<input type="radio" name="survey1" id="survey1-0" value="1">
+									Yes
+									</label> 
+									<label class="radio-inline" for="survey1-1">
+									<input type="radio" name="survey1" id="survey1-1" value="2">
+									No
+									</label>
+								</div>
+							</div>
+
+							<div class="form-group surveyForm">
+								<label class="col-md-12 control-label devSurvey" for="survey2">Was EPTT API the Development Process adequately explained?</label>
+								<div class="col-md-3"> 
+									<label class="radio-inline" for="survey2-0">
+									<input type="radio" name="survey2" id="survey2-0" value="1">
+									Yes
+									</label> 
+									<label class="radio-inline" for="survey2-1">
+									<input type="radio" name="survey2" id="survey2-1" value="2">
+									No
+									</label>
+								</div>
+							</div>
+
+							<div class="form-group surveyForm">
+								<label class="col-md-12 control-label devSurvey" for="survey3">Was EPTT API feedback helpful in the completion of your project?</label>
+								<div class="col-md-3"> 
+									<label class="radio-inline" for="survey3-0">
+									<input type="radio" name="survey3" id="survey3-0" value="1">
+									Yes
+									</label> 
+									<label class="radio-inline" for="survey3-1">
+									<input type="radio" name="survey3" id="survey3-1" value="2">
+									No
+									</label>
+								</div>
+							</div>
+
+							<div class="form-group surveyForm">
+								<label class="col-md-12 control-label devSurvey" for="survey4">Were coments and feedback received in a timely maner?</label>
+								<div class="col-md-3"> 
+									<label class="radio-inline" for="survey4-0">
+									<input type="radio" name="survey4" id="survey4-0" value="1">
+									Yes
+									</label> 
+									<label class="radio-inline" for="survey4-1">
+									<input type="radio" name="survey4" id="survey4-1" value="2">
+									No
+									</label>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-md-12 control-label devSurvey" for="surveyComment">Additional comments</label>
+								<div class="col-md-8">                     
+									<textarea class="form-control input-single" id="surveyComment" name="surveyComment"></textarea>
+								</div>
+							</div>
+
+							<div class="form-group form-button">
+								<div class="col-md-6">
+									<button id="help-submit" name="help-submit" class="btn btn-primary">Submit</button>
+								</div>
+							</div>
+
+						</fieldset>
+					</form>
 				</div>
+
 			</div>
 
 
@@ -111,7 +135,8 @@
 			
 
 			<footer>
-				<p><a href="http://clicks.att.com/OCT/eTrac?EMAIL_ID=1012748074&finalURL=http://att.com/Trademark-Copyright-Privacy-Policy?source=EACQM0ftr0000000E" target="blank">© 2016 AT&T Intellectual Property</a>. All rights reserved. AT&T, the AT&T logo and all other AT&T marks contained herein are trademarks of AT&T Intellectual Property and/or AT&T affiliated companies.</p>
+				<p><a href="http://clicks.att.com/OCT/eTrac?EMAIL_ID=1012748074&finalURL=http://att.com/Trademark-Copyright-Privacy-Policy?source=EACQM0ftr0000000E" target="blank">© 2016 AT&T Intellectual Property</a>. All rights reserved. AT&T, the AT&T logo and all other AT&T marks contained herein are trademarks of AT&T Intellectual Property and/or AT&T affiliated companies.
+</p>
 			</footer>
 			
 

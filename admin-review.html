@@ -13,7 +13,6 @@
 		<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap.min.css" rel="stylesheet"> 
 		<link href="css/eptt-api.css" rel="stylesheet">
-		<link href="css/datepicker.css" rel="stylesheet">
 	
 
 		<!-- Just for debugging purposes. Don't actually copy this line! -->
@@ -38,7 +37,8 @@
 					</div>
 					<div class="col-md-3 pull-right">
 						<ul class="topNav">
-							<li><a data-toggle="modal" data-target="#help-form" href="#">Help</a></li>
+							<!-- <li><a data-toggle="modal" data-target="#help-form" href="#">Help</a></li> -->
+							<li><a href="admin-projects.html">Admin</a></li>
 							<li><a href="index.html">Log out</a></li>
 						</ul>
 					</div>
@@ -63,162 +63,125 @@
 					  <!-- Collect the nav links, forms, and other content for toggling -->
 					  <div class="collapse navbar-collapse navbar-ex1-collapse">
 					    <ul class="nav navbar-nav">
-					      <li><a href="overview.html">Overview</a></li>
-					      <li class="dropdown">
-					        <a href="#" class="dropdown-toggle" data-toggle="dropdown">APIs <b class="caret"></b></a>
-					        <ul class="dropdown-menu">
-					          <li><a href="deepLink.html">Deep Linking</a></li>
-					          <li><a href="WebPlugin.html">Web Plugin</a></li>
-					        </ul>
-					      </li>
-					      <li><a href="#">Projects</a></li>
-					      <li><a href="http://developer.att.com/enhanced-push-to-talk" target="blank">Enhanced <br>
-					      Push-to-Talk</a></li>
+					      <li><a href="admin-projects.html">Projects</a></li>
+					      <li><a href="user-accounts.html">User accounts</a></li>
+					      <li><a href="admin-accounts.html" target="blank">Admin accounts</a></li>
+					      <li><a href="logo-review.html" target="blank">Logo review</a></li>
+					      <li><a href="overview.html" target="blank">Developer section</a></li>
 					    </ul>
 					  </div><!-- /.navbar-collapse -->
 					</nav>
     
 				</div>
 				<div class="col-md-10 content">
-					<h1 class="headline">Start a new project</h1>
-					<p>In your description or uploaded documentation please provide the following:</p>
-					<ul>
-						<li>Application name and version identifier</li>
-						<li>Application feature summary and articulate the customer offer</li>
-						<li>Architecture description and connectivity overview</li>
-						<li>Planned Enhanced Push-to-Talk API usage</li>
-						<li>Use case descriptions</li>
-						<li>UI/UX Design, including wireframes and flow diagrams</li>
-					</ul>
+					<div class="col-md-4">
+						<p class="dataTitle">Project name:<br>
+						<span class="projectData">[Project Name]</span>
+						</p>
 
-				<div class="row">
-					<form class="form-horizontal">
-					
-						<div class="col-md-5">
-							<fieldset>
+						<p class="dataTitle">Project API(s):<br>
+						<span class="projectData">[Project API]</span>
+						</p>
 
+						<p class="dataTitle">Submitted date:<br>
+						<span class="projectData">[XX/XX/XXXX]</span>
+						</p>
+
+						<p class="dataTitle">Launch date:<br>
+						<span class="projectData">[XX/XX/XXXX]</span>
+						</p>
+
+						<p class="dataTitle">Project files;<br>
+						<span class="projectData">[Filename.xxx]<br></span>
+						<span class="projectData">[Filename.xxx]<br></span>
+						<span class="projectData">[Filename.xxx]</span>
+						</p>
+
+						<p class="dataTitle">Project description:<br>
+						<span class="projectData">[This is the descrition of the project that the deveoper entered when they first submitted the project for review. It is a brief top-line overview of what their project is.]</span>
+						</p>
+					</div>
+					<div class="col-md-7 col-md-offset-1">
+						<!-- <p class="dataTitle">Reviewed by: <span class="projectData">[Reviewer Name]</span></p>
+						<p class="dataTitle">Comments</p>
+						<div class="resources reviewComments">
+							[This is the text of comments or notes entered on the review page by a member of the AT&T EPTT API team.]
+						</div>
+							<p class="dataTitle">File download;<br>
+							<span class="projectData">[Review File.xxx]<br></span>
+							<span class="projectData">[Review File.xxx]</span>
+							</p> -->
+
+							<form class="form-horizontal userResponse">
 								<div class="form-group">
-								  	<label class="col-md-4 control-label" for="projectName">Project name</label>  
-									<div class="col-md-8">
-										<input id="projectName" name="projectName" type="text" placeholder="" class="form-control input-md input-single" required-title="Enter your project name">
-									</div>
-								</div>
-								<div class="form-group">
-								  	<label class="col-md-4 control-label" for="projectName">AT&T sponsor</label>  
+								  	<label class="col-md-4 control-label" for="projectName">Reviewed by</label>  
 									<div class="col-md-8">
 										<input id="sponsor" name="sponsor" type="text" placeholder="" class="form-control input-md input-first" required-title="All projects require an AT&T Sales or Product sponsor">
 									</div>
 								</div>
 
 								<div class="form-group projectForm">
-								  	<label class="col-md-4 control-label" for="projectName">Sponsor email</label>  
+								  	<label class="col-md-4 control-label" for="projectName">ATT UID</label>  
 									<div class="col-md-8">
 										<input id="sponsorEmail" name="sponsorEmail" type="text" placeholder="" class="form-control input-md input-last" required-title="Enter a valid AT&T email address for the project sponsor">
 									</div>
 								</div>
 
-								<div class="form-group projectForm">
-									<label class="col-md-4 control-label" for="epttAPIs">API(s) used</label>
-									<div class="col-md-8">
-										<div class="checkbox">
-									    	<label for="epttAPIs-0">
-										    <input type="checkbox" name="epttAPIs" id="epttAPIs-0" value="api1">
-										    Deep Linking
-									    	</label>
-										</div>
-								  		<div class="checkbox">
-								    		<label for="epttAPIs-1">
-								      		<input type="checkbox" name="epttAPIs" id="epttAPIs-1" value="api2">
-								      		Web Plugin
-								    		</label>
-										</div>
-								  	</div>
+								<fieldset>
+									<div class="form-group">
+									<label class="col-md-4 control-label" for="comments">Add a comment</label>
+									<div class="col-md-8">                     
+										<textarea class="form-control input-single" id="comments" name="comments"></textarea>
+									</div>
 								</div>
+								</fieldset>
+
+								<fieldset>
+									<div class="form-group">
+										<label class="col-md-4 control-label" for="upload">
+											Upload new project files</label>
+										<div class="col-md-8">
+											<input type="file" name="fileToUpload" id="fileToUpload">
+											<span class="compress">Please compress files as zip, rar or gz</span>
+										</div>
+									</div>
+								</fieldset>
 
 								<div class="form-group projectForm">
-								  	<label class="col-md-4 control-label input-single" for="industry">Target Industry</label>
-								  	<div class="col-md-8">
-								    	<select id="industry" name="industry" class="form-control">
-								      		<option value="#">Select one</option>
-								      		<option value="auto">Automotive</option>
-								      		<option value="construction">Construction</option>
-								      		<option value="delivery">Delivery</option>
-								      		<option value="freight">Freight</option>
-								      		<option value="government">Government</option>
-								      		<option value="maintenance">Maintenance</option>
-								      		<option value="medical">Medical</option>
-								      		<option value="sales">Sales</option>
-								      		<option value="utility">Utility</option>
-								    	</select>
-								  	</div>
-								</div>
-
-								<div class="form-group projectForm">
-								  	<label class="col-md-4 control-label" for="endUse">End use</label>
+								  	<label class="col-md-4 control-label" for="endUse">Project status</label>
 								  		<div class="col-md-8">
 								  			<div class="checkbox">
 								    			<label for="endUse-0">
 								      			<input type="checkbox" name="endUse" id="endUse-0" value="internal">
-								      			Internal company use
+								      			See comments
 								    			</label>
 											</div>
 								  			<div class="checkbox">
 								    			<label for="endUse-1">
 								      			<input type="checkbox" name="endUse" id="endUse-1" value="resale">
-								      			Product for resale
+								      			Approved - Sandbox Access
 								    			</label>
 											</div>
 								  			<div class="checkbox">
 								    			<label for="endUse-2">
 								      			<input type="checkbox" name="endUse" id="endUse-2" value="att">
-								      			AT&amp;T whitelabel product
+								      			Approved - Production access
 								    			</label>
 											</div>
 								  		</div>
 								</div>
 
-								</fieldset>
-							</div><!-- /5colsLeft -->
-
-						<div class="col-md-5">
-						<fieldset>
-
-							<div class="form-group projectForm">
-							  	<label class="col-md-4 control-label" for="launchDate">Launch Date</label>  
-							  	<div class="col-md-8">
-							  		<input id="launchDate" name="launchDate" type="text" placeholder="" class="form-control input-md input-single" required-title="Enter your target launch date">
-							  		<!-- <span class="compress">The project review process takes x-y weeks</span> -->
-							  	</div>
-							</div>
-
-							<div class="form-group projectForm">
-								<label class="col-md-4 control-label input-single" for="message">Project Description</label>
-								<div class="col-md-8">                     
-									<textarea class="form-control input-single" id="message" name="message" required title="Please enter your question"></textarea>
+								
+								<div class="form-group form-button">
+									<label class="col-md-4 control-label" for="submit"></label>
+									<div class="col-md-6">
+										<button id="help-submit" name="help-submit" class="btn btn-primary">Resubmit</button>
+									</div>
 								</div>
-							</div>
-
-							<div class="form-group projectForm">
-								<label class="col-md-4 control-label" for="upload">
-									Upload new project files</label>
-								<div class="col-md-8">
-									<input type="file" name="fileToUpload" id="fileToUpload">
-									<span class="compress">Please compress files as zip, rar or gz</span>
-								</div>
-							</div>
-
-							<div class="form-group form-button">
-								<label class="col-md-4 control-label" for="submit">&nbsp;</label>
-								<div class="col-md-8">
-									<button id="help-submit" name="help-submit" class="btn btn-primary">Submit</button>
-								</div>
-							</div>
-						</fieldset>	
-						</div>
-					
-				</form>
+							</form>
+					</div>
+				</div>
 			</div>
-		</div>
 
 
 
@@ -301,18 +264,6 @@
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/bootstrap-datepicker.js"></script>
-
-		<script type="text/javascript">
-            // When the document is ready
-            $(document).ready(function () {
-                
-                $('#launchDate').datepicker({
-                    format: "dd/mm/yyyy"
-                });  
-            
-            });
-        </script>
 
 
 </body>

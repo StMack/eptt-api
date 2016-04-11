@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -37,7 +37,8 @@
 					</div>
 					<div class="col-md-3 pull-right">
 						<ul class="topNav">
-							<li><a data-toggle="modal" data-target="#help-form" href="#">Help</a></li>
+							<!-- <li><a data-toggle="modal" data-target="#help-form" href="#">Help</a></li> -->
+							<li><a href="admin-projects.html">Admin</a></li>
 							<li><a href="index.html">Log out</a></li>
 						</ul>
 					</div>
@@ -62,24 +63,18 @@
 					  <!-- Collect the nav links, forms, and other content for toggling -->
 					  <div class="collapse navbar-collapse navbar-ex1-collapse">
 					    <ul class="nav navbar-nav">
-					      <li><a href="overview.html">Overview</a></li>
-					      <li class="dropdown">
-					        <a href="#" class="dropdown-toggle" data-toggle="dropdown">APIs <b class="caret"></b></a>
-					        <ul class="dropdown-menu">
-					          <li><a href="deepLink.html">Deep Linking</a></li>
-					          <li><a href="WebPlugin.html">Web Plugin</a></li>
-					        </ul>
-					      </li>
-					      <li><a href="#">Projects</a></li>
-					      <li><a href="http://developer.att.com/enhanced-push-to-talk" target="blank">Enhanced <br>
-					      Push-to-Talk</a></li>
+					      <li><a href="admin-projects.html">Projects</a></li>
+					      <li><a href="user-accounts.html">User accounts</a></li>
+					      <li><a href="admin-accounts.html">Admin accounts</a></li>
+					      <li><a href="logo-review.html">Logo review</a></li>
+					      <li><a href="overview.html">Developer section</a></li>
 					    </ul>
 					  </div><!-- /.navbar-collapse -->
 					</nav>
     
 				</div>
 				<div class="col-md-10 content">
-				<h1 class="headline">Your projects</h1>
+					<h1 class="headline">Logo review</h1>
 
 				<table>
 						<tbody>
@@ -88,60 +83,36 @@
 									Project name
 								</td>
 								<td>
-									Project API(s)
+									Logo
 								</td>
 								<td>
-									Submitted date
-								</td>
-								<td>
-									Reviewd by
-								</td>
-								<td>
-									Project status
+									URL
 								</td>
 								<td class="last">
-									Manage project
+									Approval
 								</td>
 							</tr>
 							<tr class="tableInfo">
-								<td>
-									[Project name]
-								</td>
-								<td>
-									[Project API(s)]
-								</td>
-								<td>
-									[XX/XX/XXXX]
-								</td>
-								<td>
-									[Reviewer Name]
-								</td>
-								<td>
-									[Project status]
-								</td>
-								<td class="last">
-									<a href="#"><img class="editIcon" src="img/edit-icon.png"</a> <a href="#"><img class="deleteIcon" src="img/delete-icon.png"</a>
-								</td>
-							</tr>
-							<tr class="tableInfo">
-								<td>
-									[Project name]
-								</td>
-								<td>
-									[Project API(s)]
-								</td>
-								<td>
-									[XX/XX/XXXX]
-								</td>
-								<td>
-									[Reviewer Name]
-								</td>
-								<td>
-									[Project status]
-								</td>
-								<td class="last">
-									<a href="#"><img class="editIcon" src="img/edit-icon.png"</a> <a href="#"><img class="deleteIcon" src="img/delete-icon.png"</a></a>
-								</td>
+								<form class="form-horizontal">
+									<fieldset>
+										<td>
+											[Project name]
+										</td>
+										<td>
+											[<a data-toggle="modal" data-target="#logoPreview" href="#">logo-file-name.png</a>]
+										</td>
+										<td>
+											<div class="form-group">
+												<div>
+												<a herf="#">thisisourproducturl.com</a>
+												</div>
+											</div>
+										</td>
+										<td class="last">
+											<a href="#"><img class="editIcon" src="img/approval-icon.png"</a> <a data-toggle="modal" data-target="#logoReject" href="#"><img class="deleteIcon" src="img/rejection-icon.png"</a>
+										</td>
+									</fieldset>
+								</form>
 							</tr>
 						</tbody>
 					</table>
@@ -162,58 +133,19 @@
 
 
 
-<!-- **********HELP FORM MODAL********** -->
+<!-- **********LOGO PREVIEW MODAL********** -->
 
-<div id="help-form" class="modal fade" role="dialog">
+<div id="logoPreview" class="modal fade" role="dialog">
   <div class="modal-dialog">
  <!-- Modal content-->
     <div class="modal-content">
     	<div class="modal-header">
         	<button type="button" class="close" data-dismiss="modal">&times;</button>
-        	<h4 class="modal-title">Enhanced Push-to-Talk API Developer Center Help</h4>
+        	<h4 class="modal-title">Actual size logo preview</h4>
       	</div>
 
-	    <div class="modal-body">
-			<form class="form-horizontal">
-				<fieldset>
-
-					<div class="form-group">
-						<label class="col-md-4 control-label" for="name">Your name</label>  
-						<div class="col-md-6">
-							<input id="name" name="name" type="text" placeholder="" class="form-control input-md input-first" required title="Enter your first and last name">
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="col-md-4 control-label" for="email">Your email</label>  
-						<div class="col-md-6">
-							<input id="email" name="email" type="text" placeholder="" class="form-control input-md input-middle" required title="Enter your email address">
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="col-md-4 control-label" for="subject">Subject</label>  
-						<div class="col-md-6">
-							<input id="subject" name="subject" type="text" placeholder="" class="form-control input-md input-last" required title="Please indicate the subject of your question">
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="col-md-4 control-label" for="message">Question</label>
-						<div class="col-md-6">                     
-							<textarea class="form-control input-single" id="message" name="message" required title="Please enter your question"></textarea>
-						</div>
-					</div>
-
-					<div class="form-group form-button">
-						<label class="col-md-4 control-label" for="submit"></label>
-						<div class="col-md-6">
-							<button id="help-submit" name="help-submit" class="btn btn-primary">Submit</button>
-						</div>
-					</div>
-
-				</fieldset>
-			</form>
+	    <div class="modal-body text-center">
+			<img src="img/sampleLogo.png">
 		</div><!-- MODAL BODY -->
 
 		<div class="modal-footer">
@@ -222,7 +154,77 @@
     </div><!-- MODAL CONTENT -->
   </div>
 </div>
-<!-- ********** /HELP FORM MODAL********** -->
+<!-- ********** /LOGO PREVIEW MODAL********** -->
+
+<!-- **********LOGO REJECT MODAL********** -->
+
+<div id="logoReject" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+ <!-- Modal content-->
+    <div class="modal-content">
+    	<div class="modal-header">
+        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+        	<h4 class="modal-title">Logo rejection</h4>
+      	</div>
+
+	    <div class="modal-body">
+			
+	    	<form class="form-horizontal">
+				<fieldset>
+					<div class="form-group">
+					<label class="col-md-4 control-label" for="rejectReasons">Reason for Rejection<br>
+						<span class="instruct">Check all that apply</span></label>
+						<div class="col-md-8">
+							<div class="checkbox">
+								<label for="rejectReasons-0">
+								<input type="checkbox" name="rejectReasons" id="rejectReasons-0" value="1">
+								File unreadable
+								</label>
+							</div>
+							<div class="checkbox">
+								<label for="rejectReasons-1">
+								<input type="checkbox" name="rejectReasons" id="rejectReasons-1" value="2">
+								Incorrect file type
+								</label>
+							</div>
+							<div class="checkbox">
+								<label for="rejectReasons-2">
+								<input type="checkbox" name="rejectReasons" id="rejectReasons-2" value="3">
+								Poor quality
+								</label>
+							</div>
+								<div class="checkbox">
+								<label for="rejectReasons-3">
+								<input type="checkbox" name="rejectReasons" id="rejectReasons-3" value="4">
+								Incorrect/invalid URL
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group form-button">
+						<label class="col-md-4 control-label" for="singlebutton"></label>
+						<div class="col-md-4">
+						<button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+
+				</fieldset>
+			</form>
+
+
+
+
+
+		</div><!-- MODAL BODY -->
+
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+    </div><!-- MODAL CONTENT -->
+  </div>
+</div>
+<!-- ********** /LOGO REJECT MODAL********** -->
 
 		<!-- Bootstrap core JavaScript
 		================================================== -->
