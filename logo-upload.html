@@ -67,7 +67,7 @@
 					        <a href="#" class="dropdown-toggle" data-toggle="dropdown">APIs <b class="caret"></b></a>
 					        <ul class="dropdown-menu">
 					          <li><a href="deepLink.html">Deep Linking</a></li>
-					          <li><a href="WebPlugin.html">Web Plugin</a></li>
+					          <li><a href="web-plugin.html">Web Plugin</a></li>
 					        </ul>
 					      </li>
 					      <li><a href="#">Projects</a></li>
@@ -79,49 +79,65 @@
     
 				</div>
 				<div class="col-md-10 content">
-				<h1 class="headline">Your projects</h1>
+				<h1 class="headline">Your project logo</h1>
 
-				<table>
-						<tbody>
-							<tr class="tableHead">
-								<td>
-									Project name
-								</td>
-								<td width="30">
-									Logo
-								</td>
-								<td>
-									URL
-								</td>
-								<td class="last">
-									&nbsp;
-								</td>
-							</tr>
-							<tr class="tableInfo">
-								<form class="form-horizontal">
-									<fieldset>
-										<td>
-											[Project name]
-										</td>
-										<td width="30">
-											<input type="file" name="logoUpload" id="logoUpload">
-											<span class="compress">.jpg, .png, or .gif</span>
-										</td>
-										<td>
-											<div class="form-group">
-												<div>
-												<input id="logoUrl" name="logoUrl" type="text" placeholder="" class="form-control input-md">
-												</div>
-											</div>
-										</td>
-										<td class="last">
-											<button id="logoSubmit" name="logoSubmit" class="btn btn-primary">Upload</button>
-										</td>
-									</fieldset>
-								</form>
-							</tr>
-						</tbody>
-					</table>
+				<form class="form-horizontal">
+						<fieldset>
+							<div class="form-group projectForm">
+								<label class="col-md-4 control-label" for="upload">
+									Project logo</label>
+								<div class="col-md-8">
+									<input type="file" name="fileToUpload" id="fileToUpload">
+									<span class="compress">.jpg, .png, or .gif</span>
+								</div>
+							</div>
+							<div class="form-group projectForm">
+							  	<label class="col-md-4 control-label" for="launchDate">Project URL</label>  
+							  	<div class="col-md-4">
+							  		<input id="url" name="url" type="text" placeholder="" class="form-control input-md input-single">
+							  	</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="checkboxes">I confirm that</label>
+								  	<div class="col-md-4">
+  										<div class="checkbox">
+    										<label for="checkboxes-0">
+      											<input type="checkbox" name="checkboxes" id="checkboxes-0" value="msa">
+      											[Company Name] (“Company”) grants AT&T the right to use, reproduce, publish and display Company names, trademarks, service marks, designs, logos or symbols (“CompanyMarks”), including the names of Company’s application(s) that use the AT&T Enhanced Push-To-Talk (“EPTT”) APIs and any related application descriptions or specifications published or provided, in connection with the development, use, reproduction and distribution of promotional and marketing materials, content directories and indices, electronic and printed advertising, newsletters and mailings, and exhibitions, trade shows and equivalent events that reference AT&T and its relationship with Company relating to AT&T EPTT Service
+    										</label>
+										</div>
+  										<div class="checkbox">
+    										<label for="checkboxes-1">
+      											<input type="checkbox" name="checkboxes" id="checkboxes-1" value="production">
+      												Company grants AT&T a non-exclusive, royalty-free, limited license to reproduce Company Marks as reasonably necessary for the sole purpose of allowing AT&T to fully promote and market Company’s products and services in connection with AT&T EPTT Service and Company acknowledges and represents that it is the exclusive owner of Company Marks. 
+ 
+
+    											</label>
+										</div>
+  										<div class="checkbox">
+    										<label for="checkboxes-2">
+      											<input type="checkbox" name="checkboxes" id="checkboxes-2" value="sponsor">
+      												AT&T’s use of Company Marks as provided above does not grant AT&T any right, title or interest in or to Company Marks.
+    										</label>
+										</div>
+										<div class="checkbox">
+    										<label for="checkboxes-2">
+      											<input type="checkbox" name="checkboxes" id="checkboxes-2" value="authority">
+      												I am authorized to accept this agreement on behalf of [Company Name]
+    										</label>
+										</div>
+  									</div>
+							</div>
+
+<!-- Button (Double) -->
+<div class="form-group licenseForm">
+  <label class="col-md-4 control-label" for="accept">By pressing accept I acknowledge that the information above is accurate and correct.</label>
+  <div class="col-md-8">
+    <button id="accept" name="accept" class="btn btn-primary">Accept</button>
+    <button id="cancel" name="cancel" class="btn btn-default">Cancel</button>
+  </div>
+</div>
 				</div>
 			</div>
 

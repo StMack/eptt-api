@@ -35,70 +35,116 @@
 					<div class="col-xs-7 col-sm-6 col-md-4">
 						<img src="img/eptt-api-name.png">
 					</div>
-					 <div class="col-md-3 pull-right">
+					<div class="col-md-2 pull-right">
 						<ul class="topNav">
 							<li><a data-toggle="modal" data-target="#help-form" href="#">Help</a></li>
 							<li><a href="index.html">Log out</a></li>
 						</ul>
-					</div> 
+					</div>
 				</div>
 			</header>
 
 			<div class="row">
-				
-				<div class="col-md-10 col-centered">
-					<h1 class="headline text-center">Production agreement – AT&T resale</h1>
-					<!-- <p class="text-center attBlue">Before proceeding you must read and accept to the license agreement</p> -->
-					
+				<div class="col-md-2">
 
-					<form class="form-horizontal">
-						<fieldset>
+				    <nav class="navbar navbar-default" role="navigation">
+					  <!-- Brand and toggle get grouped for better mobile display -->
+					  <div class="navbar-header">
+					    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					      <span class="sr-only">Toggle navigation</span>
+					      <span class="icon-bar"></span>
+					      <span class="icon-bar"></span>
+					      <span class="icon-bar"></span>
+					    </button>
+					    <!-- <a class="navbar-brand" href="#">Brand</a> -->
+					  </div>
 
-							<div class="form-group">
-								<label class="col-md-4 control-label" for="checkboxes">I confirm that</label>
-								  	<div class="col-md-4">
-  										<div class="checkbox">
-    										<label for="checkboxes-0">
-      											<input type="checkbox" name="checkboxes" id="checkboxes-0" value="msa">
-      											[Company name] has executed and/or updated an AT&T Mobility Solutions Application Resale Agreement or similar agreement that includes AT&T’s right to resell Company’s Enhanced Push-to-Talk API service integration
-    										</label>
+					  <!-- Collect the nav links, forms, and other content for toggling -->
+					  <div class="collapse navbar-collapse navbar-ex1-collapse">
+					    <ul class="nav navbar-nav">
+					      <li><a href="overview.html">Overview</a></li>
+					      <li class="dropdown">
+					        <a href="#" class="dropdown-toggle" data-toggle="dropdown">APIs <b class="caret"></b></a>
+					        <ul class="dropdown-menu">
+					          <li><a href="deepLink.html">Deep Linking</a></li>
+					          <li><a href="web-plugin.html">Web Plugin</a></li>
+					        </ul>
+					      </li>
+					      <li><a href="#">Projects</a></li>
+					      <li><a href="http://developer.att.com/enhanced-push-to-talk" target="blank">Enhanced <br>
+					      Push-to-Talk</a></li>
+					    </ul>
+					  </div><!-- /.navbar-collapse -->
+					</nav>
+    
+				</div>
+				<div class="col-md-10 content">
+					<div class="col-md-4">
+						<p class="dataTitle">Project name:<br>
+						<span class="projectData">[Project Name]</span>
+						</p>
+
+						<p class="dataTitle">Project API(s):<br>
+						<span class="projectData">[Project API]</span>
+						</p>
+
+						<p class="dataTitle">Submitted date:<br>
+						<span class="projectData">[XX/XX/XXXX]</span>
+						</p>
+
+						<p class="dataTitle">Launch date:<br>
+						<span class="projectData">[XX/XX/XXXX]</span>
+						</p>
+
+						<p class="dataTitle">Project files;<br>
+						<span class="projectData">[Filename.xxx]<br></span>
+						<span class="projectData">[Filename.xxx]<br></span>
+						<span class="projectData">[Filename.xxx]</span>
+						</p>
+
+						<p class="dataTitle">Project description:<br>
+						<span class="projectData">[This is the descrition of the project that the deveoper entered when they first submitted the project for review. It is a brief top-line overview of what their project is.]</span>
+						</p>
+					</div>
+					<div class="col-md-7 col-md-offset-1">
+						<h1 class="headline">Upload product files</h1>
+					<p>Please include the following with your product submission:</p>
+					<ul>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+						<li>Lorem ipsum dolor sit amet</li>
+					</ul>
+
+							<form class="form-horizontal userResponse">
+								<fieldset>
+									<div class="form-group">
+									<label class="col-md-4 control-label" for="message">Add a comment</label>
+									<div class="col-md-8">                     
+										<textarea class="form-control input-single" id="message" name="message" required title="Please enter your question"></textarea>
+									</div>
+								</div>
+								</fieldset>
+								<fieldset>
+									<div class="form-group">
+										<label class="col-md-4 control-label" for="upload">
+											Upload new project files</label>
+										<div class="col-md-8">
+											<input type="file" name="fileToUpload" id="fileToUpload">
+											<span class="compress">Please compress files as zip, rar or gz</span>
 										</div>
-  										<div class="checkbox">
-    										<label for="checkboxes-1">
-      											<input type="checkbox" name="checkboxes" id="checkboxes-1" value="production">
-      												The product with EPTT API integrated content is scheduled to be available for resale by AT&T within 30 days
-    											</label>
-										</div>
-  										<div class="checkbox">
-    										<label for="checkboxes-2">
-      											<input type="checkbox" name="checkboxes" id="checkboxes-2" value="sponsor">
-      												The AT&amp;T Product Manager is [sponsor name] (<a href="edit-project">change contact</a>)
-    										</label>
-										</div>
-										<div class="checkbox">
-    										<label for="checkboxes-2">
-      											<input type="checkbox" name="checkboxes" id="checkboxes-2" value="authority">
-      												I am authorized to accept this agreement on behalf of [Company Name]
-    										</label>
-										</div>
-  									</div>
-							</div>
-
-<!-- Button (Double) -->
-<div class="form-group licenseForm">
-  <label class="col-md-4 control-label" for="accept">By pressing accept I acknowledge that the information above is accurate and correct.</label>
-  <div class="col-md-8">
-    <button id="accept" name="accept" class="btn btn-primary">Accept</button>
-    <button id="cancel" name="cancel" class="btn btn-default">Cancel</button>
-  </div>
-</div>
-
-</fieldset>
-</form>
-
-
-
-
+									</div>
+								</fieldset>
+								<div class="form-group form-button">
+									<label class="col-md-4 control-label" for="submit"></label>
+									<div class="col-md-6">
+										<button id="help-submit" name="help-submit" class="btn btn-primary">Submit</button>
+									</div>
+								</div>
+							</form>
+					</div>
 				</div>
 			</div>
 
@@ -183,7 +229,6 @@
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-
 
 
 </body>

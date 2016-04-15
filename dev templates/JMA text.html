@@ -13,6 +13,7 @@
 		<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap.min.css" rel="stylesheet"> 
 		<link href="css/eptt-api.css" rel="stylesheet">
+		<link href="css/datepicker.css" rel="stylesheet">
 		<link href="css/jma-terms.css" rel="stylesheet">
 	
 
@@ -26,34 +27,9 @@
 		<![endif]-->
 	</head>
 
-	<body> 
-		<div class="container">
-			<header>
-				<div class="row">
-					<div class="col-xs-3 col-sm-2 col-md-1">
-						<img src="img/att_globe_rgb_pos.png">
-					</div>
-					<div class="col-xs-7 col-sm-6 col-md-4">
-						<img src="img/eptt-api-name.png">
-					</div>
-					 <div class="col-md-3 pull-right">
-						<ul class="topNav">
-							<li><a data-toggle="modal" data-target="#help-form" href="#">Help</a></li>
-							<li><a href="index.html">Log out</a></li>
-						</ul>
-					</div> 
-				</div>
-			</header>
+	<body>
 
-			<div class="row">
-				
-				<div class="col-md-10 col-centered">
-					<h1 class="headline text-center">Product Agreement – commercial product </h1>
-					<p class="text-center attBlue">Before proceeding you must read and accept this agreement</p>
-					<a href="#"  value="Print Div" onclick="PrintElem('#licensePrint')"> Print agreement</a>
-					<div class="license" id="licensePrint">
-						
-						<h1 class="headline text-center">JOINT MARKETING AGREEMENT</h1>
+	<h1 class="headline text-center">JOINT MARKETING AGREEMENT</h1>
 
 <h3 class="text-center">TERMS AND CONDITIONS</h3>
 <p>
@@ -238,154 +214,6 @@ The primary purpose of this Agreement is set forth the terms and conditions purs
 	<li>NOTICES - You consent to receive and review notices sent through AT&T EPTT API Website and agree that any such notices will satisfy any legal communication requirements.</li>
 
 	<li>ENTIRE AGREEMENT - This Agreement constitutes the entire agreement between the You and AT&T concerning the subject matter hereof. No prior or contemporaneous representations, inducements, promises, or agreements, oral or otherwise, between You and AT&T with reference to this Agreement will be of any force or effect. You represent and warrant that, in entering into and performing Your obligations under this Agreement, You do not and will not rely on any promise, inducement, or representation allegedly made by or on behalf of AT&T with respect to the subject matter hereof, nor on any course of dealings or custom and usage in the trade, except as such promise, inducement, or representation has been expressly set forth herein. This Agreement may be modified only by a written amendment signed by both parties.</li> 
-					</div><!-- /license -->
 
-					<form class="form-horizontal licenseForm">
-						<fieldset>
-							<div class="form-group">
-								 <label class="col-md-8 control-label" for="licenseAgreement">I am authorized to accept this agreement on behalf of [Company Name]</label>
-  								<div class="col-md-1">
-  									<div class="checkbox">
-    								<label for="licenseAgreement-0">
-      								<input type="checkbox" name="licenseAgreement" id="licenseAgreement-0" value="accepted">
-      								&nbsp;
-    								</label>
-								</div>
-							</div>
-							<div class="form-group">
-							
-  								<label class="col-md-8 control-label" for="licenseAgreement">•	I have read and accept the AT&T Enhanced Push-to-Talk API Joint Marketing Agreement</label>
-  								<div class="col-md-1">
-  									<div class="checkbox">
-    								<label for="licenseAgreement-0">
-      								<input type="checkbox" name="licenseAgreement" id="licenseAgreement-0" value="accepted">
-      								&nbsp;
-    								</label>
-								</div>
-  							</div>
-
-  							<div class="col-md-3">
-							    <button id="accept" name="accept" class="btn btn-primary">Accept</button>
-							    <button id="cancel" name="cancel" class="btn btn-default">Cancel</button>
-  							</div>
-
-					</fieldset>
-				</form>
-
-
-
-				</div>
-			</div>
-
-
-
-			
-
-			<footer>
-				<p><a href="http://clicks.att.com/OCT/eTrac?EMAIL_ID=1012748074&finalURL=http://att.com/Trademark-Copyright-Privacy-Policy?source=EACQM0ftr0000000E" target="blank">© 2016 AT&T Intellectual Property</a>. All rights reserved. AT&T, the AT&T logo and all other AT&T marks contained herein are trademarks of AT&T Intellectual Property and/or AT&T affiliated companies.
-</p>
-			</footer>
-			
-
-		</div><!-- /container -->
-
-
-
-<!-- **********HELP FORM MODAL********** -->
-
-<div id="help-form" class="modal fade" role="dialog">
-  <div class="modal-dialog">
- <!-- Modal content-->
-    <div class="modal-content">
-    	<div class="modal-header">
-        	<button type="button" class="close" data-dismiss="modal">&times;</button>
-        	<h4 class="modal-title">Enhanced Push-to-Talk API Developer Center Help</h4>
-      	</div>
-
-	    <div class="modal-body">
-			<form class="form-horizontal">
-				<fieldset>
-
-					<div class="form-group">
-						<label class="col-md-4 control-label" for="name">Your name</label>  
-						<div class="col-md-6">
-							<input id="name" name="name" type="text" placeholder="" class="form-control input-md input-first" required title="Enter your first and last name">
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="col-md-4 control-label" for="email">Your email</label>  
-						<div class="col-md-6">
-							<input id="email" name="email" type="text" placeholder="" class="form-control input-md input-middle" required title="Enter your email address">
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="col-md-4 control-label" for="subject">Subject</label>  
-						<div class="col-md-6">
-							<input id="subject" name="subject" type="text" placeholder="" class="form-control input-md input-last" required title="Please indicate the subject of your question">
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="col-md-4 control-label" for="message">Question</label>
-						<div class="col-md-6">                     
-							<textarea class="form-control input-single" id="message" name="message" required title="Please enter your question"></textarea>
-						</div>
-					</div>
-
-					<div class="form-group form-button">
-						<label class="col-md-4 control-label" for="submit"></label>
-						<div class="col-md-6">
-							<button id="help-submit" name="help-submit" class="btn btn-primary">Submit</button>
-						</div>
-					</div>
-
-				</fieldset>
-			</form>
-		</div><!-- MODAL BODY -->
-
-		<div class="modal-footer">
-			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		</div>
-    </div><!-- MODAL CONTENT -->
-  </div>
-</div>
-<!-- ********** /HELP FORM MODAL********** -->
-
-		<!-- Bootstrap core JavaScript
-		================================================== -->
-		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-
-		<script type="text/javascript">
-
-    function PrintElem(elem)
-    {
-        Popup($(elem).html());
-    }
-
-    function Popup(data) 
-    {
-        var mywindow = window.open('', 'licensePrint', 'height=400,width=600');
-        mywindow.document.write('<html><head><title>my div</title>');
-        /*optional stylesheet*/ //mywindow.document.write('<link rel="stylesheet" href="main.css" type="text/css" />');
-        mywindow.document.write('</head><body >');
-        mywindow.document.write(data);
-        mywindow.document.write('</body></html>');
-
-        mywindow.document.close(); // necessary for IE >= 10
-        mywindow.focus(); // necessary for IE >= 10
-
-        mywindow.print();
-        mywindow.close();
-
-        return true;
-    }
-
-</script>
-
-
-</body>
-</html>
+</ol>
+</body></html>

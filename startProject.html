@@ -14,6 +14,7 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet"> 
 		<link href="css/eptt-api.css" rel="stylesheet">
 		<link href="css/datepicker.css" rel="stylesheet">
+		<link href="css/jma-terms.css" rel="stylesheet">
 	
 
 		<!-- Just for debugging purposes. Don't actually copy this line! -->
@@ -68,7 +69,7 @@
 					        <a href="#" class="dropdown-toggle" data-toggle="dropdown">APIs <b class="caret"></b></a>
 					        <ul class="dropdown-menu">
 					          <li><a href="deepLink.html">Deep Linking</a></li>
-					          <li><a href="WebPlugin.html">Web Plugin</a></li>
+					          <li><a href="web-plugin.html">Web Plugin</a></li>
 					        </ul>
 					      </li>
 					      <li><a href="#">Projects</a></li>
@@ -104,14 +105,14 @@
 									</div>
 								</div>
 								<div class="form-group">
-								  	<label class="col-md-4 control-label" for="projectName">AT&T sponsor</label>  
+								  	<label class="col-md-4 control-label" for="projectName">AT&T contact</label>  
 									<div class="col-md-8">
 										<input id="sponsor" name="sponsor" type="text" placeholder="" class="form-control input-md input-first" required-title="All projects require an AT&T Sales or Product sponsor">
 									</div>
 								</div>
 
 								<div class="form-group projectForm">
-								  	<label class="col-md-4 control-label" for="projectName">Sponsor email</label>  
+								  	<label class="col-md-4 control-label" for="projectName">Contact email</label>  
 									<div class="col-md-8">
 										<input id="sponsorEmail" name="sponsorEmail" type="text" placeholder="" class="form-control input-md input-last" required-title="Enter a valid AT&T email address for the project sponsor">
 									</div>
@@ -159,19 +160,19 @@
 								  			<div class="checkbox">
 								    			<label for="endUse-0">
 								      			<input type="checkbox" name="endUse" id="endUse-0" value="internal">
-								      			Internal company use
+								      			Proprietary application/private customer use
 								    			</label>
 											</div>
 								  			<div class="checkbox">
 								    			<label for="endUse-1">
 								      			<input type="checkbox" name="endUse" id="endUse-1" value="resale">
-								      			Product for resale
+								      			Commercial product offered for sale - subject to <a data-toggle="modal" data-target="#jma" href="#">Joint Marketing Agreement</a>
 								    			</label>
 											</div>
 								  			<div class="checkbox">
 								    			<label for="endUse-2">
 								      			<input type="checkbox" name="endUse" id="endUse-2" value="att">
-								      			AT&amp;T whitelabel product
+								      			Product resold by AT&T
 								    			</label>
 											</div>
 								  		</div>
@@ -296,6 +297,215 @@
 </div>
 <!-- ********** /HELP FORM MODAL********** -->
 
+
+<!-- ********** JMA MODAL ********** -->
+
+<div id="jma" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+	        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+	        	<h1 class="headline text-center">Joint Marketing Agreement</h1>
+	        	<h3 class="text-center">TERMS AND CONDITIONS</h3>
+			</div>
+			<div class="modal-body">
+				<a href="#"  value="Print Div" onclick="PrintElem('#licensePrint')"> Print agreement</a>
+					<div class="license" id="licensePrint">
+						
+						<p>
+This AT&T API  Joint Marketing Agreement ("Agreement") is between AT&T Mobility LLC ("AT&T") and (“You” or “Developer”) governing Your use of the Service, including all application programming interfaces ("API(s)"), information, content, products, materials, and services made available to You by AT&T or third parties related to the Enhanced Push-to-Talk (“EPTT”) Service (the "Service"). "You" and "Your" means and refers to the person(s) or legal entity using the Service or otherwise exercising rights under this Agreement. If You are entering into this Agreement on behalf of Your company, "You" or "Your" refers to your company as well.
+Please read this Agreement carefully prior to using the Service. By using or otherwise accessing the Service, You (a) acknowledge that you have read this Agreement and agree to be bound by the terms of this Agreement on behalf of yourself (if an individual) or the legal entity that you represent (in the case of a legal entity), and (b) warrant that you have authority to execute this Agreement and bind the person or entity. If You do not agree to the terms of this Agreement, do not use the Service.
+The primary purpose of this Agreement is set forth the terms and conditions pursuant to which You will provide  software applications that access and use the Service’s application programming interfaces (“APIs”) (“Applications”) and related services (collectively “Your Products”)to our mutual customers.</p>
+
+<ol class="jmaTerms">
+
+	<li>SCOPE
+		<ol>
+			<li>This Agreement provides AT&T a non-exclusive right to market Your Products in all markets worldwide.  For purposes of this Agreement, “market” means to make customers and potential customers aware of the available service and integrated features and how to obtain them.</li>
+
+			<li>AT&T may also recommend to its customers that they purchase Your Products.</li>
+
+			<li>Nothing herein prohibits AT&T from marketing products not manufactured by You which serve essentially the same function.  Nothing herein prevents You from marketing and selling Your Products or similar products serving essentially the same function to other providers of services similar to the Service.</li>
+		</ol>
+	</li>
+
+	<li>RELATIONSHIP OF THE PARTIES
+		<ol>
+			<li>General.   You agree to make reasonable commercial efforts to engage in joint sales presentations with AT&T sales representatives if requested by AT&T.</li>
+
+			<li>You will join with AT&T in a set of focused sales activities to qualify opportunities around specific target vertical market segments (“Verticals”) and / or accounts to promote the AT&T value proposition.  The effort will include sharing target account names, establishing a cadence process surrounding opportunity engagement status as well as jointly developing the sales strategy for each customer / Vertical.</li>
+
+
+			<li>Nature of Relationship.  The relationship created by this Agreement is that of independent contracting parties and is not any other relationship, including, without limitation, that of joint employers, a joint venture, or a partnership.  Personnel employed by, or acting under the authority of a party to this Agreement are not employees or agents of the other party.  AT&T and You each assume sole responsibility for the employment, compensation, discharge, and control of its own respective employees, contractors, and agents, and for ensuring their compliance with this Agreement.  You are not a general agent of AT&T.  Neither You nor any affiliate may be a reseller of AT&T’s Service, under this agreement.  Further, to the extent You obtain or use CPNI in connection with this Agreement, You will be an agent of AT&T with respect to the receipt and use of such information.  “CPNI” means Customer Proprietary Network Information as defined by the Federal Communications Act of 1934, as amended and the Federal Communications Commission rules promulgated thereunder (Federal and State CPNI laws and regulations are referred to herein as the “CPNI Restrictions”).  You agree to receive and use CPNI consistent with the CPNI Restrictions and in the manner specified herein with respect to AT&T Information received under this Agreement as set forth in Section 3 (Confidentiality) below.  These requirements include, but are not limited to, the following:  You agree that You will (1) not use any CPNI to market or otherwise sell products, except to the extent necessary to perform services for AT&T under this Agreement; (2) make no sale, license or lease of CPNI to any other party; (3) restrict access to CPNI to only those of Your employees that require access to perform services under this Agreement; and (4) promptly return all CPNI to AT&T upon expiration or termination of this Agreement, unless expressly agreed or instructed otherwise by AT&T.</li>
+
+			<li>Commitments to Third Parties.  The parties have no authority to make any commitment on behalf of the other to any third party without written permission.</li>
+
+			<li>Acknowledgements and Representations.
+				<ol>
+					<li>AT&T and You understand and accept that the terms, conditions, and covenants contained in this Agreement are reasonably necessary to maintain AT&T’s high standard for service and to protect and preserve the goodwill of the  Service and the AT&T brand.</li>
+
+					<li>AT&T expressly disclaims the making of, and You acknowledge, that You and Your affiliates have not received, have no knowledge of, and are not relying on any representations by any employee or representative of AT&T or its affiliates as to: (i) the quality of the network from which AT&T services are provided; and (ii) any other factor relating to AT&T’s business operations, except as expressly set forth in this Agreement.  You represent that You have independently investigated the risk and opportunities of the business outlined in this Agreement and have independently decided to accept the terms of this Agreement.</li>
+				</ol>
+			</li>
+		</ol>
+	</li>
+
+
+	<li>Confidentiality.
+		<ol>
+	
+			<li>AT&T Information. You agree that information AT&T discloses to You under this Agreement, including but not limited to, ideas, concepts, know-how, techniques, designs, specifications, drawings, blueprints, tracings, diagrams, models, samples, flow charts, data, computer programs, disks, diskettes, tapes, marketing plans, and other technical, financial, customer or business information (individually and collectively, "Information") shall be deemed to be confidential and proprietary to AT&T. You agree to hold such Information in confidence with the same degree of care with which You protect Your own confidential or proprietary information, but no less than reasonably prudent care; use the AT&T Information only for the purpose of this Agreement; not copy, distribute, or otherwise use such Information or knowingly allow anyone else to copy, distribute, or otherwise use such Information, and any and all copies shall bear the same notices or legends, if any, as the originals; and upon request, promptly return to AT&T all AT&T Information that is in tangible form. As to AT&T Information that was disclosed in or is stored in intangible form, including, but not limited to electronic mail or other electronic communication, upon request by AT&T, You shall certify in writing within five (5) business days to AT&T that all such AT&T Information has been destroyed or, if the AT&T Information was recorded on an erasable storage medium, that You have used reasonable efforts to erase all such intangible Information.</li>
+		
+		
+			<li>No Developer Disclosures by You. You agree that You do not intend to and that You will not disclose to AT&T  any information that You regard as proprietary regarding any of Your Products (“Developer Disclosures”). You warrant that all Developer Disclosures from You to AT&T  are or will be free of any obligation of confidence. AT&T works with many application and software developers and some of their products may be similar to or compete with Your Applications. AT&T may also be developing its own similar or competing applications and products or may decide to do so in the future. To avoid potential misunderstandings, AT&T cannot agree, and expressly disclaims, any confidentiality obligations or use restrictions, express or implied, with respect to any Developer Disclosures that You may provide in connection with this Agreement, including information about Your Application(s) and metadata. You agree that any Developer Disclosures You make to AT&T will be non-confidential. AT&T will be free to use and disclose any Developer Disclosures on an unrestricted basis without notifying or compensating You. You release AT&T from all liability and obligations that may arise from the receipt, review, use, or disclosure of any portion of any Developer Disclosures. Any physical materials You submit to AT&T that contain Developer Disclosures will become AT&T property and AT&T will have no obligation to return those materials to You or to certify their destruction.<br><br>
+				
+			Nothing in this Agreement will impair AT&T's right to develop, acquire, license, market, promote, or distribute products or technologies that perform the same or similar functions as, or otherwise compete with, Your Applications or any other products or technologies that You may develop, produce, market, or distribute.</li>
+
+			<li>Your Other Confidential Information.  Information You disclose to AT&T concerning Your business plans, pricing and customers and any non-Developer Disclosures that are marked in writing as proprietary or confidential will be deemed to be Your Confidential Information and proprietary to You. AT&T agrees to hold Your Confidential Information in confidence with the same degree of care with which AT&T protects its own confidential or proprietary information, but no less than reasonably prudent care; use Your Confidential Information only for the purpose of this Agreement; not copy, distribute, or otherwise use Your Confidential Information or knowingly allow anyone else to copy, distribute, or otherwise use Your Confidential Information, and any and all copies shall bear the same notices or legends, if any, as the originals; and upon request, promptly return to You all Your Confidential Information that is in tangible form.  As to Your Confidential Information that was disclosed in or is stored in intangible form, including, but not limited to electronic mail or other electronic communication, upon request by You, AT&T shall certify in writing within thirty (30) business days to You that all such information has been destroyed or, if such information was recorded on an erasable storage medium, that AT&T has used reasonable efforts to erase all such intangible Information.</li>
+		</ol>
+	</li>
+
+	<li>COMPENSATION.  Neither party will receive compensation of any form under this Agreement.</li>
+
+	<li>YOUR RESPONSIBILITIES.
+			<ol>
+				<li>eview and accept the AT&T API  License Agreement.</li> 
+			
+				<li>Develop, enhance and test Your Products and verify that they continue to work with the Service based on agreed upon specifications and requirements.</li> 
+			
+				<li>Sell Your Products directly or via dealers to AT&T customers at the request of AT&T.</li>
+			
+				<li>Adhere to the following sales process unless otherwise agreed upon by the parties in writing.
+					<ol>		
+						<li>AT&T Sales organization identifies an opportunity and engages an appropriate AT&T Subject Matter Expert(s) (SMEs) from the AT&T Mobile field solution specialist team.</li>
+						<li>Once qualified by AT&T SME(s), they engage You or Your designated dealer.</li>
+						<li>You or Your dealer will consult the customer on solution options in collaboration with the AT&T Sales team.</li> 
+						<li>You or Your dealer will provide pricing, installation, programming, etc. to the customer and bill the customer directly for Your Products, and equipment in communication with the AT&T Sales team and the AT&T Mobile field solution specialist team.</li>
+					</ol>
+				</li>
+			
+				<li>Appoint and maintain one point of contact dedicated to the relationship established in this Agreement.</li>
+			
+				<li>Provide customer care support directly to AT&T customers who purchase Your Products in accordance with Your standard service support plan and any EPTT API Support Plan provided by AT&T.</li>
+			
+				<li>Provide AT&T monthly reports setting forth the customer call center metrics agreed upon by the parties in writing.</li>
+			
+				<li>Be responsible for Your own costs associated with commercializing this Agreement.</li>
+			</ol>
+		</li>
+
+
+		<li>AT&T’s RESPONSIBILITIES.
+			<ol>
+				<li>Certify Your Application(s) and Product(s) interoperate properly with the EPTT APIs prior to Your marketing and promoting them in the field.</li>  
+			
+				<li>Follow the written sales process agreed upon by the parties.</li>
+			
+				<li>Provide customer care support directly to Your customers who purchase the service in accordance with AT&T’s standard service support plan and any EPTT API Support Plan AT&T provides.</li>
+			
+				<li>Appoint and maintain one point of contact responsible for the relationship established in this Agreement.</li>
+			
+				<li>Be responsible for its own cost associated with commercializing this Agreement.</li>
+			</ol>
+		</li>
+
+		<li>PROPRIETARY RIGHTS.
+			<ol>
+				<li>To the extent a party provides the other party with access to any software, technology or API codes or equipment (“Technology”), the other party will have a non-exclusive, non-transferrable, non-sublicensable, full paid up license to use such Technology solely as necessary to perform joint marketing activities and other duties as may be mutually agreed in writing from time to time. The licensee will not (i) modify or create derivatives of any of the licensor’s Technology, (ii) reverse engineer or decompile any of the licensor’s Technology, or (iii) remove any proprietary notices or labels from, on or in the licensor’s Technology.</li>
+			
+				<li>No intellectual property rights are assigned hereunder. For clarity, each party shall own its own developments it makes in connection herewith. Except for the limited rights and licenses expressly granted in Section 7.1 above, the AT&T API License Agreement, Your disclaimers with respect to Developer Disclosures and Section 13 below (YOUR MARKS), no other license is granted, no other use is permitted and each party retains all right, title and interest (including all intellectual property and proprietary rights embodied therein) in and to its respective products, services, material, trademarks and confidential information.</li>
+			</ol>
+		</li>
+
+
+		<li>SALES & MARKETING PLAN
+			<ol>
+				<li>The parties will independently and, by mutual agreement, jointly promote EPTT and Your Product(s) that interoperate(s) with EPTT.  Such marketing may include: 
+					<ol>
+						<li>Targeted solution advertising.</li>
+						
+						<li>Field marketing support for each identified market segment.</li>
+						
+						<li>Event marketing.</li>
+						
+						<li>Creation of end-user marketing collateral, data sheets, case studies, videos and white papers.</li>
+						
+						<li>Creation of a targeted list of accounts as mutually agreed upon by both parties.</li>
+					</ol>
+				</li>
+			</ol>
+		</li>
+
+		<li>PRE SALES SUPPORT/POST SALES SUPPORT PLAN<br>
+		
+			AT&T and You will collaborate in a set of focused sales activities around specific target Verticals and / or accounts to promote the unique value proposition of using the Service in connection with Your Product(s) that utilize the EPTT APIs. The effort will include sharing target account names, establishing a cadence process surrounding opportunity engagement status, as well as jointly developing the sales strategy for each customer / Vertical.
+		</li>
+
+		<li>TERM AND TERMINATION.
+			<ol>
+				<li>Term.  This Agreement continues in effect for an initial term of 3 years beginning on the date You accept these terms and conditions, unless earlier terminated in accordance with the provisions of this Agreement.  This Agreement will automatically renew for successive one-year periods under the same terms and conditions as are in effect at the time of the renewal, unless either party gives written notice to the other party of its intention not to renew this Agreement at least 60 days before the expiration of the then current term.</li>
+			
+				<li>Termination.  Either party has the right to terminate this Agreement if the other party is in material breach of its obligations hereunder and fails to cure this breach within 30 days after written notice thereof is delivered to the allegedly breaching party.  This termination is effective at the end of the 30-day cure period if the material breach has not been cured.  Either party may also terminate this Agreement without cause upon 60 days’ prior written notice.</li>
+			
+				<li>Obligations Upon Termination or Expiration.  Upon the expiration or termination of this Agreement for any reason, You and Your affiliates must return to AT&T or destroy those documents, records, or other materials (including all copies, either photocopies or electronic copies) that were provided by AT&T or that contain any AT&T Confidential Information, including without limitation all CPNI, except for Confidential Information required to provide customer support to AT&T customers.  Additionally, for a period of 5 years after termination or expiration, You will continue to provide customer support to AT&T customers that use Your Products in accordance with the customer care model in effect at the time of termination or expiration.<br><br>
+							
+				Upon the expiration or termination of this Agreement for any reason, AT&T and its affiliates must return to You or destroy those documents, records, or other materials (including all copies, either photocopies or electronic copies) that were provided to AT&T by You or that contain any of Your confidential information (which does not include Developer Disclosures) except for confidential information required to provide customer support to Your customers. Additionally, for a period of 5 years after termination or expiration, AT&T will continue to provide customer support to Your customers using AT&T EPTT in accordance with the customer care model in effect at the time of termination or expiration.</li>
+			</ol>
+		</li>
+
+	<li>DISCLAIMER OF WARRANTIES AND LIMITATION OF LIABILITY
+		<ol>	
+			<li>AT&T MAKES NO WARRANTIES OR REPRESENTATIONS CONCERNING AVAILABILITY OR SECURITY OF THE  SERVICE, NOR THAT YOUR APPLICATIONS ARE FIT FOR BEING TESTED OR OTHERWISE VERIFIED FOR USE IN CONNECTION WITH THE SERVICE. AT&T INFORMS YOU AND YOU ACCEPT THAT AVAILABILITY OF THE SERVICE CAN BE NON-EXISTING OR RESTRICTED DUE TO LACK OF CAPACITY, DATA TRANSMISSION ERRORS, INTERRUPTION OF POWER AND OTHER CIRCUMSTANCES BEYOND AT&T'S CONTROL. FURTHER YOU AGREE THAT AT&T SHALL HAVE NORESPONSIBILITY AND NO LIABILITY FOR THE NON-AVAILABILITY OF THE  SERVICE. AT&T SHALL ATTEMPT TO POST, BUT HAS NO OBLIGATION TO DO SO, WHEN THE  SERVICE MAY BE UNAVAILABLE FOR MAINTENANCE, REPAIRS, OR OTHER REASONS.</li>
+		
+			<li>AT&T'S SOLE RESPONSIBILITY IN THE CASE OF MALFUNCTIONS OF THE SERVICE IS LIMITED TO USING REASONABLE EFFORTS TO CORRECT ANY MALFUNCTION. YOU SHALL HAVE NO OTHER REMEDY. IF, IN SPITE OF AT&T USING REASONABLE EFFORTS, IT PROVES DIFFICULT OR NOT COMMERCIALLY SUITABLE IN AT&T’S SOLE OPINION TO CORRECT THE MALFUNCTION, THE MALFUNCTION WILL NOT BE CORRECTED. AT&T SHALL HAVE NO RESPONSIBILITY OR LIABILITY FOR ANY MALFUNCTION WHETHER CAUSED BY AT&T OR CAUSED BY YOU AND/OR ANY THIRD PARTY. THE REMEDIES SET FORTH ABOVE CONSTITUTE THE ONLY AND EXCLUSIVE REMEDIES AVAILABLE TO YOU FOR SUCH MALFUNCTIONS.</li>
+		
+			<li>YOU ASSUME TOTAL RESPONSIBILITY AND RISK FOR YOUR USE OF THE  SERVICE. THE  SERVICE IS PROVIDED "AS IS" AND AT&T DOES NOT MAKE, AND EXPRESSLY DISCLAIMS, ANY EXPRESS OR IMPLIED WARRANTIES, REPRESENTATIONS OR ENDORSEMENTS OF ANY KIND WHATSOEVER, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, AND THE WARRANTIES OF TITLE OR NON-INFRINGEMENT. YOU ASSUME ALL RISK AS TO THE SUITABILITY, QUALITY, AND PERFORMANCE OF THE SERVICE.</li>
+		
+			<li>IN NO EVENT SHALL AT&T OR ITS DIRECTORS, OFFICERS, EMPLOYEES OR AFFILIATES BE LIABLE FOR (A) ANY INCIDENTAL, CONSEQUENTIAL, INDIRECT, SPECIAL OR EXEMPLARY DAMAGES (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS, BUSINESS INTERRUPTION, LOSS OF PROGRAMS OR INFORMATION, AND THE LIKE) ARISING OUT OF ANY USE OF OR INABILITY TO USE THE  SERVICE, EVEN IF AT&T OR ANY OF ITS AUTHORIZED REPRESENTATIVES HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, (B) ANY CLAIM ATTRIBUTABLE TO ERRORS, OMISSIONS, INTERRUPTIONS, INCOMPATIBILITY WITH EQUIPMENT, SYSTEMS, VIRUSES, OR OTHER INACCURACIES IN THE SERVICE, OR (C) ANY CLAIM BY ANY THIRD PARTY. BECAUSE SOME STATES DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, THE ABOVE LIMITATION MAY NOT APPLY TO YOU. IN SUCH STATES, AT&T'S LIABILITY IS LIMITED TO THE GREATEST EXTENT PERMITTED BY LAW.</li>
+		
+			<li>NOTWITHSTANDING ANY OTHER PROVISION IN THIS AGREEMENT, AT&T'S AGGREGATE LIABILITY UNDER THIS AGREEMENT IS LIMITED TO A MAXIMUM AMOUNT EQUAL TO $100.00.</li>
+		
+			<li>YOU ACKNOWLEDGE THAT THE PROVISIONS OF THIS AGREEMENT WERE NEGOTIATED TO REFLECT AN INFORMED, VOLUNTARY ALLOCATION BETWEEN YOU AND AT&T OF ALL RISKS (BOTH KNOWN AND UNKNOWN) ASSOCIATED WITH THE TRANSACTIONS ASSOCIATED WITH THIS AGREEMENT AND REFLECT THAT AT&T IS NOT CHARGING YOU FOR THE LICENSES GRANTED UNDER THIS AGREEMENT AND THE API LICENSE AGREEMENT. THE REMEDY LIMITATIONS, AND THE LIMITATIONS OF LIABILITY, ARE SEPARATELY INTENDED TO LIMIT THE FORMS OF RELIEF AVAILABLE TO YOU.</li>
+		</ol>
+	</li>
+
+	<li>INDEMNIFICATION <br>
+	
+		You agree to indemnify, defend and hold AT&T, its employees, agents, consultants, subsidiaries, affiliates, suppliers and licensors (each an "Indemnified Party") harmless from and against any and all claims, costs, losses, damages, liabilities, judgments and expenses (including reasonable fees of attorneys and other professionals) which AT&T and/or any Indemnified Party may incur and that arise from or are related to: (i) Your use of EPTT Service; (ii) any infringement of intellectual property, patents, trademarks, copyrights, or trademarks belonging to any Third Party; or (iii) Your breach of this Agreement.</li>
+
+	<li>YOUR MARKS <br>
+	
+		You grant AT&T the right to use, reproduce, publish and display Your names, trademarks, service marks, designs, logos or symbols (“Your Marks”), including the names of Your Application(s)  and any related Application descriptions or specifications published or provided by You, in connection with the development, use, reproduction and distribution of promotional and marketing materials, content directories and indices, electronic and printed advertising, newsletters and mailings, and exhibitions, trade shows and equivalent events that reference AT&T and its relationship with You relating to this Agreement.  This Agreement gives AT&T a non-exclusive, royalty-free, limited license to reproduce Your Marks as reasonably necessary for the sole purpose of allowing AT&T to fully promote and market the services covered by this Agreement.  AT&T acknowledges and agrees that You are the exclusive owner of Your Marks and that their use as provided in this Agreement does not grant AT&T any right, title or interest in or to Your Marks.</li>
+
+	<li>GOVERNING LAW - This Agreement shall be governed by the laws of the State of Georgia, except conflict of law rules. The United Nations Convention on the International Sale of Goods shall not apply to this Agreement. Suit to enforce this Agreement or any provision thereof will be brought exclusively in the state or federal courts located in Atlanta, Georgia.</li>
+
+	<li>SEVERABILITY - If any one or more of the provisions of this Agreement should be ruled wholly or partly invalid or unenforceable by a court or other government body of competent jurisdiction, then: (a) the validity and enforceability of all provisions of this Agreement not ruled to be invalid or unenforceable will be unaffected; (b) the effect of the ruling will be limited to the jurisdiction of the court or other government body making the ruling; (c) the provision(s) held wholly or partly invalid or unenforceable will be deemed amended, and the court or other government body or AT&T is authorized to reform the provision(s), to the minimum extent necessary to render them valid and enforceable in conformity with the parties' intent as manifested herein; and (d) if the ruling, and/or the controlling principle of law or equity leading to the ruling, is subsequently overruled, modified, or amended by legislative, judicial, or administrative action, then the provision(s) in question as originally set forth in this Agreement will be deemed valid and enforceable to the maximum extent permitted by the new controlling principle of law or equity.</li>
+
+	<li>NO WAIVER - The failure of either party at any time to require performance by the other party of any provision of this Agreement shall in no way affect the right of such party to require future performance of that provision. Any waiver by either party of any breach of any provision of this Agreement shall not be construed as a waiver of any continuing or succeeding breach of such provision, a waiver of the provision itself or a waiver of any right under this Agreement.</li>
+
+	<li>1INJUNCTIVE RELIEF - Any violation by You of this Agreement shall give the AT&T the right to a court-ordered injunction or other appropriate order to specifically enforce the covenants herein. This is in addition to any remedies AT&T may have at law. A breach of any of Your obligations or the covenants under this Agreement shall be deemed to be a breach of the Licenses granted by this Agreement.</li>
+
+	<li>NON-EXCLUSIVE - Under no circumstances will this Agreement be construed or interpreted as an exclusive dealing agreement by either party. Nothing in this Agreement will be construed to restrict either party from entering into any agreement with any other party, even if similar to or competitive with the transactions contemplated hereunder</li>.
+
+	<li>EXPORT - You will not export or re-export directly or indirectly (including via remote access) any part of the Service (including any Confidential/Proprietary Information) to any country for which a valid license is required for such export or re-export under the U.S. Export Laws without first obtaining a valid license.</li>
+
+	<li>FORCE MAJEURE - AT&T shall not be responsible for failures of its obligations under this Agreement for events beyond its reasonable control, including, but not limited to, natural disasters, epidemics, strikes, labor difficulties, severe weather conditions, regulatory or government acts, or delay of suppliers or contractors.</li>
+
+	<li>NOTICES - You consent to receive and review notices sent through AT&T EPTT API Website and agree that any such notices will satisfy any legal communication requirements.</li>
+
+	<li>ENTIRE AGREEMENT - This Agreement constitutes the entire agreement between the You and AT&T concerning the subject matter hereof. No prior or contemporaneous representations, inducements, promises, or agreements, oral or otherwise, between You and AT&T with reference to this Agreement will be of any force or effect. You represent and warrant that, in entering into and performing Your obligations under this Agreement, You do not and will not rely on any promise, inducement, or representation allegedly made by or on behalf of AT&T with respect to the subject matter hereof, nor on any course of dealings or custom and usage in the trade, except as such promise, inducement, or representation has been expressly set forth herein. This Agreement may be modified only by a written amendment signed by both parties.</li> 
+
+</ol>
+					</div><!-- /license -->
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 		<!-- Bootstrap core JavaScript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
@@ -314,6 +524,32 @@
             });
         </script>
 
+<script type="text/javascript">
+
+    function PrintElem(elem)
+    {
+        Popup($(elem).html());
+    }
+
+    function Popup(data) 
+    {
+        var mywindow = window.open('', 'licensePrint', 'height=400,width=600');
+        mywindow.document.write('<html><head><title>my div</title>');
+        /*optional stylesheet*/ //mywindow.document.write('<link rel="stylesheet" href="main.css" type="text/css" />');
+        mywindow.document.write('</head><body >');
+        mywindow.document.write(data);
+        mywindow.document.write('</body></html>');
+
+        mywindow.document.close(); // necessary for IE >= 10
+        mywindow.focus(); // necessary for IE >= 10
+
+        mywindow.print();
+        mywindow.close();
+
+        return true;
+    }
+
+</script>
 
 </body>
 </html>
